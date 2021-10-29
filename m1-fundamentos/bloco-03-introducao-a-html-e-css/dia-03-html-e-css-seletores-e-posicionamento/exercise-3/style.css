@@ -1,0 +1,17 @@
+h1, p {
+    text-align: center; 
+}
+
+li:hover {
+    background-color: green;
+}
+
+li:active {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    color: white;
+}
+
+ol, ul {
+    list-style: none;
+}
