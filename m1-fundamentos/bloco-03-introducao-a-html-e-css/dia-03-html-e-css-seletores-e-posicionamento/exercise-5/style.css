@@ -1,0 +1,28 @@
+ol {
+    background-color: yellow;
+}
+ol li:nth-child(even) {
+    color: green;
+}
+ol li:nth-child(odd) {
+    text-transform: uppercase;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: red;
+}
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
+li {
+    font-size: 20px;
+}
+li em {
+    font-weight: bold;
+}
+.lang li:nth-child(-n+3) {
+    color: blue;
+}
+.java {
+    background-color: pink;
+}
