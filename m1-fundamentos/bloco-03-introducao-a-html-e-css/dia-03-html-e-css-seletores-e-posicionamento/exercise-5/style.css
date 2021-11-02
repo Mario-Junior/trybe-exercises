@@ -26,21 +26,23 @@ li em {
 .java {
     background-color: pink;
 }
-.allies li a:hover {
+#li1 a:hover {
     font-weight: 700;
-}
-.allies li a[href*="stackoverflow"] {
     color: orange;
 } 
-.allies li a[href*="w3schools"] {
+#li2 a:hover {
+    font-weight: 700;
     color: green;
 } 
-.allies li a[href*="mozilla"] {
+#li3 a:hover {
+    font-weight: 700;
     color: black;
 } 
-.allies li a[href*="devdocs"] {
+#li4 a:hover {
+    font-weight: 700;
     color: yellow;
 } 
-.allies li a[href*="trybe"] {
+#li5 a:hover {
+    font-weight: 700;
     color: green;
 }
