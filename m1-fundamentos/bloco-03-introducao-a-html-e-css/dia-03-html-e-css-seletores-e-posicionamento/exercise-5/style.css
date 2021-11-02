@@ -1,4 +1,4 @@
-ol {
+ol li {
     background-color: yellow;
 }
 ol li:nth-child(even) {
@@ -18,11 +18,29 @@ li {
     font-size: 20px;
 }
 li em {
-    font-weight: bold;
+    font-weight: 700;
 }
 .lang li:nth-child(-n+3) {
     color: blue;
 }
 .java {
     background-color: pink;
+}
+.allies li a:hover {
+    font-weight: 700;
+}
+.allies li a[href*="stackoverflow"] {
+    color: orange;
+} 
+.allies li a[href*="w3schools"] {
+    color: green;
+} 
+.allies li a[href*="mozilla"] {
+    color: black;
+} 
+.allies li a[href*="devdocs"] {
+    color: yellow;
+} 
+.allies li a[href*="trybe"] {
+    color: green;
 }

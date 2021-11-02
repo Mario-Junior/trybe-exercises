@@ -1,0 +1,81 @@
+/* 1. Faça com que todos os itens de Listas Ordenadas tenham uma cor de fundo amarela.
+Se a numeração do item for PAR, faça a cor de fonte ser verde. Se o número for considerado
+ÍMPAR, utilize a propriedade text-transform para deixar o texto maiúsculo.
+(Dica: combinar classes pode ser útil aqui). */
+ol li {
+    background-color: yellow;
+  }
+  
+  ol li:nth-child(even) {
+    color: green;
+  }
+  
+  ol li:nth-child(odd) {
+    text-transform: uppercase;
+  }
+  
+  /* - Faça todas as tags Header (h1, h2...) possuírem cor de fonte vermelha e,
+  se alguma delas estiver em itálico, aumente seu tamanho para 40px e acrescente
+  uma borda de 1px preta e sólida. */
+  h1, h2 {
+    color: red;
+  }
+  
+  h1 em, h2 em {
+    font-size: 40px;
+    border: 1px solid black;
+  }
+  
+  /* - Faça todas as li's terem 20px de tamanho de fonte e, para todo texto em itálico
+  dentro de alguma li, utilize a propriedade font-weight para deixá-lo negrito. */
+  
+  li {
+    font-size: 20px;
+  }
+  
+  li em {
+    font-weight: 700;
+  }
+  
+  /* - Na listagem de linguagens de programação, faça com que as 3 primeiras da lista
+  possuam cor de fonte azul e, se alguma possuir "java*" no texto, utilize uma cor de
+  fundo rosa. */
+  
+  /* Este seletor coloca a cor de font azul em todos os elementos exceto do 4 em diante */
+  #linguagens li:not(:nth-child(n + 4)) {
+    color: blue;
+  }
+  
+  .pink-bg {
+    background-color: pink;
+  }
+  
+  /* - (Bônus) Para cada link na lista de aliados da pessoa desenvolvedora,
+  faça com que ao passar o mouse sobre cada um, o texto fique em negrito e
+  assuma a cor de fonte "temática do site"
+  Dica 1: Utilize o seletor :hover para controlar o passar do mouse.
+  Dica 2: Sugestão de cores padrão. StackOverflow (laranja), W3Schools (verde),
+  MDN (preta), DevDocs (amarela), Trybe (verde). */
+  #aliados li a:hover {
+    font-weight: 700;
+  }
+  
+  #aliados li a[href*="stackoverflow"] {
+    color: orange;
+  }
+  
+  #aliados li a[href*="w3schools"] {
+    color: green;
+  }
+  
+  #aliados li a[href*="mozilla"] {
+    color: black;
+  }
+  
+  #aliados li a[href*="devdocs"] {
+    color: yellow;
+  }
+  
+  #aliados li a[href*="trybe"] {
+    color: green;
+  }
