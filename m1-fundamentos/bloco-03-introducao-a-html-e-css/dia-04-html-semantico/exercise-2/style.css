@@ -39,6 +39,11 @@ p img[src*=stomatopoda1] {
 table {
     text-align: left;
 }
+caption {
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 2%;
+}
 h3 {
     margin-top: 10%;
 }
