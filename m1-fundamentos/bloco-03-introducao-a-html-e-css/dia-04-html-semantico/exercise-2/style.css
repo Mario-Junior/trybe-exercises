@@ -1,60 +1,79 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 4em solid lightblue;
+}
+header {
+    background-image: url("header-colored-bkgd.jpg");
+    border: 0.1px solid white;
+}
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: black 1px -1px 2px, black -1px 1px 2px, black 1px 1px 2px, black -1px -1px 2px
+}
 ul {
-    list-style: none;
     margin: 0px;
     padding: 0px;
+    background-color: lightblue;
+}
+ul li {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+ul li:hover {
+    background-color: aqua;
+}
+article {
+    color: #212529;
+    margin-left: 2%;
+    width: 60%;
+    display: inline-block;
+    border: 2px solid aqua;
+}
+p img[src*=stomatopoda1] {
+    width: 100%;
 }
 table {
     text-align: left;
 }
+h3 {
+    margin-top: 10%;
+}
 h4 {
     display: inline;
 }
-
-
-<!---Bordas Orientativas--->
-body{
-    border: 2px solid green;
+p img[src*=stomatopoda-esmaga] {
+    width: 100%;
 }
-header {
-    border: 2px solid aqua;
+p img[src*=stomatopoda-box] {
+    width: 100%;
 }
-h1 {
-    border: 2px solid black;
-}
-nav {
-    border: 2px solid blue;
-}
-ul {
-    border: 2px solid blueviolet;
-}
-main {
-    border: 2px solid brown;
-}
-article {
-    border: 2px solid cadetblue;
-}
-h2 {
-    border: 2px solid chartreuse;
-}
-section {
-    border: 2px solid chocolate;
-}
-h3 {
-    border: 2px solid crimson;
-}
-p {
-    border: 2px solid fuchsia;
-}
-h4 {
-    border: 2px solid gold;
-}
-table {
-    border: 2px solid grey;
+p img[src*=stomatopoda-veloz] {
+    width: 100%;
 }
 aside {
-    border: 2px solid hotpink;
+    color: #212529;
+    text-align: center;
+    background-color: azure;
+    border: 2px solid aqua;
+    width: 30%;
+    display: inline-block;
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 1%;
+    left: 62.25%;
+}
+p img[src*=stomatopoda-video] {
+    width: 90%;
+    border: 1px solid aqua;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 footer {
-    border: 2px solid aqua;
+    text-align: center;
+    margin-top: 2%;
 }
-<!---Bordas Orientativas--->
