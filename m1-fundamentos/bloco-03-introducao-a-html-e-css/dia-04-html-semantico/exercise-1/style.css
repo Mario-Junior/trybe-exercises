@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+}
+.first {
+    background-color: rgb(235, 200, 84);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    /* Resposta */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.second {
+    background-color: rgb(219, 219, 219);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    /* Resposta */
+    display: inline-block;
+    position: relative;
+    left: 315px;
+}
+
+.third {
+    background-color: rgb(170, 142, 106);
+    font-size: 20px;
+    height: 50px;
+    text-align: center;
+    width: 300px;
+    /* Resposta */
+    display: inline-block;
+    position: relative;
+    left: 315px;
+}
+/* Resposta */
+#prizes {
+    text-align: center;
+}
+.align-prizes li {
+    display: inline;
+}
