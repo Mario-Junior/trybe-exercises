@@ -1,16 +1,3 @@
-ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-}
-table {
-    text-align: left;
-}
-h4 {
-    display: inline;
-}
-
-
 <!---Bordas Orientativas--->
 body{
     border: 2px solid green;
