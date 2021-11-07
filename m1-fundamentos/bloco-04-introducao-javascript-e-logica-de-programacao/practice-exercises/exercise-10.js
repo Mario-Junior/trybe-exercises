@@ -27,3 +27,16 @@ if (productCost >=0 && saleValue >=0) {
 } else {
   console.log('Error! Input values ​​cannot be negative!'); 
 }
+
+/* GABARITO */
+
+const costOfProduct = 1;
+const saleValue2 = 3;
+
+if (costOfProduct >= 0 && saleValue2 >= 0) {
+  const totalCostOfProduct = costOfProduct * 1.2;
+  const totalProfit2 = (saleValue2 - totalCostOfProduct) * 1000;
+  console.log(totalProfit2);
+} else {
+  console.log("Error, os valores não podem ser negativos");
+};
