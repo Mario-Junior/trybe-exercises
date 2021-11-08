@@ -109,9 +109,17 @@ console.log(smallestNumber);
 console.log('\n');
 
 /* 8.Utilizando for , crie um array que vá de 1 até 25 e imprima o resultado; */
-
+let numArray = [];
+for (let i = 1; i <= 25; i += 1) {
+  numArray.push(i);
+}
+console.log(numArray);
+console.log('\n');
 
 /* 9.Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2 . */
-
+for (let i = 0; i < numArray.length; i += 1) {
+  console.log(numArray[i] / 2);
+}
+console.log('\n');
 
 /* BÔNUS */
