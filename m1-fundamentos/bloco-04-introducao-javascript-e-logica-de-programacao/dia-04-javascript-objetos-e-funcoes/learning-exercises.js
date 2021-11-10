@@ -174,6 +174,83 @@ let names = {
 };
 for (key in names) {
   console.log('Olá ' + names[key] + '!');
-}
+};
 console.log('\n');
-// 2 - 
+// 2 - Usando o objeto, utilizar For/in e imprimir as chaves e valores do objeto
+let carObj = {
+  model: 'A3 Sedan',
+  manufacturer: 'Audi',
+  year: 2020
+};
+for (values in carObj) {
+  console.log(values, ':', carObj[values]);
+};
+console.log('\n');
+/////////////////////////////////////////////////////////////////////////////////////
+
+// Funções:
+// Sem função
+let nome = 'João';
+
+console.log('Bom dia, ' + nome);
+
+
+// Com função
+function bomDiaTryber(nome) {
+  console.log('Bom dia, ' + nome);
+}
+
+bomDiaTryber('João'); // Bom dia, João
+bomDiaTryber('Julia'); // Bom dia, Julia
+bomDiaTryber('Marcelo'); // Bom dia, Marcelo
+console.log('\n');
+
+// Funções SEM parâmetros:
+function bomDia() {
+  return 'Bom dia!';
+}
+console.log(bomDia()); // Bom dia!
+console.log('\n');
+
+let status = 'deslogado';
+
+function logarDeslogar() {
+  if (status === 'deslogado') {
+    status = 'logado';
+  } else {
+    status = 'deslogado';
+  }
+}
+
+console.log(status); // deslogado
+
+logarDeslogar();
+console.log(status); // logado
+
+logarDeslogar();
+console.log(status); // deslogado
+
+console.log('O usuário está ' + status); // O usuário está deslogado
+console.log('\n');
+
+// Funções COM parâmetros:
+// Com função
+function soma(a, b) {
+  return a + b;
+};
+console.log(soma(5, 2)); // 7
+console.log('\n');
+
+function maiorNum(primeiroNum, segundoNum) {
+  if (primeiroNum > segundoNum) {
+    return primeiroNum + ' é maior que ' + segundoNum;
+  } else if (segundoNum > primeiroNum) {
+    return segundoNum + ' é maior que ' + primeiroNum;
+  } else {
+    return 'Os números são iguais';
+  }
+}
+
+console.log(maiorNum(10, 20)); // 20 é maior que 10
+console.log(maiorNum(2, -5)); // 2 é maior que -5
+console.log(maiorNum(1, 1)); // Os números são iguais
