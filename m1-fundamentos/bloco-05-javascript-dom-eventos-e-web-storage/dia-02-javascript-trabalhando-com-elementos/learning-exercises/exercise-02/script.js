@@ -30,3 +30,25 @@ terceiroFilho.innerText = 'Número 7 feito com sucesso!';
 // 8. Agora acesse o terceiroFilho a partir de pai
 let terceiroFilho2 = pai.lastElementChild.previousElementSibling;
 terceiroFilho2.style.color = 'DeepPink';
+
+// Parte II - Criando elementos
+// Prática? Aqui!
+
+// 1. Crie um irmão para elementoOndeVoceEsta
+let elementoOndeVoceEstaBro = document.createElement('section');
+elementoOndeVoceEstaBro.innerText = 'Irmão para elementoOndeVoceEsta'
+pai.appendChild(elementoOndeVoceEstaBro);
+
+// 2. Crie um filho para elementoOndeVoceEsta
+let elementoOndeVoceEstaSon = document.createElement('p');
+elementoOndeVoceEstaSon.innerText = 'Filho para elementoOndeVoceEsta';
+elementoOndeVoceEsta.appendChild(elementoOndeVoceEstaSon);
+
+// 3. Crie um filho para primeiroFilhoDoFilho
+let primeiroFilhoDoFilhoSon = document.createElement('h4');
+primeiroFilhoDoFilhoSon.innerText = 'Filho para primeiroFilhoDoFilho';
+primeiroFilhoDoFilho.appendChild(primeiroFilhoDoFilhoSon);
+
+// 4. A partir desse filho criado, acesse terceiroFilho
+terceiroFilho = primeiroFilhoDoFilhoSon.parentElement.parentElement.nextElementSibling;
+console.log(terceiroFilho);
