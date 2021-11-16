@@ -52,3 +52,25 @@ primeiroFilhoDoFilho.appendChild(primeiroFilhoDoFilhoSon);
 // 4. A partir desse filho criado, acesse terceiroFilho
 terceiroFilho = primeiroFilhoDoFilhoSon.parentElement.parentElement.nextElementSibling;
 console.log(terceiroFilho);
+
+
+/* Parte III - Removendo elementos
+Para praticar: Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho */
+pai.removeChild(primeiroFilho);
+pai.removeChild(terceiroFilho);
+pai.removeChild(quartoEUltimoFilho);
+pai.removeChild(elementoOndeVoceEstaBro);
+elementoOndeVoceEsta.removeChild(segundoEUltimoFilhoDoFilho);
+
+// GABARITO:
+// const pai = document.getElementById('pai');
+
+//     for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+//       const currentChildren = pai.childNodes[index];
+//       if (currentChildren.id !== 'elementoOndeVoceEsta') {
+//         currentChildren.remove();
+//       }
+//     }
+
+//     const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+//     segundoEUltimoFilhoDoFilho.remove();
