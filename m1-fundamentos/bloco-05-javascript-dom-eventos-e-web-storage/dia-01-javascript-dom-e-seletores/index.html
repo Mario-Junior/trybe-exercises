@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html> -->
+<!-- <html> -->
+  <!-- <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class = 'pg'>Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class = 'pg'>Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+      // 1. Recupere o elemento título e faça algo, como alterá-lo para o nome do seu filme favorito.
+      document.getElementById('page-title').innerText = 'Matrix';
+      // 2. Recupere o segundo parágrafo e use sua criatividade para alterá-lo.
+      document.getElementById('second-paragraph').innerText = 'Vamos alterando tudo o que queremos com JavaScript!';
+      document.getElementById('second-paragraph').style.backgroundColor = 'green';
+      document.getElementById('second-paragraph').style.color = 'white';
+      document.getElementById('second-paragraph').style.border = '2px solid yellow';
+      // 3. Recupere o subtítulo e altere-o também.
+      document.getElementById('subtitle').innerText = 'Estamos presenciando nossa entrada na Matrix para alterarmos as páginas de um jeito jamais imaginado';
+      document.getElementById('subtitle').style.border = '2px solid blue';
+      // 1. Utilizando o mesmo template - Adicione uma classe igual para os dois parágrafos.
+      // 2. Recupere os parágrafos via JavaScript, usando getElementsByClassName - 3. Altere algum estilo do primeiro deles.
+      document.getElementsByClassName('pg')[0].style.backgroundColor = 'yellow';
+      // 4. Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName.
+      document.getElementsByTagName('h4')[0].style.color = 'purple';
+    </script>
+  </body>
+</html>
+
+<!-- Parte III - Qual seletor usar? Para praticar, substitua todas as funções que você usou no exercício anterior por querySelector e/ou querySelectorAll -->
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class = 'pg'>Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class = 'pg'>Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+      // 1. Recupere o elemento título e faça algo, como alterá-lo para o nome do seu filme favorito.
+      document.querySelector('#page-title').innerText = 'Matrix';
+      // 2. Recupere o segundo parágrafo e use sua criatividade para alterá-lo.
+      document.querySelector('#second-paragraph').innerText = 'Vamos alterando tudo o que queremos com JavaScript!';
+      document.querySelector('#second-paragraph').style.backgroundColor = 'green';
+      document.querySelector('#second-paragraph').style.color = 'white';
+      document.querySelector('#second-paragraph').style.border = '2px solid yellow';
+      // 3. Recupere o subtítulo e altere-o também.
+      document.querySelector('#subtitle').innerText = 'Estamos presenciando nossa entrada na Matrix para alterarmos as páginas de um jeito jamais imaginado';
+      document.querySelector('#subtitle').style.border = '2px solid blue';
+      // 1. Utilizando o mesmo template - Adicione uma classe igual para os dois parágrafos.
+      // 2. Recupere os parágrafos via JavaScript, usando getElementsByClassName - 3. Altere algum estilo do primeiro deles.
+      document.querySelectorAll('.pg')[0].style.backgroundColor = 'yellow';
+      // 4. Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName.
+      document.querySelectorAll('h4')[0].style.color = 'purple';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+.super-mario {
+    width: 200px;
+    position: absolute;
+    left: 10px;
+    z-index: 1;
+  }
+  
+  .goomba {
+    width: 100px;
+    position: relative;
+    left: 175px;
+    top: 250px;
+    z-index: 2;
+  }
+  
+  .baloon {
+    position: absolute;
+    left: 355px;
+    z-index: 4;
+  }
+  
+  .speach {
+    font-size: 25px;
+    position: absolute;
+    left: 375px;
+    top: 120px;
+    z-index: 5;
+  }
+  
+  .bowser {
+    width: 450px;
+    position: absolute;
+    left: 600px;
+    top: 100px;
+    z-index: 3;
+    }
+
+    h1 {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }

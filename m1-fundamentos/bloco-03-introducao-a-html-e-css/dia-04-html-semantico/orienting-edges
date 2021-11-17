@@ -1,0 +1,47 @@
+<!---Bordas Orientativas--->
+body{
+    border: 2px solid green;
+}
+header {
+    border: 2px solid aqua;
+}
+h1 {
+    border: 2px solid black;
+}
+nav {
+    border: 2px solid blue;
+}
+ul {
+    border: 2px solid blueviolet;
+}
+main {
+    border: 2px solid brown;
+}
+article {
+    border: 2px solid cadetblue;
+}
+h2 {
+    border: 2px solid chartreuse;
+}
+section {
+    border: 2px solid chocolate;
+}
+h3 {
+    border: 2px solid crimson;
+}
+p {
+    border: 2px solid fuchsia;
+}
+h4 {
+    border: 2px solid gold;
+}
+table {
+    border: 2px solid grey;
+}
+aside {
+    border: 2px solid hotpink;
+}
+footer {
+    border: 2px solid aqua;
+}
+<!---Bordas Orientativas--->

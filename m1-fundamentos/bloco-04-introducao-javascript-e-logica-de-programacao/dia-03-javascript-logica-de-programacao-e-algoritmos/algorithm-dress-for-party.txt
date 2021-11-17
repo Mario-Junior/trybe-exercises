@@ -1,0 +1,21 @@
+confirmar o tipo de festa;
+abrir o guarda-roupas;
+se festa informal, pegar roupa casual;
+se festa formal, pegar roupa social;
+tomar banho;
+vestir a roupa.
+
+Eu resolvi o problema?
+R: Creio que sim!
+
+Havia outras maneiras de resolver o problema?
+R: Pode até haver, mas acredito que como resolvi foi a maneira mais direta.
+
+A maneira que eu escolhi foi a mais eficiente possível, ou havia como fazer a mesma coisa com menos passos?
+R: Acredito que a maneira que descrevi foi a mais eficiente.
+
+Seria possível inverter ou retirar algum passo?
+R: Sim, pode-se inverter os passos 1 e 2 e também retirar o passo 5.
+
+Se eu fosse um computador, conseguiria entender todas as instruções?
+R: Acredito que conseguiria sim.
