@@ -165,3 +165,33 @@ function assignTaskLabelColor() {
   });
 };
 assignTaskLabelColor();
+
+// Bônus:
+function addAppointment() {
+  let textField = document.querySelector('#task-input');
+  let addButton = document.querySelector('#btn-add');
+  let appointmentList = document.querySelector('.task-list');
+
+  addButton.addEventListener('click', function() {
+    if (textField.value.length > 0) {
+      let newLi = document.createElement('li');
+      newLi.innerText = textField.value;
+
+      appointmentList.appendChild(newLi);
+      textField.value = '';
+    } else {
+      alert('Error: Digite ao menos 1 caractere.');
+    }
+  })
+
+  textField.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter' && textField.value.length > 0) {
+      let newLi = document.createElement('li');
+      newLi.innerText = textField.value;
+
+      appointmentList.appendChild(newLi);
+      textField.value = '';
+    }
+  });
+};
+addAppointment();
