@@ -88,3 +88,21 @@ function colorFridaysOnCLick() {
   });
 }
 colorFridaysOnCLick();
+
+// Exercício 6:
+function zommIn() {
+  let textDay = document.querySelector('#days');
+  textDay.addEventListener('mouseover', function(event) {
+    event.target.style.fontSize = '50px';
+  });
+}
+zommIn()
+
+function zoomOut() {
+  let textDay = document.querySelector('#days');
+  textDay.addEventListener('mouseout', function(event) {
+    event.target.style.fontSize = '20px';
+  });
+}
+zoomOut()
+
