@@ -31,7 +31,7 @@ button {
   color: #777;
   display: inline-block;
   font-size:20px;
-  margin: 5px 0;
+  margin: 15px 0;
   text-align: center;
   vertical-align: middle;
   width: 13.6%;
@@ -57,7 +57,7 @@ label {
 
 .month-container {
   background: green;
-  padding: 40px 25px;
+  padding: 20px 15px;
   text-align: center;
 }
 
@@ -88,10 +88,10 @@ label {
   width: 35px;
 }
 
-.my-tasks div:hover {
+/* .my-tasks div:hover {
   height: 45px;
   width: 45px;
-}
+} */
 
 .my-tasks span {
   color: #666;

@@ -128,3 +128,21 @@ function addTaskColorLabel(color) {
   tasksList.appendChild(taskLabel);
 };
 addTaskColorLabel('orange');
+
+// Exercício 9:
+function setTaskClass() {
+  let clickedTask = document.getElementsByClassName('task selected');
+  let tasksList = document.querySelector('.task');
+
+  tasksList.addEventListener('click', function(event) {
+    if (clickedTask.length === 0) {
+      event.target.className = 'task selected';
+      tasksList.innerText = 'X';
+      tasksList.style.fontSize = '27px';
+    } else {
+      event.target.className = 'task';
+      tasksList.innerText = '';
+    }
+  });
+};
+setTaskClass();
