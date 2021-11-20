@@ -68,4 +68,23 @@ function createFridaysButton(buttonName) {
   button.innerHTML = buttonName;
   buttonDiv.appendChild(button);
 }
-createHolidaysButton('Sextas-feiras');
+createFridaysButton('Sextas-feiras');
+
+// Exercício 5:
+function colorFridaysOnCLick() {
+  const fridayButton = document.querySelector('#btn-friday');
+  const fridaysOnCLickColor = document.querySelectorAll('.friday');
+  const backgroundColor = 'rgb(238,238,238)';
+  const fridayColor = 'yellow';
+
+  fridayButton.addEventListener('click', function() {
+    for (let i = 0; i < fridaysOnCLickColor.length; i += 1) {
+      if (fridaysOnCLickColor[i].style.backgroundColor === fridayColor) {
+        fridaysOnCLickColor[i].style.backgroundColor = backgroundColor;
+      } else {
+        fridaysOnCLickColor[i].style.backgroundColor = fridayColor;
+      }
+    }
+  });
+}
+colorFridaysOnCLick();
