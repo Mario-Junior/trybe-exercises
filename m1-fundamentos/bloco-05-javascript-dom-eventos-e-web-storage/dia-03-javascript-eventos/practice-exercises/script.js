@@ -146,3 +146,22 @@ function setTaskClass() {
   });
 };
 setTaskClass();
+
+// Exercício 10:
+function assignTaskLabelColor() {
+  let clickedTask = document.getElementsByClassName('task selected');
+  let days = document.querySelector('#days');
+  let taskItem = document.querySelector('.task');
+  let taskLabel = taskItem.style.backgroundColor;
+  
+  days.addEventListener('click', function(event){
+    let eventTargetColor = event.target.style.color;
+    if (clickedTask.length > 0 && eventTargetColor !== taskLabel) {
+      let color = clickedTask[0].style.backgroundColor;
+      event.target.style.color = color;
+    } else if (eventTargetColor === taskLabel && clickedTask.length !== 0) {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+};
+assignTaskLabelColor();
