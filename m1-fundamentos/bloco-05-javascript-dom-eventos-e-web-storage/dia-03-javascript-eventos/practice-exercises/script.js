@@ -30,4 +30,18 @@ for (let i = 0; i < dez2021DaysList.length; i += 1) {
 }
 
 // Exercício 2:
+function holidaysButton() {
+  const button = document.createElement('button');
+  button.setAttribute('type','button');
+  button.appendChild(document.createTextNode('Feriados'));
+  button.id = 'btn-holiday';
+  const buttonDiv = document.querySelector('.buttons-container');
+  buttonDiv.appendChild(button);
+}
+holidaysButton();
 
+// Exercício 3:
+function colorHolidaysOnCLick() {
+  
+}
+colorHolidaysOnCLick();
