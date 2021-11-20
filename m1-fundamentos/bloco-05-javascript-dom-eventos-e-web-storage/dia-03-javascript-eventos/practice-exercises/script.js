@@ -30,15 +30,15 @@ for (let i = 0; i < dez2021DaysList.length; i += 1) {
 }
 
 // Exercício 2:
-function createHolidaysButton() {
+function createHolidaysButton(buttonName) {
   const button = document.createElement('button');
-  button.setAttribute('type','button');
-  button.appendChild(document.createTextNode('Feriados'));
-  button.id = 'btn-holiday';
   const buttonDiv = document.querySelector('.buttons-container');
+  
+  button.id = 'btn-holiday';
+  button.innerHTML = buttonName;
   buttonDiv.appendChild(button);
 }
-createHolidaysButton();
+createHolidaysButton('Feriados');
 
 // Exercício 3:
 function colorHolidaysOnCLick() {
@@ -58,3 +58,14 @@ function colorHolidaysOnCLick() {
   });
 }
 colorHolidaysOnCLick();
+
+// Exercício 4:
+function createFridaysButton(buttonName) {
+  const button = document.createElement('button');
+  const buttonDiv = document.querySelector('.buttons-container');
+  
+  button.id = 'btn-friday';
+  button.innerHTML = buttonName;
+  buttonDiv.appendChild(button);
+}
+createHolidaysButton('Sextas-feiras');
