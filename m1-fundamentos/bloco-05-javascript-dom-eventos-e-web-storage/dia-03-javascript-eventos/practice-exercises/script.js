@@ -30,7 +30,7 @@ for (let i = 0; i < dez2021DaysList.length; i += 1) {
 }
 
 // Exercício 2:
-function holidaysButton() {
+function createHolidaysButton() {
   const button = document.createElement('button');
   button.setAttribute('type','button');
   button.appendChild(document.createTextNode('Feriados'));
@@ -38,10 +38,23 @@ function holidaysButton() {
   const buttonDiv = document.querySelector('.buttons-container');
   buttonDiv.appendChild(button);
 }
-holidaysButton();
+createHolidaysButton();
 
 // Exercício 3:
 function colorHolidaysOnCLick() {
-  
+  const holidayButton = document.querySelector('#btn-holiday');
+  const holidaysOnCLickColor = document.querySelectorAll('.holiday');
+  const backgroundColor = 'rgb(238,238,238)';
+  const holidayColor = 'crimson';
+
+  holidayButton.addEventListener('click', function() {
+    for (let i = 0; i < holidaysOnCLickColor.length; i += 1) {
+      if (holidaysOnCLickColor[i].style.backgroundColor === holidayColor) {
+        holidaysOnCLickColor[i].style.backgroundColor = backgroundColor;
+      } else {
+        holidaysOnCLickColor[i].style.backgroundColor = holidayColor;
+      }
+    }
+  });
 }
 colorHolidaysOnCLick();
