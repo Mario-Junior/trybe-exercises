@@ -115,5 +115,16 @@ function addPesonalTask(task) {
   taskName.innerHTML = task;
   tasksList.appendChild(taskName);
 };
-addPesonalTask('Teste de tarefa 1');
+addPesonalTask('Pagar Plano de Saúde URGENTE!');
 
+// Exercício 8:
+function addTaskColorLabel(color) {
+
+  let tasksList = document.querySelector('.my-tasks');
+  let taskLabel = document.createElement('div');
+
+  taskLabel.className = 'task';
+  taskLabel.style.backgroundColor = color;
+  tasksList.appendChild(taskLabel);
+};
+addTaskColorLabel('orange');
