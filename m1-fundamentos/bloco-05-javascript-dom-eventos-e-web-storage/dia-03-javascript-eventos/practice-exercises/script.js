@@ -180,7 +180,7 @@ function addAppointment() {
       appointmentList.appendChild(newLi);
       textField.value = '';
     } else {
-      alert('Error: Digite ao menos 1 caractere.');
+      alert('Erro! Nenhum compromisso foi adicionado.');
     }
   })
 
