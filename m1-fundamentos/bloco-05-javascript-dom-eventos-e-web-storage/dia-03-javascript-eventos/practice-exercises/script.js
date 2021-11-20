@@ -106,3 +106,14 @@ function zoomOut() {
 }
 zoomOut()
 
+// Exercício 7:
+function addPesonalTask(task) {
+
+  const tasksList = document.querySelector('.my-tasks');
+  let taskName = document.createElement('span');
+
+  taskName.innerHTML = task;
+  tasksList.appendChild(taskName);
+};
+addPesonalTask('Teste de tarefa 1');
+
