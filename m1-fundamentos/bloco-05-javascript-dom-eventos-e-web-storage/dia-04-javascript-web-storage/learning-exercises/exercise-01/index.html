@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Exercises - 5.4</title>
+</head>
+<body>
+  <h1>Web Storage</h1>
+    <ul>
+      <li>Cookies</li>
+    </ul>
+  <script>
+    document.cookie = "email1=isabella@email.com";
+    // document.cookie = "email2=isabella@email.com; expires=19 Nov 2022 20:00:00 UTC";
+    // document.cookie = "email3=isabella@email.com; expires=17 Dec 2022 12:00:00 UTC; path=/";
+    document.cookie = "email1=cleyton@email.com; expires=21 Nov 2021 21:00:00 UTC";
+
+    const myCookie = document.cookie;
+    console.log(myCookie)
+</script>
+</body>
+</html>
