@@ -11,22 +11,29 @@
     <h1>Formulário de cadastro de Currículo</h1>
   </header>
   <form action="" method="get" id="curriForm" class="curriReg">
+    <button type="submit">Testar Submissão</button>
     <fieldset>
       <legend>Dados Pessoais:</legend>
       <label for="inputName">Nome</label>
-      <input type="text" name="name" id="inputName" maxlength="40" required>
+      <input type="text" name="name" id="inputName" maxlength="40" required placeholder="digite seu nome aqui">
       <label for="inputEmail">E-mail</label>
-      <input type="text" name="email" id="inputEmail" maxlength="50" required>
+      <input type="text" name="email" id="inputEmail" maxlength="50" required placeholder="digite seu e-mail aqui">
       <label for="inputCpf">CPF</label>
-      <input type="text" name="cpf" id="inputCpf" maxlength="11" required>
+      <input type="text" name="cpf" id="inputCpf" maxlength="11" required placeholder="12345678900">
       <label for="inputEnd">Endereço</label>
-      <input type="text" name="end" id="inputEnd" maxlength="200" required>
+      <input type="text" name="end" id="inputEnd" maxlength="200" required placeholder="digite seu endereço aqui">
+      <label for="casa"><input type="radio" name="moradia" id="casa" value="casa">Casa</label>
+      <label for="apto"><input type="radio" name="moradia" id="apto" value="apto">Apartamento</label>
+      <div>
       <label for="inputCidade">Cidade</label>
-      <input type="text" name="cidade" id="inputCidade" maxlength="28" required>
+      <input type="text" name="cidade" id="inputCidade" maxlength="28" required placeholder="digite sua cidade aqui">
       <label for="inputEstado">Estado</label>
       <select  name="estado" id="inputEstado" required>
+        <option value selected>escolha seu Estado</option>
       </select>
+      </div>
     </fieldset>
   </form>
+  <script src="script.js"></script>
 </body>
 </html>
