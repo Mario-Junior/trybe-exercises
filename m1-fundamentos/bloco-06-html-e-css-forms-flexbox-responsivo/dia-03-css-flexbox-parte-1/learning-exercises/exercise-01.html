@@ -16,15 +16,75 @@
         width: 30%;
       }
 
-      .box-container {
+      .box-container1 {
         background-color: #0fa36b;
         display: flex;
-        /* ADICIONE AQUI SEUS TESTES */
+        flex-direction: row;
+      }
+
+      .box-container2 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .box-container3 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .box-container4 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: column-reverse;
       }
     </style>
 
   </head>
   <body>
+    <p>1 - Teste as possibilidades ( row , column , row-reverse e column-reverse ) para a propriedade flex-direction</p>
+    <p>flex-direction: row;</p>
+    <div class="box-container1">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-direction: column;</p>
+    <div class="box-container2">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-direction: row-reverse;</p>
+    <div class="box-container3">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-direction: column-reverse;</p>
+    <div class="box-container4">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>2 - Teste as possibilidades ( wrap e nowrap ) para a propriedade flex-wrap</p>
+    <div class="box-container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>3 - Teste as possibilidades para a propriedade flex-flow</p>
     <div class="box-container">
       <div class="box">1</div>
       <div class="box">2</div>
