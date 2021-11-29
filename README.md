@@ -42,15 +42,15 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-3: _JavaScript - Eventos_
 - [X] 5-4: _JavaScript - Web Storage_
 - [X] 5-5: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-018-b-project-pixels-art/tree/mario-junior-project-pixels-art)_
-- [ ] 5-6: _[Projeto - Lista de tarefas]()_
+- [X] 5-6: _[Projeto - Lista de tarefas](https://github.com/tryber/sd-018-b-project-todo-list/tree/mario-junior-todo-list-project)_
 - [ ] 5-7: _[Projeto - Meme Generator]()_
 - [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
 - [ ] 5-7: _[Projeto - Carta Misteriosa]()_
 
 ##### Bloco 6: HTML & CSS avançado :hourglass_flowing_sand:
 
-- [ ] 6-1: _HTML & CSS - Forms_
-- [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
+- [X] 6-1: _HTML & CSS - Forms_
+- [X] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
 - [ ] 6-3: _CSS Flexbox - Part 1_
 - [ ] 6-4: _CSS Flexbox - Part 2_
 - [ ] 6-5: _CSS Responsivo - Mobile First_
