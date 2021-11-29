@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Align Items</title>
+    <style>
+      .box-one {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 70px;
+        min-height: 80px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 50px;
+      }
+
+      .box-two {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        min-height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 50px;
+      }
+
+      .box-three {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 30px;
+        margin: 10px 5px;
+        min-height: 50px;
+        text-align: center;
+        width: 50px;
+      }
+
+      .box-container31 {
+        background-color: #0fa36b;
+        display: flex;
+        align-items: center;
+      }
+
+      .box-container32 {
+        background-color: #0fa36b;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .box-container33 {
+        background-color: #0fa36b;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .box-container34 {
+        background-color: #0fa36b;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .box-container35 {
+        background-color: #0fa36b;
+        display: flex;
+        align-items: baseline;
+      }
+    </style>
+
+  </head>
+  <body>
+    <p>2 - Teste as possibilidades ( center , flex-start , flex-end , stretch e baseline ) para a propriedade align-items</p>
+    <p>align-items: center</p>
+    <div class="box-container31">
+      <div class="box-one">1</div>
+      <div class="box-two">2</div>
+      <div class="box-three">3</div>
+    </div>
+    <p>align-items: flex-start</p>
+    <div class="box-container32">
+      <div class="box-one">1</div>
+      <div class="box-two">2</div>
+      <div class="box-three">3</div>
+    </div>
+    <p>align-items: flex-end</p>
+    <div class="box-container33">
+      <div class="box-one">1</div>
+      <div class="box-two">2</div>
+      <div class="box-three">3</div>
+    </div>
+    <p>align-items: stretch</p>
+    <div class="box-container34">
+      <div class="box-one">1</div>
+      <div class="box-two">2</div>
+      <div class="box-three">3</div>
+    </div>
+    <p>align-items: baseline</p>
+    <div class="box-container35">
+      <div class="box-one">1</div>
+      <div class="box-two">2</div>
+      <div class="box-three">3</div>
+    </div>
+  </body>
+</html>
