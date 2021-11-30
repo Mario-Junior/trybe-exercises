@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEXBOX - ALIGN SELF</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        display: flex;
+        height: 300px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .keep {
+        align-self: center;
+        background-color: #FAA488;
+        display: flex;
+        justify-content: center;
+        width: 150px;
+        list-style: none;
+      }
+
+      #change11 {
+        /* Altere a propriedade align-self. */
+        align-self: center;
+        background-color: #FBD26A;
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        list-style: none;
+      }
+
+      #change12 {
+        /* Altere a propriedade align-self. */
+        align-self: baseline;
+        background-color: #FBD26A;
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        list-style: none;
+      }
+
+      #change13 {
+        /* Altere a propriedade align-self. */
+        align-self: flex-end;
+        background-color: #FBD26A;
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        list-style: none;
+      }
+
+      #change14 {
+        /* Altere a propriedade align-self. */
+        align-self: flex-start;
+        background-color: #FBD26A;
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        list-style: none;
+      }
+
+      #change15 {
+        /* Altere a propriedade align-self. */
+        align-self: stretch;
+        background-color: #FBD26A;
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        list-style: none;
+      }
+
+      p {
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>1-Teste das possibilidades para a propriedade align-self</p>
+    <p>align-self: center</p>
+    <ul class="container">
+      <li class="keep">REFERÊNCIA</li>
+      <li id="change11">ELEMENTO TESTE</li>
+      <li class="keep">REFERÊNCIA</li>
+    </ul>
+    <p>align-self: baseline</p>
+    <ul class="container">
+      <li class="keep">REFERÊNCIA</li>
+      <li id="change12">ELEMENTO TESTE</li>
+      <li class="keep">REFERÊNCIA</li>
+    </ul>
+    <p>align-self: flex-end</p>
+    <ul class="container">
+      <li class="keep">REFERÊNCIA</li>
+      <li id="change13">ELEMENTO TESTE</li>
+      <li class="keep">REFERÊNCIA</li>
+    </ul>
+    <p>align-self: flex-start</p>
+    <ul class="container">
+      <li class="keep">REFERÊNCIA</li>
+      <li id="change14">ELEMENTO TESTE</li>
+      <li class="keep">REFERÊNCIA</li>
+    </ul>
+    <p>align-self: stretch</p>
+    <ul class="container">
+      <li class="keep">REFERÊNCIA</li>
+      <li id="change15">ELEMENTO TESTE</li>
+      <li class="keep">REFERÊNCIA</li>
+    </ul>
+  </body>
+</html>
