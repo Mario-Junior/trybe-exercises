@@ -35,7 +35,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 4-4: _JavaScript - Objetos e funções_
 - [X] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-018-b-project-playground-functions/tree/mario-junior-playground-functions)_
 
-##### Bloco 5: Introdução - JavaScript - Projetos :hourglass_flowing_sand:
+##### Bloco 5: Introdução - JavaScript - Projetos
 
 - [X] 5-1: _JavaScript - DOM e seletores_
 - [X] 5-2: _JavaScript - Trabalhando com elementos_
@@ -43,16 +43,16 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 5-4: _JavaScript - Web Storage_
 - [X] 5-5: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-018-b-project-pixels-art/tree/mario-junior-project-pixels-art)_
 - [X] 5-6: _[Projeto - Lista de tarefas](https://github.com/tryber/sd-018-b-project-todo-list/tree/mario-junior-todo-list-project)_
-- [ ] 5-7: _[Projeto - Meme Generator]()_
-- [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
-- [ ] 5-7: _[Projeto - Carta Misteriosa]()_
+- [X] 5-7: _[Projeto - Meme Generator](https://github.com/tryber/sd-018-b-project-meme-generator/tree/mario-junior-meme-generator-project)_
+- [X] 5-7: _[Projeto - Adivinhe a Cor](https://github.com/tryber/sd-018-b-project-color-guess/tree/mario-junior-project-color-guess)_
+- [X] 5-7: _[Projeto - Carta Misteriosa](https://github.com/tryber/sd-018-b-project-mistery-letter/tree/mario-junior-project-mistery-letter)_
 
 ##### Bloco 6: HTML & CSS avançado :hourglass_flowing_sand:
 
 - [X] 6-1: _HTML & CSS - Forms_
 - [X] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
-- [ ] 6-3: _CSS Flexbox - Part 1_
-- [ ] 6-4: _CSS Flexbox - Part 2_
+- [X] 6-3: _CSS Flexbox - Part 1_
+- [X] 6-4: _CSS Flexbox - Part 2_
 - [ ] 6-5: _CSS Responsivo - Mobile First_
 - [ ] 6-6: _[Projeto - Trybewarts]()_
 
