@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Justify Content</title>
+    <style>
+      .box {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 20%;
+      }
+
+      .box-container11 {
+        background-color: #0fa36b;
+        display: flex;
+        justify-content: center;
+      }
+
+      .box-container12 {
+        background-color: #0fa36b;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .box-container13 {
+        background-color: #0fa36b;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .box-container14 {
+        background-color: #0fa36b;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .box-container15 {
+        background-color: #0fa36b;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+  </head>
+  <body>
+    <p>1 - Utilizando o código abaixo, teste as possibilidades ( center , flex-start , flex-end , space-around e space-between ) para a propriedade justify-content</p>
+    <p>justify-content: center</p>
+    <div class="box-container11">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <p>justify-content: flex-start</p>
+    <div class="box-container12">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <p>justify-content: flex-end</p>
+    <div class="box-container13">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <p>justify-content: space-around</p>
+    <div class="box-container14">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+    <p>justify-content: space-between</p>
+    <div class="box-container15">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Flex Flow</title>
+    <style>
+      .box {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 30%;
+      }
+
+      .box-container11 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .box-container12 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .box-container13 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .box-container14 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .box-container21 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .box-container22 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      .box-container23 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-wrap: wrap-reverse;
+      }
+
+      .box-container31 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .box-container32 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      .box-container33 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: row wrap-reverse;
+      }
+
+      .box-container34 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: column wrap;
+      }
+
+      .box-container35 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      .box-container36 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: column wrap-reverse;
+      }
+
+      .box-container37 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: row-reverse wrap;
+      }
+
+      .box-container38 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: row-reverse nowrap;
+      }
+
+      .box-container39 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: row-reverse wrap-reverse;
+      }
+
+      .box-container310 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: column-reverse wrap;
+      }
+
+      .box-container311 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: column-reverse nowrap;
+      }
+
+      .box-container312 {
+        background-color: #0fa36b;
+        display: flex;
+        flex-flow: column-reverse wrap-reverse;
+      }
+    </style>
+
+  </head>
+  <body>
+    <p>1 - Teste as possibilidades ( row , column , row-reverse e column-reverse ) para a propriedade flex-direction</p>
+    <p>flex-direction: row;</p>
+    <div class="box-container11">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-direction: column;</p>
+    <div class="box-container12">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-direction: row-reverse;</p>
+    <div class="box-container13">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-direction: column-reverse;</p>
+    <div class="box-container14">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>2 - Teste as possibilidades ( wrap e nowrap ) para a propriedade flex-wrap</p>
+    <p>flex-wrap: wrap;</p>
+    <div class="box-container21">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-wrap: nowrap;</p>
+    <div class="box-container22">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-wrap: wrap-reverse;</p>
+    <div class="box-container23">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>3 - Teste as possibilidades para a propriedade flex-flow</p>
+    <p>flex-flow: row wrap;</p>
+    <div class="box-container31">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: row nowrap;</p>
+    <div class="box-container32">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: row wrap-reverse;</p>
+    <div class="box-container33">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: column wrap;</p>
+    <div class="box-container34">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: column nowrap;</p>
+    <div class="box-container35">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: column wrap-reverse;</p>
+    <div class="box-container36">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: row-reverse wrap;</p>
+    <div class="box-container37">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: row-reverse nowrap;</p>
+    <div class="box-container38">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: row-reverse wrap-reverse;</p>
+    <div class="box-container39">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: column-reverse wrap;</p>
+    <div class="box-container310">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: column-reverse nowrap;</p>
+    <div class="box-container311">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+    <p>flex-flow: column-reverse wrap-reverse;</p>
+    <div class="box-container312">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+    </div>
+  </body>
+</html>

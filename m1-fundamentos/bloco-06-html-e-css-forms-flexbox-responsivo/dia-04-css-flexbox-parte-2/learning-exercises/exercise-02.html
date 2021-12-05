@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEXBOX - ORDER</title>
+    <style>
+      .container {
+        border: 1px solid black;
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .box {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 125px;
+      }
+
+      .one {
+        background-color: #FBD26A;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 1;
+        list-style: none;
+      }
+
+      .two {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 2;
+        list-style: none;
+      }
+
+      .three {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 3;
+        list-style: none;
+      }
+
+      .four {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 4;
+        list-style: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li class="box one">1</li>
+      <li class="box two">2</li>
+      <li class="box three">3</li>
+      <li class="box four">4</li>
+    </ul>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEXBOX - ORDER</title>
+    <style>
+      .container21 {
+        border: 1px solid black;
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .box21 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 125px;
+      }
+
+      .one21 {
+        background-color: #FBD26A;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 1;
+        list-style: none;
+      }
+
+      .two21 {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 2;
+        list-style: none;
+      }
+
+      .three21 {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 3;
+        list-style: none;
+      }
+
+      .four21 {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 4;
+        list-style: none;
+      }
+      .container22 {
+        border: 1px solid black;
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .box22 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 125px;
+      }
+
+      .one22 {
+        background-color: #FBD26A;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 1;
+        list-style: none;
+      }
+
+      .two22 {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 2;
+        list-style: none;
+      }
+
+      .three22 {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 3;
+        list-style: none;
+      }
+
+      .four22 {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 4;
+        list-style: none;
+      }
+      .container23 {
+        border: 1px solid black;
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .box23 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 125px;
+      }
+
+      .one23 {
+        background-color: #FBD26A;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 1;
+        list-style: none;
+      }
+
+      .two23 {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 2;
+        list-style: none;
+      }
+
+      .three23 {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 3;
+        list-style: none;
+      }
+
+      .four23 {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 4;
+        list-style: none;
+      }
+      .container24 {
+        border: 1px solid black;
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 500px;
+      }
+
+      .box24 {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 125px;
+      }
+
+      .one24 {
+        background-color: #FBD26A;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 1;
+        list-style: none;
+      }
+
+      .two24 {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 2;
+        list-style: none;
+      }
+
+      .three24 {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 3;
+        list-style: none;
+      }
+
+      .four24 {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade order. */
+        order: 4;
+        list-style: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>2-Teste as possibilidades de ordenação</p>
+    <p>Ordenação normal com números positivos</p>
+    <ul class="container21">
+      <li class="box21 one21">1</li>
+      <li class="box21 two21">2</li>
+      <li class="box21 three21">3</li>
+      <li class="box21 four21">4</li>
+    <p>Ordenação binária com N itens 0 (zero) e algum item 1</p>
+    <ul class="container22">
+      <li class="box22 one22">1</li>
+      <li class="box22 two22">2</li>
+      <li class="box22 three22">3</li>
+      <li class="box22 four22">4</li>
+    <p>Ordenação com algum item negativo</p>
+    <ul class="container23">
+      <li class="box23 one23">1</li>
+      <li class="box23 two23">2</li>
+      <li class="box23 three23">3</li>
+      <li class="box23 four23">4</li>
+    <p>Ordenação inversa com números positivos e reverse no container pai</p>
+    <ul class="container24">
+      <li class="box24 one24">1</li>
+      <li class="box24 two24">2</li>
+      <li class="box24 three24">3</li>
+      <li class="box24 four24">4</li>
+    </ul>
+  </body>
+</html> -->
