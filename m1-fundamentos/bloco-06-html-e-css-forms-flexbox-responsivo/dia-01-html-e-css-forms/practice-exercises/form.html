@@ -4,67 +4,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
   <title>6.1 Exercício Prático</title>
 </head>
 <body>
-  <header>
-    <h1>Formulário de cadastro de Currículo</h1>
+  <header class="form-header">
+    <h1>Formulário para cadastro de Currículo</h1>
+    <p>Preencha os campos abaixo.</p>
   </header>
-  <form action="" method="get" id="curriForm" class="curriReg">
-    <button type="submit">Testar Submissão</button>
-    <fieldset>
-      <legend>Dados Pessoais:</legend>
-      <div class="container">
-        <label for="inputName">Nome</label>
-        <input type="text" name="name" id="inputName" maxlength="40" required placeholder="digite seu nome aqui">
+  <main>
+    <form action="" method="get" id="curriForm" class="curriReg">
+      <div class="form-row">
+        <fieldset>
+          <legend>Dados Pessoais:</legend>
+          <div class="container">
+            <label for="inputName">Nome</label>
+            <input type="text" name="name" id="inputName" maxlength="40" required placeholder="digite seu nome aqui">
+          </div>
+          <div class="container">
+            <label for="inputEmail">E-mail</label>
+            <input type="text" name="email" id="inputEmail" maxlength="50" required placeholder="digite seu e-mail aqui">
+          </div>
+          <div class="container">
+            <label for="inputCpf">CPF</label>
+            <input type="text" name="cpf" id="inputCpf" maxlength="11" required placeholder="12345678900">
+          </div>
+          <div class="container">
+            <label for="inputEnd">Endereço</label>
+            <input type="text" name="end" id="inputEnd" maxlength="200" required placeholder="digite seu endereço aqui">
+          </div>
+          <div class="container">
+            <label for="inputCidade">Cidade</label>
+            <input type="text" name="cidade" id="inputCidade" maxlength="28" required placeholder="digite sua cidade aqui">
+          </div>
+          <div class="container">
+            <label for="inputEstado">Estado</label>
+            <select  name="estado" id="inputEstado" required>
+              <option value class="state" selected disabled>escolha seu Estado</option>
+            </select>
+          </div>
+          <div class="container">
+            <label for="moradia">Tipo de imóvel: </label>
+            <label><input type="radio" name="moradia" id="casa" value="casa" required>Casa</label>
+            <label><input type="radio" name="moradia" id="apto" value="apto" required>Apartamento</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Dados do Último Emprego:</legend>
+          <div class="container">
+            <label for="resumo">Resumo de seu Currículo: </label>
+            <textarea name="resumo" id="resumo" cols="50" rows="20" maxlength="1000" required>Digite aqui um breve resumo de seu Currículo com até 1.000 caracteres</textarea>
+          </div>
+          <div class="container">
+            <label for="inputCargo">Cargo: </label>
+            <input type="text" name="cargo" id="inputCargo" maxlength="40" required placeholder="digite seu cargo aqui">
+          </div>
+          <div class="container">
+            <label for="inputDescCargo">Descrição do cargo: </label>
+            <input type="text" name="descricao" id="inputDescCargo" maxlength="500" required placeholder="breve descrição do cargo">
+          </div>
+          <div class="container">
+            <label for="dataInicio">Data de início: </label>
+            <input type="text" name="data" id="dataInicio" maxlength="10" required placeholder="01/01/2001">
+          </div>
+        </fieldset>
+        <div class="container">
+          <button type="submit" class="submit-button">Enviar</button>
+          <button type="button" class="clear-button">Limpar</button>
+        </div>
       </div>
-      <div class="container">
-        <label for="inputEmail">E-mail</label>
-        <input type="text" name="email" id="inputEmail" maxlength="50" required placeholder="digite seu e-mail aqui">
-      </div>
-      <div class="container">
-        <label for="inputCpf">CPF</label>
-        <input type="text" name="cpf" id="inputCpf" maxlength="11" required placeholder="12345678900">
-      </div>
-      <div class="container">
-        <label for="inputEnd">Endereço</label>
-        <input type="text" name="end" id="inputEnd" maxlength="200" required placeholder="digite seu endereço aqui">
-      </div>
-      <div class="container">
-        <label for="casa"><input type="radio" name="moradia" id="casa" value="casa">Casa</label>
-        <label for="apto"><input type="radio" name="moradia" id="apto" value="apto">Apartamento</label>
-      </div>
-      <div class="container">
-        <label for="inputCidade">Cidade</label>
-        <input type="text" name="cidade" id="inputCidade" maxlength="28" required placeholder="digite sua cidade aqui">
-      </div>
-      <div class="container">
-        <label for="inputEstado">Estado</label>
-        <select  name="estado" id="inputEstado" required>
-          <option value selected>escolha seu Estado</option>
-        </select>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Dados do Último Emprego:</legend>
-      <div class="container">
-        <label for="resumo">Resumo de seu Currículo</label>
-        <textarea name="curriResumo" id="resumo" cols="50" rows="20" maxlength="1000" required>Digite aqui um breve resumo de seu Currículo com até 1.000 caracteres</textarea>
-      </div>
-      <div class="container">
-        <label for="inputCargo">Cargo</label>
-        <input type="text" name="cargo" id="inputCargo" maxlength="40" required placeholder="digite seu cargo aqui">
-      </div>
-      <div class="container">
-        <label for="inputDescCargo">Descrição do cargo</label>
-        <input type="text" name="descricao" id="inputDescCargo" maxlength="500" required placeholder="breve descrição do cargo">
-      </div>
-      <div class="container">
-        <label for="dataInicio">Data de início</label>
-        <input type="text" name="data" id="dataInicio" maxlength="10" required placeholder="01/01/2001">
-      </div>
-    </fieldset>
-  </form>
+    </form>
+  </main>
+  <section class="form-data"></section>
   <script src="script.js"></script>
 </body>
 </html>
