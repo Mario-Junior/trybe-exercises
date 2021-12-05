@@ -13,6 +13,10 @@ body {
   font-family: 'Helvetica', 'Arial', 'Sans-serif';
 }
 
+main {
+  margin: 20px 130px;
+}
+
 .form-header {
   text-align: center;
   background-color: rgb(246, 247, 248);

@@ -1,0 +1,16 @@
+{
+  "name": "practice-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "just-validate.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "just-validate": "^1.5.0",
+    "pikaday": "^1.8.2"
+  }
+}
