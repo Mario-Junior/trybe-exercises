@@ -33,3 +33,17 @@ const customer2 = {
 console.log(customer2);
 customer2['lastName'] = 'Silva';
 console.log(customer2);
+
+const client = {
+  firstName: 'Roberto',
+  age: 22,
+  job: 'Teacher',
+};
+
+let newKey = 'lastName';
+const lastName = 'Ferreira';
+client[newKey] = lastName;
+newKey = 'fullName';
+const fullName = `${client.firstName} ${client.lastName}`;
+client[newKey] = fullName;
+console.log(client);
