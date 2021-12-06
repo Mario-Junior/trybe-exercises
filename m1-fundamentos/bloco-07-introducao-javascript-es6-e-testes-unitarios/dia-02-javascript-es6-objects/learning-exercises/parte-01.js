@@ -1,3 +1,4 @@
+// Parte I - Adicionando novas chaves (keys)
 const customer = {
   firstName: 'Roberto',
   age: 22,
@@ -47,3 +48,9 @@ newKey = 'fullName';
 const fullName = `${client.firstName} ${client.lastName}`;
 client[newKey] = fullName;
 console.log(client);
+
+function addKeyToObject(object, key, value) {
+  object[key] = value;
+  return object;
+};
+console.log(addKeyToObject({}, 'newKey', 'Value to test'));
