@@ -28,3 +28,17 @@ const student2 = {
   SoftSkills: 'Ótimo',
   Git: 'Bom', // chave adicionada
 };
+
+// Método Object.keys usado para pegar as chaves e for/in para os valores
+const listOfSkills = (student) => {
+  const skillsArray = Object.keys(student);
+  for (let index in skillsArray) {
+    console.log(`${skillsArray[index]}, Nível: ${student[skillsArray[index]]}`);
+  }
+};
+
+console.log('Estudante 1:');
+listOfSkills(student1);
+
+console.log('Estudante 2:');
+listOfSkills(student2);
