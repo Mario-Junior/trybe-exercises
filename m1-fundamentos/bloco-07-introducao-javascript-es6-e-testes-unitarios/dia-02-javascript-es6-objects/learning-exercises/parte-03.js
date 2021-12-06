@@ -1,3 +1,4 @@
+// Parte III - Object.values
 const coolestTvShow = {
   name: "BoJack Horseman",
   genre: "adult animation",
@@ -5,6 +6,7 @@ const coolestTvShow = {
   favoriteCharacter: "Princess Carolyn",
   quote: "Princess Carolyn always lands on her feet.",
   seasons: 6,
+  valide: true,
 };
 
 for (const property in coolestTvShow) {
