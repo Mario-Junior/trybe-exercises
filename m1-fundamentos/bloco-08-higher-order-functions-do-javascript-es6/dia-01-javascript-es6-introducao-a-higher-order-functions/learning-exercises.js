@@ -100,3 +100,9 @@ const numberGenerator2 = () => {
 
 console.log(numberGenerator2());
 // Para executar a função, temos que inserir os () na frente dela
+
+// Vi no slack #zapzap . Interessante pra entender o porque do resultado!?
+const [x, , ...y] = [1, 2, 3, 4, 5];
+
+console.log(x); // 1
+console.log(y); // [3, 4, 5]
