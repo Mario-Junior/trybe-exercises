@@ -106,3 +106,13 @@ const [x, , ...y] = [1, 2, 3, 4, 5];
 
 console.log(x); // 1
 console.log(y); // [3, 4, 5]
+
+const wakeUp = () => 'Acordando!!';
+const coffeeTime = () => 'Bora tomar café!!';
+const timeToSleep = () => 'Partiu dormir!!';
+
+const doingThings = (func) => func();
+
+console.log(doingThings(wakeUp));
+console.log(doingThings(coffeeTime));
+console.log(doingThings(timeToSleep));
