@@ -58,3 +58,14 @@ console.log(fullNames);
 const fullNamesComMap = persons.map((person) => `${person.firstName} ${person.lastName}`);
 
 console.log(fullNamesComMap); // [ 'Maria Ferreira', 'João Silva', 'Antonio Cabral' ]
+
+const listaNumeros = [10, 20, 30, 40];
+
+const multDois = () => {
+  for (let i = 0; i < listaNumeros.length; i += 1) {
+    return listaNumeros[i] * 2;
+  }
+};
+const dobro = () => listaNumeros.map(multDois);
+
+console.log(dobro());
