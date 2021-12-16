@@ -113,3 +113,92 @@ console.log(listProducts);
 //   { Alface: 1.5 },
 //   { Tomate: 2 },
 // ]
+
+
+// Exmeplo pra entender melhor a diferença entre as HOFs (no caso map) e o forEach
+const numeros = [1, 2, 3, 4, 5, 6];
+console.log(numeros.map((numero) => numero * 2)); // Retorno: [2, 4, 6, 8, 10, 12]
+
+const paresMenoresQueCinco = [];
+numeros.forEach((numero) => {
+  if (numero < 5 && numero % 2 === 0) {
+    paresMenoresQueCinco.push(numero);
+  }
+});
+console.log(paresMenoresQueCinco); // Retorno: [2, 4]
+
+// Hora de ver como pode-se usar as outras HOFs junto com o map
+const estudantes = [
+  {
+    nome: 'Jorge',
+    sobrenome: 'Silva',
+    idade: 14,
+    turno: 'Manhã',
+    materias: [
+      { name: 'Matemática', nota: 67 },
+      { name: 'Português', nota: 79 },
+      { name: 'Química', nota: 70 },
+      { name: 'Biologia', nota: 65 },
+    ],
+  },
+  {
+    nome: 'Mario',
+    sobrenome: 'Ferreira',
+    idade: 15,
+    turno: 'Tarde',
+    materias: [
+      { name: 'Matemática', nota: '59' },
+      { name: 'Português', nota: '80' },
+      { name: 'Química', nota: '78' },
+      { name: 'Biologia', nota: '92' },
+    ],
+  },
+  {
+    nome: 'Jorge',
+    sobrenome: 'Santos',
+    idade: 15,
+    turno: 'Manhã',
+    materias: [
+      { name: 'Matemática', nota: '76' },
+      { name: 'Português', nota: '90' },
+      { name: 'Química', nota: '70' },
+      { name: 'Biologia', nota: '80' },
+    ],
+  },
+  {
+    nome: 'Maria',
+    sobrenome: 'Silveira',
+    idade: 14,
+    turno: 'Manhã',
+    materias: [
+      { name: 'Matemática', nota: '91' },
+      { name: 'Português', nota: '85' },
+      { name: 'Química', nota: '92' },
+      { name: 'Biologia', nota: '90' },
+    ],
+  },
+  {
+    nome: 'Natalia',
+    sobrenome: 'Castro',
+    idade: 14,
+    turno: 'Manhã',
+    materias: [
+      { name: 'Matemática', nota: '70' },
+      { name: 'Português', nota: '70' },
+      { name: 'Química', nota: '60' },
+      { name: 'Biologia', nota: '50' },
+    ],
+  },
+  {
+    nome: 'Wilson',
+    sobrenome: 'Martins',
+    idade: 14,
+    turno: 'Manhã',
+    materias: [
+      { name: 'Matemática', nota: '80' },
+      { name: 'Português', nota: '82' },
+      { name: 'Química', nota: '79' },
+      { name: 'Biologia', nota: '75' },
+    ],
+  },
+];
