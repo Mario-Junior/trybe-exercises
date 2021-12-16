@@ -202,3 +202,16 @@ const estudantes = [
     ],
   },
 ];
+
+// exemplos de funções apenas usando for e depois como refatorá-las para quem usem HOFs
+// buscar e imprimir o nome completo de todos os estudantes que estudam no turno da manhã
+const allNameStudents = [];
+
+for (let index = 0; index < estudantes.length; index += 1 ) {
+  if(estudantes[index].turno === 'Manhã') {
+    allNameStudents.push(`${estudantes[index].nome} ${estudantes[index].sobrenome}`)
+  }
+}
+
+console.log(allNameStudents);
+
