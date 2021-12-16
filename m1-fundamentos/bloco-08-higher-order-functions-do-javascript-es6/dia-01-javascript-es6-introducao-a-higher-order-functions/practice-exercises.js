@@ -16,3 +16,17 @@ const employeeObj = (fullname) => {
 };
 
 console.log(newEmployees(employeeObj));
+
+// 2 - Desenvolver HOF que retorna o resultado de um sorteio. A HOF gerará um número aleatório entre 1 e 5 recebendo como parâmetros o número apostado e uma função que checa se o número apostado é igual ao número sorteado. O retorno da sua HOF deve ser uma string (Ex: "Tente novamente" ou "Parabéns você ganhou").
+const raffleResult = (bet, raffleCheck) => {
+  const raffle = Math.ceil(Math.random() * 5);
+
+  console.log(raffle);
+  
+  if (raffleCheck(bet, raffle)) return 'Parabéns você ganhou!'
+  return 'Tente novamente';
+};
+
+const raffleCheck = (bet, raffle) => bet === raffle;
+
+console.log(raffleResult(2, raffleCheck));
