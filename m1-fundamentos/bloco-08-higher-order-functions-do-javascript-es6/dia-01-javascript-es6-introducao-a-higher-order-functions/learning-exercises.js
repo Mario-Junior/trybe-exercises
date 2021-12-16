@@ -57,7 +57,8 @@ const repeat2 = (number, action) => {
   }
 };
 
-repeat2(3, (number) => {
+// Testar quais números são pares
+repeat2(7, (number) => {
   if (number % 2 === 0) {
     console.log(number, 'is even');
   }
@@ -82,8 +83,8 @@ const isOdd = (number) => {
   }
 };
 
-repeat3(3, isEven); // Testa quais números serão pares;
-repeat3(3, isOdd); // Testa quais números serão ímpares;
+repeat3(9, isEven); // Testa quais números serão pares;
+repeat3(9, isOdd); // Testa quais números serão ímpares;
 
 const numberGenerator = () => {
   return Math.random() * 100;
