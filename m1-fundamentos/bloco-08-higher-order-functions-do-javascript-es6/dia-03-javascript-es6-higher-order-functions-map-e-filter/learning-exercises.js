@@ -59,6 +59,7 @@ const fullNamesComMap = persons.map((person) => `${person.firstName} ${person.la
 
 console.log(fullNamesComMap); // [ 'Maria Ferreira', 'João Silva', 'Antonio Cabral' ]
 
+// Exemplo dos números * 2 com for
 const dobro = [];
 const multDois = () => {
   const listaNumeros = [10, 20, 30, 40];
@@ -69,6 +70,7 @@ const multDois = () => {
 };
 console.log(multDois());
 
+// Mesmo exemplo dos números * 2 com map e numa única linha
 const listaNumeros2 = [10, 20, 30, 40];
 
 const dobro2 = listaNumeros2.map((callback) => callback * 2);
