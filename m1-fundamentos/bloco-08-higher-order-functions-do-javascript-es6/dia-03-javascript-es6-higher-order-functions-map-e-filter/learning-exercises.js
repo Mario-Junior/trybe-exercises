@@ -76,3 +76,11 @@ const listaNumeros2 = [10, 20, 30, 40];
 const dobro2 = listaNumeros2.map((callback) => callback * 2);
 
 console.log(dobro2);
+
+// Suponha que é preciso transformar todos os números em negativos e passa-lós para um array novo:
+const numbers = [1, 2, 3, 4, -5];
+
+const negativeNumbers = numbers.map((number) => ((number > 0) ? number * (-1) : number));
+
+console.log('Negativos:', negativeNumbers); // [ -1, -2, -3, -4, -5 ]
+console.log('Array base:', numbers); // [ 1, 2, 3, 4, -5 ]
