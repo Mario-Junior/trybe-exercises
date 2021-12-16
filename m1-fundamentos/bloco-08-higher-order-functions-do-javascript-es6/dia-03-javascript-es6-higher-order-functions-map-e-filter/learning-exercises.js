@@ -205,6 +205,7 @@ const estudantes = [
 
 // exemplos de funções apenas usando for e depois como refatorá-las para quem usem HOFs
 // buscar e imprimir o nome completo de todos os estudantes que estudam no turno da manhã
+// com for
 const allNameStudents = [];
 
 for (let index = 0; index < estudantes.length; index += 1 ) {
@@ -215,3 +216,41 @@ for (let index = 0; index < estudantes.length; index += 1 ) {
 
 console.log(allNameStudents);
 
+// com map e filter
+const allNameStudents2 = estudantes.filter((estudante) => (
+  estudante.turno === 'Manhã')).map((estudante) => `${estudante.nome} ${estudante.sobrenome}`);
+
+console.log(allNameStudents2);
+
+// Buscar um estudante pelo nome e retornar a situação dele em cada matéria
+// apenas com for
+const findStudent = (name, students) => {
+  for (let index = 0; index < students.length; index += 1) {
+    if (students[index].nome === name) {
+      return students[index];
+    }
+  }
+};
+
+const reportStatus = (name, students) => {
+  const getStudent = findStudent(name, students);
+  const report = [];
+  for (let index = 0; index < getStudent.materias.length; index += 1) {
+    if (getStudent.materias[index].nota >= 60) {
+      report.push(`${getStudent.materias[index].name}: Aprovado`);
+    } else {
+      report.push(`${getStudent.materias[index].name}: Reprovado`);
+    }
+  }
+  return report;
+};
+console.log(reportStatus('Natalia', estudantes));
+
+// com find e map
+const reportStatus2 = (name, students) => {
+  const studentInfo = students.find((student) => student.nome === name);
+  return studentInfo.materias.map((materia) => (
+    `${materia.name}: ${(materia.nota >= 60) ? 'Aprovado' : 'Reprovado'}`
+  ));
+};
+console.log(reportStatus2('Natalia', estudantes));
