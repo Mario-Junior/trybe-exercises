@@ -93,3 +93,21 @@ const getBigger2 = (bigger, number) => {
 };
 const bigger3 = numArr2.reduce(getBigger2, 0);
 console.log(bigger3); // 85
+
+// Fazer função com reduce que some todos os números pares do array:
+const isEvenArr = [18, 19, 23, 53, 4, 5, 76, 23, 54];
+
+// Com reduce e filter:
+const getEven = (isEven) => isEven % 2 === 0;
+const sumNum = (result, number) => result + number;
+
+const sumEven = (arr) => arr.filter(getEven).reduce(sumNum);
+
+console.log(sumEven(isEvenArr));
+
+// Só com reduce:
+const getEvenSum = (sum, isEven) => ((isEven % 2 === 0) ? sum + isEven : sum);
+
+const sumEven2 = (arr) => arr.reduce(getEvenSum, 0);
+
+console.log(sumEven2(isEvenArr));
