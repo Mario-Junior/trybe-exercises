@@ -66,3 +66,30 @@ const getSum5 = (result, number) => {
   };
 const sumNumbers7 = numbers4.reduce(getSum5, 10); // Parâmetro adicionado ao reduce: o 10;
 console.log(sumNumbers7); // 123
+
+// Comparar valores para buscar o maior valor em um array - com for:
+const numArr = [50, 85, -30, 3, 15];
+
+let bigger = 0;
+for (let i = 0; i < numArr.length; i += 1) {
+  if (numArr[i] > bigger) {
+    bigger = numArr[i];
+  };
+};
+console.log(bigger);
+
+// Com reduce:
+const getBigger = (bigger, number) => ((bigger > number) ? bigger : number);
+
+const bigger2 = numArr.reduce(getBigger, 0);
+console.log(bigger2); // 85
+
+// Com reduce (com console.log na função para ver os detalhes):
+const numArr2 = [50, 85, -30, 3, 15];
+
+const getBigger2 = (bigger, number) => {
+  console.log(bigger);
+  return (bigger > number) ? bigger : number;
+};
+const bigger3 = numArr2.reduce(getBigger2, 0);
+console.log(bigger3); // 85
