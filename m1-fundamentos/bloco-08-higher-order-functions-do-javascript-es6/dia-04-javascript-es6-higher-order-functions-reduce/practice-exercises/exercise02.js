@@ -67,8 +67,8 @@ const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Fra
 
 function getAuthorNames() {
   const stringNames = books.map((book) => book.author.name).reduce((name1, name2, index, array) => {
-   if (index === array.length - 1) return `${name1}, ${name2}.`;
-   return `${name1}, ${name2}`;
+    if (index === array.length - 1) return `${name1}, ${name2}.`;
+    return `${name1}, ${name2}`;
   });
   return stringNames;
 }
