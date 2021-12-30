@@ -75,5 +75,18 @@ const expectedResult = {
 };
 
 function longestNamedBook() {
-  // escreva seu código aqui
+  const book = books.reduce((book1, book2) => book2.name.length > book1.name.length ? book2 : book1);
+  return book;
 }
+console.log(longestNamedBook());
+
+// Gabarito:
+function longestNamedBook() {
+  return books.reduce((biggestBook, currentBook) => {
+    if (currentBook.name.length > biggestBook.name.length) {
+      return currentBook;
+    }
+    return biggestBook;
+  });
+}
+console.log(longestNamedBook());
