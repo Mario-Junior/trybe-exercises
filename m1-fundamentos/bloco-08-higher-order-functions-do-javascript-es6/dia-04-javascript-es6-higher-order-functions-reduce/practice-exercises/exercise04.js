@@ -62,30 +62,31 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-// 2 - Criar string com os nomes de todas as pessoas autoras.
-const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
+// 4 - Encontrar livro com o maior nome.
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
 
-function getAuthorNames() {
-  const stringNames = books.map((book) => book.author.name).reduce((name1, name2, index, array) => {
-    if (index === array.length - 1) return `${name1}, ${name2}.`;
-    return `${name1}, ${name2}`;
+function longestNamedBook() {
+  const book = books.reduce((book1, book2) => book2.name.length > book1.name.length ? book2 : book1);
+  return book;
+}
+console.log(longestNamedBook());
+
+// Gabarito:
+function longestNamedBook2() {
+  return books.reduce((biggestBook, currentBook) => {
+    if (currentBook.name.length > biggestBook.name.length) {
+      return currentBook;
+    }
+    return biggestBook;
   });
-  return stringNames;
 }
-console.log(getAuthorNames());
-
-function getAuthorNames2() {
-  const stringNames = books.map((book) => book.author.name).reduce((name1, name2, index, array) => (index === array.length - 1) ? `${name1}, ${name2}.` : `${name1}, ${name2}`);
-  return stringNames;
-}
-console.log(getAuthorNames2());
-
-// Gabarito
-function reduceNames() {
-  const names = books.reduce((acc, book, index, array) => {
-    if (index === array.length - 1) return `${acc} ${book.author.name}.`;
-    return `${acc} ${book.author.name},`;
-  }, '');
-  return names.trim();
-}
-console.log(reduceNames());
+console.log(longestNamedBook2());
