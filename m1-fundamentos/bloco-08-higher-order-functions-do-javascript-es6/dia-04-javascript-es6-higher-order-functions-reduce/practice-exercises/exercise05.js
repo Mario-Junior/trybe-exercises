@@ -14,11 +14,11 @@ function containsA() {
 console.log(containsA());
 
 // Gabarito:
-function containsA() {
+function containsA2() {
   return names.reduce((acc, curr) =>
      acc + curr.split('').reduce((acumulator, current) => {
         if (current === 'a' || current === 'A') return acumulator + 1;
         return acumulator;
      }, 0), 0);
 }
-console.log(containsA());
+console.log(containsA2());

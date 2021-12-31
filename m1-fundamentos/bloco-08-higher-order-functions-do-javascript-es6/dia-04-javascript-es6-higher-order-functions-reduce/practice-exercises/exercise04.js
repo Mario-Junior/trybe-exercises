@@ -81,7 +81,7 @@ function longestNamedBook() {
 console.log(longestNamedBook());
 
 // Gabarito:
-function longestNamedBook() {
+function longestNamedBook2() {
   return books.reduce((biggestBook, currentBook) => {
     if (currentBook.name.length > biggestBook.name.length) {
       return currentBook;
@@ -89,4 +89,4 @@ function longestNamedBook() {
     return biggestBook;
   });
 }
-console.log(longestNamedBook());
+console.log(longestNamedBook2());

@@ -74,11 +74,11 @@ function getAuthorNames() {
 }
 console.log(getAuthorNames());
 
-function getAuthorNames() {
+function getAuthorNames2() {
   const stringNames = books.map((book) => book.author.name).reduce((name1, name2, index, array) => (index === array.length - 1) ? `${name1}, ${name2}.` : `${name1}, ${name2}`);
   return stringNames;
 }
-console.log(getAuthorNames());
+console.log(getAuthorNames2());
 
 // Gabarito
 function reduceNames() {
