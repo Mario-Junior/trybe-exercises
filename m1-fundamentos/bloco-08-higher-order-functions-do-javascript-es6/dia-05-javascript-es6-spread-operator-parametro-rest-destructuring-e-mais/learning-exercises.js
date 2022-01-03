@@ -1,4 +1,5 @@
-// Spread Operator
+//* Spread Operator *//
+
 // Adicionar itens a um array ... Usando push:
 const numbers = [1, 2, 3];
 numbers.push(4);
@@ -64,7 +65,7 @@ const additionalItens = ['canned milk', 'chia', 'orange juice'];
 const fruitSalad = (fruit, additional) => [...fruit, ...additional];
 console.log(fruitSalad(specialFruit, additionalItens));
 
-// Parâmetro Rest
+//* Parâmetro Rest *//
 function quantosParams(...args) {
   console.log('parâmetros:', args);
   return `Você passou ${args.length} parâmetros para a função.`;
@@ -78,3 +79,18 @@ console.log(sum(4, 7, 8, 9, 60)); // 88
 
 const bigMac = (...args) => args.reduce((accumulator, current) => accumulator + current);
 console.log(bigMac('dois hamburgueres,', ' alface,', ' queijo,', ' molho especial,', ' cebola,', ' picles,', ' num pão com gergelim'))
+
+//* Object Destructuring *//
+const product = {
+  name: 'Smart TV Crystal UHD',
+  price: '1899.05',
+  seller: 'Casas de Minas',
+};
+console.log(product.name);
+console.log(product.price);
+console.log(product.seller);
+
+const {name, price, seller} = product;
+console.log(`${name} 
+${price} 
+${seller}`);
