@@ -91,6 +91,6 @@ console.log(product.price);
 console.log(product.seller);
 
 const {name, price, seller} = product;
-console.log(`${name} 
-${price} 
+console.log(`${name}
+${price}
 ${seller}`);
