@@ -107,3 +107,15 @@ const { a: firstname, b: classAssigned, c: subject } = student;
 console.log(firstname); // Maria
 console.log(classAssigned); // Turma B
 console.log(subject); // Matemática
+
+// A forma acima é equivalente a abaixo:
+const name2 = student.a;
+console.log(name2); // Maria
+
+// Outra situação para desestruturação de objetos é passar valores de um objeto como parâmetros para uma função:
+const printProductDetails = ({ name, price, seller }) => {
+  console.log(`Promoção! ${name} por apenas ${price} é só aqui: ${seller}`);
+};
+printProductDetails(product); // Promoção! Smart TV Crystal UHD por apenas 1899.05 é só aqui: Casas de Minas
+
+//* Array Destructuring *//
