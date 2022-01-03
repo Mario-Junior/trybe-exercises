@@ -86,6 +86,7 @@ const product = {
   price: '1899.05',
   seller: 'Casas de Minas',
 };
+// Acessar posições do objeto como conhecíamos até agora
 console.log(product.name);
 console.log(product.price);
 console.log(product.seller);
@@ -119,3 +120,17 @@ const printProductDetails = ({ name, price, seller }) => {
 printProductDetails(product); // Promoção! Smart TV Crystal UHD por apenas 1899.05 é só aqui: Casas de Minas
 
 //* Array Destructuring *//
+
+// Acessar posições do array como conhecíamos até agora:
+const arrayCountries = ['Brazil', 'Japan', 'China', 'Canada'];
+
+const firstCountry = arrayCountries[0];
+const secondCountry = arrayCountries[1];
+const thirdCountry = arrayCountries[2];
+const fourthCountry = arrayCountries[3];
+
+console.log(firstCountry); // Brazil
+console.log(secondCountry); // Japan
+console.log(thirdCountry); // China
+console.log(fourthCountry); // Canada
+
