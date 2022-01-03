@@ -90,7 +90,20 @@ console.log(product.name);
 console.log(product.price);
 console.log(product.seller);
 
+// Sintaxe da desestruturação de objetos é passarmos o nome das propriedades para acesso do lado esquerdo, entre chaves, e o objeto do lado direito:
 const {name, price, seller} = product;
 console.log(`${name}
 ${price}
 ${seller}`);
+
+// Outra aplicação é reatribuir o nome de propriedade ao declará-la como uma variável:
+const student = {
+  a: 'Maria',
+  b: 'Turma B',
+  c: 'Matematica',
+};
+
+const { a: firstname, b: classAssigned, c: subject } = student;
+console.log(firstname); // Maria
+console.log(classAssigned); // Turma B
+console.log(subject); // Matemática
