@@ -63,3 +63,5 @@ const additionalItens = ['canned milk', 'chia', 'orange juice'];
 
 const fruitSalad = (fruit, additional) => [...fruit, ...additional];
 console.log(fruitSalad(specialFruit, additionalItens));
+
+// Parâmetro Rest
