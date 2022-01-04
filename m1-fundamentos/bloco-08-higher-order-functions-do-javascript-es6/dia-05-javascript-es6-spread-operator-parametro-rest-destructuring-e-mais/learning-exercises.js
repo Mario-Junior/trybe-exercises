@@ -134,3 +134,35 @@ console.log(secondCountry); // Japan
 console.log(thirdCountry); // China
 console.log(fourthCountry); // Canada
 
+// Com array destructuring, declaramos todas as variáveis com os nomes dos países em apenas uma linha de código:
+const arrCountries = ['Brazil', 'Japan', 'China', 'Canada'];
+const [country1, country2, country3, country4] = arrCountries; // Sintaxe!
+
+console.log(country1); // Brazil
+console.log(country2); // Japan
+console.log(country3); // China
+console.log(country4); // Canada
+
+// Para fixar:
+// 1 - Produzir mesmo resultado, utilizando array destructuring para recolher a função e a saudação.
+const saudacoes = ['Olá', (saudacao) => console.log(saudacao)];
+saudacoes[1](saudacoes[0]); // Olá
+// Produza o mesmo resultado acima, porém utilizando array destructuring
+const [saudacao, funcaoDeSaudacao] = saudacoes;
+funcaoDeSaudacao(saudacao); // Olá
+
+// 2 - Seguem alguns valores que estão descritos em variáveis incoerentes. Através da desestruturação de arrays, corriir:
+let comida = 'gato';
+let animal = 'água';
+let bebida = 'arroz';
+console.log(comida, animal, bebida);
+// Utilizando array destructuring, faça com que os valores apareçam nas variáveis correspondentes ao seu verdadeiro tipo
+[comida, animal, bebida] = [bebida, comida, animal];
+console.log(comida, animal, bebida); // arroz gato água
+
+// 3 - array possui números que não condizem com o conteúdo. Através de array destructuring, fazer com que existam apenas números pares na variável numerosPares .
+let numerosPares = [1, 3, 5, 6, 8, 10, 12];
+console.log(numerosPares);
+// Utilize array destructuring para produzir o resultado esperado pelo console.log abaixo
+[,,, ...numerosPares] = numerosPares;
+console.log(numerosPares); // [6, 8, 10, 12];
