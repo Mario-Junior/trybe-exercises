@@ -166,3 +166,24 @@ console.log(numerosPares);
 // Utilize array destructuring para produzir o resultado esperado pelo console.log abaixo
 [,,, ...numerosPares] = numerosPares;
 console.log(numerosPares); // [6, 8, 10, 12];
+
+//* Default Destructuring *//
+// Em objetos
+const person = {
+  name: 'João',
+  lastName: 'Jr',
+  age: 34,
+};
+const { nationality } = person;
+console.log(nationality); // undefined
+const { nationality2 = 'Brazilian' } = person;
+console.log(person);
+console.log(nationality2); // Brazilian
+
+// Em arrays
+const position2d = [1.0, 2.0];
+console.log(position2d);
+const [x, y, z = 0] = position2d;
+console.log(x); // 1
+console.log(y); // 2
+console.log(z); // 0
