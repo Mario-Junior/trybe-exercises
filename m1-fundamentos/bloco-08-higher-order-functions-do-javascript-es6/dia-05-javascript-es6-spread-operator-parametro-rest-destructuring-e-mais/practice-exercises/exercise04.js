@@ -1,4 +1,4 @@
-// 4 - Escrever função filterPeople que, dada lista de pessoas, retorna todas australianas que nasceram no século 20:
+// 4 - Escrever função filterPeople que, dada lista de pessoas, retorna todas pessoas australianas que nasceram no século 20:
 // Dica: use object destructuring
 const people = [
   {
@@ -29,3 +29,5 @@ const people = [
 ];
 
 // escreva filterPeople abaixo
+const filterPeople = (arr) => arr.filter(( {nationality, bornIn} ) => nationality === 'Australian' && bornIn > 1900 && bornIn <= 2000);
+console.log(filterPeople(people));
