@@ -4,3 +4,5 @@
 const myList = [1, 2, 3];
 
 // escreva swap abaixo
+const swap = ([i1, i2, i3]) => [i3, i2, i1];
+console.log(swap(myList));
