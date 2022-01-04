@@ -80,6 +80,13 @@ function getAuthorNames2() {
 }
 console.log(getAuthorNames2());
 
+// Solução da pessoa estudante Lucas Manete
+function getAuthorNames3(arr) {
+  return arr.map((book) => book.author.name)
+  .reduce((name1, name2) => `${name1}, ${name2}`).concat('.');
+}
+console.log(getAuthorNames3(books));
+
 // Gabarito
 function reduceNames() {
   const names = books.reduce((acc, book, index, array) => {
