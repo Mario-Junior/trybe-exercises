@@ -207,3 +207,56 @@ console.log(getNationality(otherPerson)); // Ivan is Russian
 console.log(getNationality(person2));
 
 //* Object Property Shorthand *//
+// Repetição desnecessária:
+const newUser = (id, name, email) => {
+  return {
+    id: id,
+    name: name,
+    email: email,
+  };
+};
+console.log(newUser(54, 'isabella', 'isabella@email.com')); // { id: 54, name: 'isabella', email: 'isabella@email.com' }
+
+// Javascript entende que queremos atribuir o valor a uma propriedade com o mesmo nome que o parâmetro passado:
+const newUser1 = (id1, name1, email1) => {
+  return {
+    id1,
+    name1,
+    email1,
+  };
+};
+console.log(newUser1(54, 'isabella', 'isabella@email.com')); // { id: 54, name: 'isabella', email: 'isabella@email.com' }
+
+// Para Fixar
+// Alterar a função getPosition utilizando property shorthand:
+const getPosition = (latitude, longitude) => ({
+  latitude: latitude,
+  longitude: longitude});
+
+console.log(getPosition(-19.8157, -43.9542));
+
+const getPosition1 = (latitude1, longitude1) => ({
+  latitude1,
+  longitude1});
+
+console.log(getPosition1(-19.8157, -43.9542));
+
+//* Default Parameters *//
+//  Executar algumas funções sem passar argumentos, trazem retornos indefinidos:
+const greeting = (user) => console.log(`Welcome ${user}!`);
+greeting(); // Welcome undefined!
+// Uma solução seria:
+const greeting1 = (user) => {
+  const userDisplay = typeof user === 'undefined' ? 'usuário' : user;
+  console.log(`Welcome ${userDisplay}!`);
+};
+greeting1(); // Welcome usuário!
+
+// Com o ES6, é possível definir um parâmetro padrão para a função:
+const greeting2 = (user = 'usuário') => console.log(`Welcome ${user}!`);
+greeting2(); // // Welcome usuário!
+
+// Para fixar
+// Escrever função multiply que multiplique dois números passados como argumentos. Atribuir como default o valor 1 caso não seja passado nenhum valor como segundo parâmetro.
+const multiply = (number, value = 1) => number * value;
+console.log(multiply(12));
