@@ -187,3 +187,23 @@ const [x, y, z = 0] = position2d;
 console.log(x); // 1
 console.log(y); // 2
 console.log(z); // 0
+
+// Para Fixar
+// Ajustar função GetNationality para que chamada GetNationality(person) retorne João is Brazilian:
+const getNationality = ({ firstName, nationality3 = 'Brazilian' }) => `${firstName} is ${nationality3}`;
+
+const person2 = {
+  firstName: 'João',
+  lastName: 'Jr II',
+};
+
+const otherPerson = {
+  firstName: 'Ivan',
+  lastName: 'Ivanovich',
+  nationality3: 'Russian',
+};
+
+console.log(getNationality(otherPerson)); // Ivan is Russian
+console.log(getNationality(person2));
+
+//* Object Property Shorthand *//
