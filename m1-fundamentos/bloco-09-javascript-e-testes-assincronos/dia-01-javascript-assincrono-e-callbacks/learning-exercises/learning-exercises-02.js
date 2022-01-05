@@ -74,12 +74,12 @@ console.log(getUser1(userNationality)); // complete a chamada da função getUse
 console.log('\n');
 
 // 2 - Passar, como parâmetro e como retorno, uma callback para a função getUser
-const userFullName = ({ firstName, lastName }) => `Hello! My name is ${firstName} ${lastName}`;
-const userNationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
+const userFullName2 = ({ firstName, lastName }) => `Hello! My name is ${firstName} ${lastName}`;
+const userNationality2 = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
 
 const delay = (maxMilliseconds = 5000) => Math.floor(Math.random() * maxMilliseconds);
 
-const getUser = (callback) => {
+const getUser2 = (callback) => {
   setTimeout(() => {
     const user = {
       firstName: "Ivan",
@@ -92,5 +92,7 @@ const getUser = (callback) => {
   }, delay());
 };
 
-getUser(userFullName); // deve imprimir "Hello! My name is Ivan Ivanovich" depois de um certo tempo
-getUser(userNationality); // deve imprimir "Ivan is Russian" depois de um certo tempo
+getUser2(userFullName2); // deve imprimir "Hello! My name is Ivan Ivanovich" depois de um certo tempo
+getUser2(userNationality2); // deve imprimir "Ivan is Russian" depois de um certo tempo
+
+// Obs.: ATENÇÃO ao comportamento assíncrono da função getUser ao chamar getUser(userFullName) seguido de getUser(userNationality) . Tem hora que o nome da pessoa é impresso antes e tem hora que a nacionalidade da pessoa é impressa antes!
