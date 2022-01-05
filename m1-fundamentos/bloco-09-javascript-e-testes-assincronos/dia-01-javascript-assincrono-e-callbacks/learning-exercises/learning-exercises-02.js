@@ -53,3 +53,21 @@ const getUser = (param) => {
 
 // Chamada/execução da função getUser, que vai receber como parâmetro nossa função userFullName.
 console.log(getUser(userFullName));
+console.log('\n');
+
+// Exercícios:
+// 1 - Adicionar callback como parâmetro da funcão getUser
+const userFullName1 = ({ firstName, lastName }) => `Hello! My name is ${firstName} ${lastName}`;
+const userNationality = ({ firstName, nationality }) => `${firstName} is ${nationality}`;
+
+const getUser1 = (callback) => {
+  const userToReturn = {
+    firstName: "Ivan",
+    lastName: "Ivanovich",
+    nationality: "Russian"
+  };
+  return callback(userToReturn);
+};
+
+console.log(getUser1(userFullName1)); // complete a chamada da função getUser de modo que o retorno seja: "Hello! My name is Ivan Ivanovich"
+console.log(getUser1(userNationality)); // complete a chamada da função getUser de modo que o retorno seja: "Ivan is Russian"
