@@ -1,4 +1,5 @@
-// Lidando com erros em operações assíncronas
+//* Bloco 09 - Dia 01 *//
+//* Lidando com erros em operações assíncronas *//
 // Da mesma forma que se tem uma callback para quando a operação assíncrona tem sucesso, também precisa ter uma callback para quando a operação assíncrona termina com erro.
 // Para fixar
 // 1 - Adicione uma callback e trate o erro retornado:

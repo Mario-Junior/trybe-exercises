@@ -1,4 +1,4 @@
-//* Bloco 09 - Dia 01 
+//* Bloco 09 - Dia 01 *//
 //* Operações assíncronas *//
 // Obs.: aguardar os tempos necessários das setTimeout() para observar as simulações de ações assíncronas
 console.log('1 - Receber roda');
