@@ -260,3 +260,76 @@ greeting2(); // // Welcome usuário!
 // Escrever função multiply que multiplique dois números passados como argumentos. Atribuir como default o valor 1 caso não seja passado nenhum valor como segundo parâmetro.
 const multiply = (number, value = 1) => number * value;
 console.log(multiply(12));
+
+// QUIZ - Fixando os aprendizados
+const numbersFind = [3, 12, 1, 21, 23];
+const foundElements = numbersFind.find(e => e > 10);
+console.log(foundElements);
+
+const products = [
+  {
+    name: 'laptop',
+    price: 1000,
+    id: 3,
+  },
+  {
+    name: 'desktop',
+    price: 1500,
+    id: 2
+  },
+  {
+    name: 'phone',
+    price: 500,
+    id: 1
+  }
+];
+console.log(products.sort((a, b) => b.price - a.price));
+
+const adultos = [
+  {
+    peso: 100,
+    altura: 1.85
+  },
+  {
+    peso: 90,
+    altura: 1.72
+  },
+  {
+    peso: 79,
+    altura: 1.99
+  }
+]
+
+// IMC = Índice de Massa Corporal
+
+function IMC(adulto) {
+  return parseFloat((adulto.peso/(Math.pow(adulto.altura,2))).toFixed(2));
+}
+console.log(adultos.map(IMC));
+  
+const cart = [
+  {
+    name: "laptop",
+    price: 1000,
+    quantity: 2,
+    id: 3,
+  },
+  {
+    name: "desktop",
+    price: 1500,
+    quantity: 1,
+    id: 2,
+  },
+  {
+    name: "phone",
+    price: 500,
+    quantity: 3,
+    id: 1,
+  },
+];
+
+// escreva seu código aqui
+const valorInicial = 0;
+const totalCart = cart.reduce((accumulator, product) => accumulator + product.price * product.quantity, valorInicial);
+// fim do código
+console.log('totalCart:', totalCart);
