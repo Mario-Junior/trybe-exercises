@@ -60,3 +60,28 @@ describe('Agrupa o segundo bloco de testes', () => {
     expect(cities).toHaveLength(0);
   });
 });
+// Outro teste usando as três etapas
+describe('Agrupa o terceiro bloco de testes', () => {
+  beforeEach(() => {
+    cities = ['Tangamandapio'];
+  });
+  
+  afterEach(() => {
+    cities = [];
+  });
+  
+  test('Testa a função addCity dentro do terceiro bloco de testes', () => {
+    expect.assertions(3);
+    expect(cities).toHaveLength(1);
+    expect(cities).not.toContain('Pindamonhangaba');
+    expect(cities).toContain('Tangamandapio');
+  });
+  
+  test('Testa a função removeCity dentro do terceiro bloco de testes', () => {
+    expect.assertions(2);
+    removeCity('Tangamandapio');
+    expect(cities).not.toContain('Pindamonhangaba');
+    expect(cities).toHaveLength(0);
+  });
+});
+// Atenção que está sendo usando o 'describe(, () => {})' para englobar os casos de testes e permitir que o código das funções não necessite ser repetido
