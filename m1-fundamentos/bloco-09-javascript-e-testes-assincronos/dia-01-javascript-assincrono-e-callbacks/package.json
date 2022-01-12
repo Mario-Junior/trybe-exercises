@@ -1,0 +1,15 @@
+{
+  "name": "learning-exercises",
+  "version": "1.0.0",
+  "description": "Asynchronous Tests with Callbacks",
+  "main": "learning-exercises-01.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
