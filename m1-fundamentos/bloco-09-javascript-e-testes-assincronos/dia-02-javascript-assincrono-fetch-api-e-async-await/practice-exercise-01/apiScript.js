@@ -3,7 +3,12 @@
 const API_URL = 'https://icanhazdadjoke.com/';
 
 const fetchJoke = () => {
-  // Adicionar lógica aqui!
+  const object = {
+    method: 'GET',
+    headers: { 'Accept': 'application/json' }
+  };
+  fetch(API_URL, object)
+    .then(response => console.log(response));
 };
 
 window.onload = () => fetchJoke();
