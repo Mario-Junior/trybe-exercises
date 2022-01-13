@@ -8,6 +8,6 @@ describe('Testes para a função fetchCharacter', () => {
   });
   it('Verifica se retorna erro ao executar a função sem parâmetro', async () => {
     const failRequest = await fetchCharacter();
-    console.log(failRequest);
+    expect(failRequest).toEqual(new Error('You must provide an url'));
   });
 });
