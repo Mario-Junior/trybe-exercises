@@ -9,7 +9,7 @@ const fetchJoke = () => {
   };
   fetch(API_URL, object)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then((data) => document.getElementById('jokeContainer').innerText = data.joke);
 };
 
 window.onload = () => fetchJoke();
