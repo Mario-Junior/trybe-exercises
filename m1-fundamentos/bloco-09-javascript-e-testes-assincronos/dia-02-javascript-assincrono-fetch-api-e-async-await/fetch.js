@@ -1,5 +1,6 @@
 //* Fetch API *//
 // Gestores de fluxo
+// Código que roda mas imprime Promise { <pending> } no console.log, pois o fluxo assíncrono não está sendo controlado
 const fetch = require('node-fetch');
 
 const fetchJoke = () => {
@@ -7,5 +8,5 @@ const fetchJoke = () => {
 
   console.log(fetch(url));
 }
-
 fetchJoke();
+
