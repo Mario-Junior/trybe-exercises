@@ -6,4 +6,8 @@ describe('Testes para a função fetchCharacter', () => {
     const character = await fetchCharacter('720');
     expect(character.name).toBe('Wonder Woman');
   });
+  it('Verifica se retorna erro ao executar a função sem parâmetro', async () => {
+    const failRequest = await fetchCharacter();
+    console.log(failRequest);
+  });
 });
