@@ -15,13 +15,14 @@ const showCoins = async () => {
   const coins = await fetchCriptos();
   const coinsList = document.getElementById('cripto-list');
 
-  coins.forEach(coin => {
-    const newLi = document.createElement('li');
-    const usdPrice = Number(coin.priceUsd);
+  coins.filter((coin) => coin.rank <= 10)
+    .forEach(coin => {
+      const newLi = document.createElement('li');
+      const usdPrice = Number(coin.priceUsd);
 
-    newLi.innerText = `${coin.name} (${coin.symbol}): USD ${usdPrice.toFixed(2)}`;
-    coinsList.appendChild(newLi);
-  });
+      newLi.innerText = `${coin.name} (${coin.symbol}): USD ${usdPrice.toFixed(2)}`;
+      coinsList.appendChild(newLi);
+    });
 }
 
 window.onload = () => showCoins();
