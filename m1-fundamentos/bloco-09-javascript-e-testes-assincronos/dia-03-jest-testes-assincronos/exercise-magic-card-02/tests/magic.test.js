@@ -28,7 +28,15 @@ describe(' Testa a função saveFavoriteMagicCard', () => {
 
   // 4 - Após descomentar o teste dentro deste it, rode os testes.
   it('5- Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
-    expect.assertions(1);
+    expect.assertions(2);
     expect(favoriteCards).toHaveLength(4);
+
+    // Bônus
+    // 1 - Utilizando a função map, crie um array contendo apenas a propriedade name de todos os cards presentes no deck original, ou seja, no favoriteCards. Este array deve conter quatro nomes e deve ser salvo em uma nova variável.
+    const namesOfFavoriteCards = favoriteCards.map((card) => card.name);
+
+    // 2 - Teste que verifica que o array obtido com map anterior contém a seguinte estrutura e valores:
+    const namesArr = ['Ancestor\'s Chosen', 'Angel of Mercy', 'Aven Cloudchaser', 'Ballista Squad'];
+    expect(namesOfFavoriteCards).toEqual(namesArr);
   });
 });
