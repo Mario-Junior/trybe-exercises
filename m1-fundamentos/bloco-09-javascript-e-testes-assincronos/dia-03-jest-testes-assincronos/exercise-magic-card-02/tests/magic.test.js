@@ -6,12 +6,16 @@ const retrievesFavoriteCards = () => {
 }
 
 describe(' Testa a função saveFavoriteMagicCard', () => {
-  it('Testa se um novo card é adicionado a cada execução', async () => {
+  it('1- Testa se um novo card é adicionado a cada execução', async () => {
     expect.assertions();
+    // 1.1 Verifica que após a execução da função saveFavoriteMagicCard, favoriteCards passa a possuir length === 5.
     await saveFavoriteMagicCard('130553');
     expect(favoriteCards.length).toBe(5);
 
-    // implemente seus testes aqui
+    // 1.2 Verifica que na última posição do array favoriteCards existe um card com o a propriedade name e valor "Beacon of Immortality".
+    const lastCard = favoriteCards[favoriteCards.length - 1];
+    expect(lastCard.name).toBe('Beacon of Immortality');
+
   });
 
   it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
