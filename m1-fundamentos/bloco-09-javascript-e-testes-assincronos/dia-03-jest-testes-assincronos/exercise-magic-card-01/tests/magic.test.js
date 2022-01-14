@@ -21,4 +21,8 @@ describe('Testa a função getMagicCard', () => {
     await getMagicCard('130550');
     expect(fetch).toHaveBeenCalledWith(endpoint);
   });
+  it('6- O retorno da função getMagicCard é igual ao objeto card.', async () => {
+    const response = await getMagicCard('130550');
+    expect(response).toEqual(card);
+  });
 });
