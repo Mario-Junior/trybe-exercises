@@ -7,7 +7,7 @@ const retrievesFavoriteCards = () => {
 
 describe(' Testa a função saveFavoriteMagicCard', () => {
   it('1- Testa se um novo card é adicionado a cada execução', async () => {
-    expect.assertions();
+    expect.assertions(3);
     // 1.1 Verifica que após a execução da função saveFavoriteMagicCard, favoriteCards passa a possuir length === 5.
     await saveFavoriteMagicCard('130553');
     expect(favoriteCards.length).toBe(5);
@@ -21,9 +21,10 @@ describe(' Testa a função saveFavoriteMagicCard', () => {
     expect(favoriteCards.length).toBe(6);
   });
 
-  it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
-    // expect.assertions();
-    // expect(favoriteCards).toHaveLength(4);
+  // 4 - Após descomentar o teste dentro deste it, rode os testes.
+  it('5- Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
+    expect.assertions();
+    expect(favoriteCards).toHaveLength(4);
 
     // implemente seus testes aqui
   });
