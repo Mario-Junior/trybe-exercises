@@ -16,6 +16,9 @@ describe(' Testa a função saveFavoriteMagicCard', () => {
     const lastCard = favoriteCards[favoriteCards.length - 1];
     expect(lastCard.name).toBe('Beacon of Immortality');
 
+    // 1.3 Verifica que ao chamar a função saveFavoriteMagicCard com o argumento "130554", favoriteCards passa a possuir length === 6
+    await saveFavoriteMagicCard('130554');
+    expect(favoriteCards.length).toBe(6);
   });
 
   it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
