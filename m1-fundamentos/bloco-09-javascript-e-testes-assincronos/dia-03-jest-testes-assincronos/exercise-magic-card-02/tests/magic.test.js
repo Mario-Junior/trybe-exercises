@@ -9,6 +9,7 @@ describe(' Testa a função saveFavoriteMagicCard', () => {
   it('Testa se um novo card é adicionado a cada execução', async () => {
     expect.assertions();
     await saveFavoriteMagicCard('130553');
+    expect(favoriteCards.length).toBe(5);
 
     // implemente seus testes aqui
   });
