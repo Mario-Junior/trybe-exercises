@@ -9,7 +9,11 @@ describe('Testa a função getMagicCard', () => {
     const { name } = response;
     expect(name).toBe(`Ancestor\'s Chosen`);
   });
-  it('3 - getMagicCard é uma função', async () => {
+  it('3- getMagicCard é uma função', async () => {
     expect(typeof getMagicCard).toBe('function');
+  });
+  it('4- Com o argumento "130550", a função fetch é chamada.', async () => {
+    await getMagicCard('130550');
+    expect(fetch).toHaveBeenCalled();
   });
 });
