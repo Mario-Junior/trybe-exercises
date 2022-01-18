@@ -1,7 +1,24 @@
 {
-  "dependencies": {
-    "node-fetch": "^2.6.7"
+  "name": "live-lectures",
+  "version": "1.0.0",
+  "description": "Este repositório armazena os códigos e scripts fornecidos durante as aulas ao vivo pelos especialistas da Trybe.",
+  "main": "api.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
+    "lint:styles": "stylelint **/*.css --config .stylelintrc.json --ignore-disables --allow-empty-input"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryber/sd-xp-b-live-lecture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tryber/sd-xp-b-live-lecture/issues"
+  },
+  "homepage": "https://github.com/tryber/sd-xp-b-live-lecture#readme",
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -12,16 +29,7 @@
     "stylelint": "13.11.0",
     "stylelint-config-standard": "20.0.0"
   },
-  "name": "projeto-casa-de-cambio",
-  "version": "1.0.0",
-  "main": "api.js",
-  "scripts": {
-    "test": "jest",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
-    "lint:styles": "stylelint **/*.css --config .stylelintrc.json --ignore-disables --allow-empty-input"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "node-fetch": "^2.6.6"
+  }
 }
