@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const textJSX = <h1>Hello JSX!</h1>
+
 class MyName extends Component {
   render() {
     return (
