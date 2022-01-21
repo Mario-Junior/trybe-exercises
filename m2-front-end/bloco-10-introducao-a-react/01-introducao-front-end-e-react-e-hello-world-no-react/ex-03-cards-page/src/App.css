@@ -15,10 +15,10 @@
 .content {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 80vh;
-  gap: 15px;
+  gap: 10px;
 }
 
 .card {
@@ -26,9 +26,11 @@
   border-radius: 8px;
   gap: 12px;
   padding: 25px;
-  height: 180px;
+  height: 200px;
+  width: 23%;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   justify-content: center;
 }
