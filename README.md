@@ -84,7 +84,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 10: Introdução - React :hourglass_flowing_sand:
 
-- [ ] 10-1: _'Hello, world!' no React!_
+- [X] 10-1: _'Hello, world!' no React!_
 - [ ] 10-2: _Componentes React_
 - [ ] 10-3: _[Projeto - Sistema Solar]()_
 
