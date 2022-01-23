@@ -1,3 +1,4 @@
+// Lista de Componentes e chaves
 // arquivo App.js, criado pelo create-react-app, modificado
 import { Component } from 'react';
 import './App.css';

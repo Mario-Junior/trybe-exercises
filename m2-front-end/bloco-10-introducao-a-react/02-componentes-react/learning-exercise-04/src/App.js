@@ -1,3 +1,4 @@
+// Lista de Componentes e chaves
 import React, { Component } from 'react';
 
 class App extends Component {

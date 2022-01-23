@@ -1,3 +1,4 @@
+// Lista de Componentes e chaves
 import { Component } from "react";
 import Image from "./Image";
 
