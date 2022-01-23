@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+//* Composição de componentes *//
+// arquivo App.js, criado pelo create-react-app, modificado
+// O que o componente App é em relação a Order ?
+// R: O componente App é pai de Order
+import React from 'react';
 import './App.css';
+import Order from './Order';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    const headphone = {
+      id: 102,
+      user: "cena@gmail.com",
+      product: "Razer Headphone",
+      price: {
+        value: 99.99,
+        currency: "dollars"
+      }
+    };
+
+    const energyDrink = {
+      id: 77,
+      user: "cena@gmail.com",
+      product: "Monster 500mL",
+      price: {
+        value: 9.99,
+        currency: "dollars"
+      }
+    };
+
+    return (
+      <div className="App">
+        <h1> Orders recently created </h1>
+        <Order order={ headphone } />
+        <Order order={ energyDrink } />
+      </div>
+    );
+  }
 }
 
 export default App;
