@@ -1,3 +1,4 @@
+//* Componentes React - Exercício Prático *//
 const pokemons = [
   {
       id: 25,
