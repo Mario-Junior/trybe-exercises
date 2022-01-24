@@ -2,11 +2,11 @@ import { Component } from "react";
 import PropTypes from 'prop-types';
 
 class Pokemon extends Component {
-  render () {
+  render() {
     const { pokemon: { name, type, averageWeight, image } } = this.props;
     return (
       <div className="pokemon">
-          <div key={ pokemon.props.id } className="card">
+          <div className="card">
             <h2>{ name }</h2>
             <p>{ type }</p>
             <p>{ `Average weight: ${ averageWeight.value } ${ averageWeight.measurementUnit }` }</p>
