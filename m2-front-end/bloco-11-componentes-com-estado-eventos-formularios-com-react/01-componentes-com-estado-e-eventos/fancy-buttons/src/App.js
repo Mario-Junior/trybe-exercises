@@ -7,7 +7,7 @@ em React! A função se refere ao componente,
 então deve ser parte de sua classe! */
 const handleClick = () => console.log('Clicou no botão!');
 const handleOnMouseOver = () => console.log('Passou o mouse aqui, hein! ;D');
-const handleOnLoadFocus = () => console.log('Oh o mouse focado em mim! XD');
+const handleOnLoadFocus = () => console.log('Oh o foco aqui em mim! XD');
 
 class App extends Component {
   /* Repare que, diferentemente do HTML, no
