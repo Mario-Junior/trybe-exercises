@@ -29,8 +29,35 @@ import './App.css';
 
 // Refatoração 1 (this) = as funções passam a existirem apenas no contexto do Componente
 // Descomente da linha 32 até a linha 48 para ver)
+// class App extends Component {
+//   handleClick = () => console.log('Clicou no botão!');
+//   handleOnMouseOver = () => console.log('Passou o mouse aqui, hein! ;D');
+//   handleOnLoadFocus = () => console.log('Oh o foco aqui em mim! XD');
+  
+//   render () {
+    
+//     return (
+//       <>
+//         <h3>Abra o console log para ver os resultados de cada botão</h3>
+//         <button onClick={this.handleClick}>Meu botão 1</button>
+//         <button onMouseOver={this.handleOnMouseOver}>Meu botão 2</button>
+//         <button onFocus={this.handleOnLoadFocus} autoFocus>Meu botão 3</button>
+//       </>
+//     ) 
+//   }
+// }
+
+// Refatoração 2 ( constructor() super() bind(this) ) = abrimos acesso ao this (com suas props, state, etc.) nas funções do componente
 class App extends Component {
-  handleClick = () => console.log('Clicou no botão!');
+  constructor() {
+    super()
+    
+    this.handleClick = this.handleClick.bind(this);
+    this.handleOnMouseOver = this.handleOnMouseOver.bind(this);
+    this.handleOnLoadFocus = this.handleOnLoadFocus.bind(this);
+  }
+  
+  handleClick = () => console.log('Clicou no botão!', this);
   handleOnMouseOver = () => console.log('Passou o mouse aqui, hein! ;D');
   handleOnLoadFocus = () => console.log('Oh o foco aqui em mim! XD');
   
