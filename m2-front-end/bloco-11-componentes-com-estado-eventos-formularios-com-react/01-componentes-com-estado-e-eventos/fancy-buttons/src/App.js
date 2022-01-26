@@ -28,10 +28,14 @@ import './App.css';
 // }
 
 // Refatoração 1 (this) = as funções passam a existirem apenas no contexto do Componente
-// Descomente da linha 32 até a linha 48 para ver)
+// Descomente da linha 32 até a linha 52 para ver)
 // class App extends Component {
-//   handleClick = () => console.log('Clicou no botão!');
-//   handleOnMouseOver = () => console.log('Passou o mouse aqui, hein! ;D');
+//   handleClick() {
+//     console.log('Clicou no botão!');
+//     console.log(this);
+//   } ; // esta chamada ao 'this' retorna 'undefined'
+//   handleOnMouseOver = () => console.log('Passou o mouse aqui, hein! ;D e acessou o `this`', this);
+//   // 💡 Se você definir uma função da classe com uma arrow function, com a sintaxe minhaFuncao = () => {...} , você não precisará fazer o bind no constructor, mas sua aplicação será menos performática! Se quiser ler mais a respeito, busque o texto "Binding vs arrow-function (for react onClick event)" nos Recursos Adicionais!
 //   handleOnLoadFocus = () => console.log('Oh o foco aqui em mim! XD');
   
 //   render () {
@@ -48,6 +52,7 @@ import './App.css';
 // }
 
 // Refatoração 2 ( constructor() super() bind(this) ) = abrimos acesso ao this (com suas props, state, etc.) nas funções do componente
+// Descomente da linha 56 até a linha 80 para ver)
 class App extends Component {
   constructor() {
     super()
@@ -57,7 +62,7 @@ class App extends Component {
     this.handleOnLoadFocus = this.handleOnLoadFocus.bind(this);
   }
   
-  handleClick = () => console.log('Clicou no botão!', this);
+  handleClick = () => console.log('Clicou no botão! E chamou o `this`', this);
   handleOnMouseOver = () => console.log('Passou o mouse aqui, hein! ;D');
   handleOnLoadFocus = () => console.log('Oh o foco aqui em mim! XD');
   
