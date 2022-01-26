@@ -16,6 +16,7 @@ class App extends Component {
   render () {
     return (
       <>
+        <h3>Abra o console log para ver os resultados de cada botão</h3>
         <button onClick={handleClick}>Meu botão 1</button>
         <button onMouseOver={handleOnMouseOver}>Meu botão 2</button>
         <button onFocus={handleOnLoadFocus} autoFocus>Meu botão 3</button>
