@@ -105,10 +105,10 @@ class App extends Component {
   render () {
     return (
       <>
-        <h3>Abra o console log para ver os resultados de cada botão</h3>
-        <button onClick={this.handleClick}>Meu botão 1</button>
-        <button onMouseOver={this.handleOnMouseOver}>Meu botão 2</button>
-        <button onFocus={this.handleOnLoadFocus} autoFocus>Meu botão 3</button>
+        <h3>Abra o Console (F12) para ver os resultados de cada botão</h3>
+        <button onClick={this.handleClick}>Clique aqui: {this.state.clicksNumber}</button>
+        <button onMouseOver={this.handleOnMouseOver}>Passe o mouse</button>
+        <button onFocus={this.handleOnLoadFocus} autoFocus>Coloque o foco</button>
       </>
     ) 
   }
