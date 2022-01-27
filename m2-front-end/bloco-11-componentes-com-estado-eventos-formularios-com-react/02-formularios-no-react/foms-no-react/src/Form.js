@@ -8,7 +8,10 @@ class Form extends Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
+      aprendizadoFavorito: '',
       aprendizados: '',
+      nome: '',
+      email: '',
     };
   }
 
