@@ -25,6 +25,8 @@ class Form extends Component {
   }
 
   render () {
+    const { aprendizadoFavorito, nome, email, aprendizados } = this.state;
+    const { handleChange } = this;
     return (
       <>
         <h1>Estudando Formulários em React - Exercício de aprendizado</h1>
@@ -33,8 +35,8 @@ class Form extends Component {
             Escolha seu aprendizado favorito até aqui:
             <select
               name="aprendizadoFavorito"
-              value={this.state.aprendizadoFavorito}
-              onChange={this.handleChange}
+              value={aprendizadoFavorito}
+              onChange={handleChange}
             >
               <option value="html">HTML</option>
               <option value="css">CSS</option>
@@ -47,8 +49,8 @@ class Form extends Component {
             <input
               type="name"
               name="nome"
-              value={this.state.nome}
-              onChange={this.handleChange}
+              value={nome}
+              onChange={handleChange}
             />
           </label>
           <label>
@@ -56,16 +58,16 @@ class Form extends Component {
             <input
               type="email"
               name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
+              value={email}
+              onChange={handleChange}
             />
           </label>
           <label>
             Diga mais sobre seus aprendizados até aqui!
             <textarea
               name="aprendizados"
-              value={this.state.aprendizados}
-              onChange={this.handleChange}
+              value={aprendizados}
+              onChange={handleChange}
             />
           </label>
         </form>
