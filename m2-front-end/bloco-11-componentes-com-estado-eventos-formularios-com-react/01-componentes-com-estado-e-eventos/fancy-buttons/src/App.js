@@ -93,7 +93,7 @@ import './App.css';
 // }
 
 // Refatoração 3 = Incluindo estado (state e setState)
-// Descomente da linha 97 até a linha 140 para ver)
+// Descomente da linha 97 até a linha 158 para ver)
 class App extends Component {
   constructor() {
     super()
