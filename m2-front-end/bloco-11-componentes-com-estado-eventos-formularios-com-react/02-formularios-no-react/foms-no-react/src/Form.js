@@ -9,9 +9,9 @@ class Form extends Component {
 
     this.state = {
       aprendizadoFavorito: '',
-      aprendizados: '',
       nome: '',
       email: '',
+      aprendizados: '',
     };
   }
 
