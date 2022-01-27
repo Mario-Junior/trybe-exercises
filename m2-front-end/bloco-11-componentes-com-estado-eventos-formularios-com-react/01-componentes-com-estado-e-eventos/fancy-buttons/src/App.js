@@ -10,9 +10,11 @@ import './App.css';
 // Dica: Uma possibilidade é você definir três chaves, uma para cada botão!
 // 6 - Agora, quando um botão for clicado, altere de forma assíncrona o estado deste botão de zero para um.
 // 7 - Por fim, baseie-se no estado anterior ao atual para incrementar a contagem de cliques cada vez que um botão for clicado!
+// 8 - Defina uma lógica que estabeleça que, quando o número de cliques no botão for par, ele deve ser verde.
+// 9 - A cor atual do botão deve ser impressa num console.log() de dentro da função do evento que lida com o clique. Faça isso acontecer!
+// Dica: Lembre-se de substituir a referência à função, no evento, por uma callback que invoca!
 
-
-// Versão 1 (Descomente da linha 5 até a linha 28 para ver)
+// Versão 1 (Descomente da linha 18 até a linha 41 para ver)
 // /* Embora isso funcione, essa DEFINITIVAMENTE
 // não é a maneira correta de se criar eventos
 // em React! A função se refere ao componente,
@@ -39,7 +41,7 @@ import './App.css';
 // }
 
 // Refatoração 1 (this) = as funções passam a existirem apenas no contexto do Componente
-// Descomente da linha 32 até a linha 52 para ver)
+// Descomente da linha 45 até a linha 65 para ver)
 // class App extends Component {
 //   handleClick() {
 //     console.log('Clicou no botão!');
@@ -63,7 +65,7 @@ import './App.css';
 // }
 
 // Refatoração 2 ( constructor() super() bind(this) ) = abrimos acesso ao this (com suas props, state, etc.) nas funções do componente
-// Descomente da linha 56 até a linha 80 para ver)
+// Descomente da linha 69 até a linha 93 para ver)
 // class App extends Component {
 //   constructor() {
 //     super()
@@ -91,7 +93,7 @@ import './App.css';
 // }
 
 // Refatoração 3 = Incluindo estado (state e setState)
-// Descomente da linha 95 até a linha 138 para ver)
+// Descomente da linha 97 até a linha 140 para ver)
 class App extends Component {
   constructor() {
     super()
@@ -99,39 +101,57 @@ class App extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleOnMouseOver = this.handleOnMouseOver.bind(this);
     this.handleOnLoadFocus = this.handleOnLoadFocus.bind(this);
+    this.changeButtonColor = this.changeButtonColor.bind(this);
     this.state = {
       clicksNumber: 0,
       overNumber: 0,
       focusNumber: 0,
     }
   }
+
   
+  changeButtonColor(num) {
+    return num % 2 === 0 ? 'green' : 'white';
+  };
   handleClick() {
     this.setState((previousState, _props) => ({
       clicksNumber: previousState.clicksNumber + 1
     }))
-    console.log('Clicou no botão! E chamou o `this`', this);
+    console.log('Clicou no botão!');
+    console.log(this.changeButtonColor(this.state.clicksNumber + 1));
   };
   handleOnMouseOver() {
     this.setState((previousState, _props) => ({
       overNumber: previousState.overNumber + 1
     }))
     console.log('Passou o mouse aqui, hein! ;D');
+    console.log(this.changeButtonColor(this.state.overNumber + 1));
   };
   handleOnLoadFocus() {
     this.setState((previousState, _props) => ({
       focusNumber: previousState.focusNumber + 1
     }))
     console.log('Oh o foco aqui em mim! XD');
+    console.log(this.changeButtonColor(this.state.focusNumber + 1));
   };
     
   render () {
+    const { clicksNumber, overNumber, focusNumber } = this.state;
     return (
       <>
         <h3>Abra o Console (F12) para ver os resultados de cada botão</h3>
-        <button onClick={this.handleClick}>Clique aqui: {this.state.clicksNumber}</button>
-        <button onMouseOver={this.handleOnMouseOver}>Passe o mouse: {this.state.overNumber}</button>
-        <button onFocus={this.handleOnLoadFocus} autoFocus>Coloque o foco: {this.state.focusNumber}</button>
+        <button
+          onClick={this.handleClick}
+          style={{ backgroundColor: this.changeButtonColor(clicksNumber) }}
+        > Clique aqui: { clicksNumber } </button>
+        <button
+          onMouseOver={this.handleOnMouseOver}
+          style={{ backgroundColor: this.changeButtonColor(overNumber) }}
+        > Passe o mouse: { overNumber } </button>
+        <button autoFocus
+          onFocus={this.handleOnLoadFocus}
+          style={{ backgroundColor: this.changeButtonColor(focusNumber) }}
+        > Coloque o foco: { focusNumber } </button>
       </>
     ) 
   }
