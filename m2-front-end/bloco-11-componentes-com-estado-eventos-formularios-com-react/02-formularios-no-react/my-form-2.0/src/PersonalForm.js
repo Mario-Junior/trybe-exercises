@@ -4,6 +4,7 @@ const states = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Dis
 
 class PersonalForm extends Component {
   render() {
+    const { changeHandler, onBlurHandler, currentState } = this.props;
     return (
       <fieldset>
         <legend>Dados pessoais</legend>

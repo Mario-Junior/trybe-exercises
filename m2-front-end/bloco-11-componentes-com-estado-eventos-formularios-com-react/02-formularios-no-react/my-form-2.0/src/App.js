@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from './Form';
+import FormError from './FormError';
+import FormDataDisplay from './FormDataDisplay';
 
 const initial_state = {
   name: '',
@@ -67,14 +69,28 @@ class App extends Component {
     return '';
   }
 
-  
+  resetForm = () => { this.setState(initial_state) };
+
+  sendForm = () => { this.setState({ submitted: true }) };
 
   render() {
+    const { submitted } = this.state;
+
     return (
-      <>
-        <Form />
-      </>
-    )
+      <main>
+        <Form
+          sendForm={this.sendForm}
+          resetForm={this.resetForm}
+          changeHandler={this.changeHandler}
+          currentState={this.currentState}
+          onBlurHandler={this.onBlurHandler}
+        />
+        <div className="container">
+          <FormError formError={this.state.formError} />
+        </div>
+        { submitted && <FormDataDisplay currentState={ this.state } /> }
+      </main>
+    );
   }
 }
 
