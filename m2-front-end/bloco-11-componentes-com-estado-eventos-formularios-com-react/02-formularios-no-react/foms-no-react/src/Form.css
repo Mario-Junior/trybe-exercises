@@ -4,15 +4,30 @@ main {
   flex-direction: column;
   border: 2px solid green;
   border-radius: 2vw;
-  margin: 2vw auto;
-  padding: 2vw;
+  margin: 3vw auto;
+  padding: 1vw;
+  text-align: center;
 }
 
 fieldset {
-  width: 90vw;
+  width: 86vw;
   display: flex;
   flex-direction: column;
   border: 2px solid green;
-  margin: 2vw auto;
-  padding: 2vw;
+  margin: 1vw auto;
+  padding: 1vw;
+  text-align: justify;
+}
+
+label {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  margin: 1vw auto;
+  padding: 1vw;
+}
+
+#ult {
+  width: 86vw;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Form.css';
 import AprendizadoFavorito from './AprendizadoFavorito';
+import Checkbox from './Checkbox';
 
 class Form extends Component {
   constructor() {
@@ -64,18 +65,8 @@ class Form extends Component {
             />
           </label>
           </fieldset>
-          <fieldset>
-          <legend>Complete o formulário</legend>
-          <label>
-            Você quer aprender mais com a TRYBE? 
-            <input
-              type="checkbox"
-              name="queroMais"
-              value={queroMais}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
+          <Checkbox value={this.state.queroMais} handleChange={this.handleChange} />
+          <label id="ult">
             Mande uma foto sua que represente você com a TRYBE: 
             <input
               type="file"
@@ -84,7 +75,6 @@ class Form extends Component {
               onChange={handleChange}
             />
           </label>
-          </fieldset>
         </form>
       </main>
     )
