@@ -49,7 +49,7 @@ class Form extends Component {
   }
 
   render () {
-    const { aprendizadoFavorito, nome, email, aprendizados, queroMais, enviaFoto } = this.state;
+    const { nome, email, aprendizados, enviaFoto } = this.state;
     const { handleChange } = this;
     return (
       <main>
