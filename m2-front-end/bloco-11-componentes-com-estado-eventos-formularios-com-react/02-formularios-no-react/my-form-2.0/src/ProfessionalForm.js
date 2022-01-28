@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ProfessionalForm extends Component {
+class ProfessionalFormForm extends Component {
   render() {
     const { changeHandler } = this.props;
     return (
@@ -41,4 +41,4 @@ class ProfessionalForm extends Component {
   }
 }
 
-export default ProfessionalForm;
+export default ProfessionalFormForm;

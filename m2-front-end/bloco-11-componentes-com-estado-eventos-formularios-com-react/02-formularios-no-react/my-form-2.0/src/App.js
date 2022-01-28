@@ -4,25 +4,25 @@ import Form from './Form';
 import FormError from './FormError';
 import FormDataDisplay from './FormDataDisplay';
 
-const initial_state = {
+const INITIAL_STATE = {
   name: '',
   email: '',
   cpf: '',
   address: '',
   city: '',
   countryState: '',
-  addresType: '',
+  addressType: '',
   resume: '',
   role: '',
   roleDescription: '',
   formError: {},
-  sudmitted: false,
+  submitted: false,
 }
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = initial_state;
+    this.state = INITIAL_STATE;
   }
 
   changeHandler = event => {
@@ -46,13 +46,13 @@ class App extends Component {
     this.setState((state) => ({
       [name]: value,
       formError: {
-        ... state.formError,
+        ...state.formError,
         [name]: this.validateField(name, value)
       }
     }));
   }
 
-  validateAddress = address => address.replace(/[^\w\s]/gi, '');
+  validateAddress = address => address.replace(/[^\w\s]/gi, '')
 
   handleSubmit = event => {
     event.preventDefault();
@@ -69,7 +69,7 @@ class App extends Component {
     return '';
   }
 
-  resetForm = () => { this.setState(initial_state) };
+  resetForm = () => { this.setState(INITIAL_STATE) };
 
   sendForm = () => { this.setState({ submitted: true }) };
 
@@ -82,8 +82,8 @@ class App extends Component {
           sendForm={this.sendForm}
           resetForm={this.resetForm}
           changeHandler={this.changeHandler}
-          currentState={this.currentState}
-          onBlurHandler={this.onBlurHandler}
+          currentState={ this.state }
+          onBlurHandler={ this.onBlurHandler }
         />
         <div className="container">
           <FormError formError={this.state.formError} />

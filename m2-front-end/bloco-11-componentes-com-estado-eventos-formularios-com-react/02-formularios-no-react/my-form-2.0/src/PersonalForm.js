@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-const states = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Roraima', 'Rondônia', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'];
+const states = ['Rio de Janeiro', 'Minas Gerais', 'Amapá', 'Amazonas', 'São Paulo', 'Ceará', 'Distrito Federal'];
 
 class PersonalForm extends Component {
   render() {
     const { changeHandler, onBlurHandler, currentState } = this.props;
     return (
       <fieldset>
-        <legend>Dados pessoais</legend>
+            <legend>Dados pessoais</legend>
             <div className="container">
               Nome:
               <input
@@ -98,7 +98,7 @@ class PersonalForm extends Component {
                 Apartamento
               </label>
             </div>
-      </fieldset>
+          </fieldset>
     );
   }
 }
