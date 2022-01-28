@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './Form.css';
 
 class Checkbox extends Component {
   render() {
     const { value, handleChange } = this.props;
 
     let error = '';
-    if(value === false) error = 'Este campo é obrigatório. Escolha uma opção!';
+    if(value === false) error = 'Este campo é obrigatório. Marque-o para prosseguir!';
     
     return (
       <fieldset>
@@ -18,7 +19,7 @@ class Checkbox extends Component {
           value={value}
           onChange={handleChange}
         />
-        <p>{error}</p>
+        <span>{error}</span>
       </label>
       </fieldset>
     )

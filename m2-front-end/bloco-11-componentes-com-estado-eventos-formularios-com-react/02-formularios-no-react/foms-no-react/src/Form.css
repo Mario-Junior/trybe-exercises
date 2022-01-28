@@ -23,11 +23,16 @@ label {
   width: 80vw;
   display: flex;
   flex-direction: column;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   margin: 1vw auto;
   padding: 1vw;
 }
 
 #ult {
   width: 86vw;
+  text-align: justify;
+}
+
+span {
+  color: red
 }

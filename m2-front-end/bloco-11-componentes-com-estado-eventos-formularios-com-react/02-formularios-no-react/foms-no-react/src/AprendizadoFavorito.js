@@ -5,7 +5,7 @@ class AprendizadoFavorito extends Component {
     const { value, handleChange } = this.props;
 
     let error = '';
-    if(value === '') error = 'Este campo é obrigatório. Escolha uma opção!';
+    if(value === '' || value === 'selecione') error = 'Este campo é obrigatório. Escolha uma opção!';
     
     return (
       <fieldset>
@@ -17,13 +17,13 @@ class AprendizadoFavorito extends Component {
           value={value}
           onChange={handleChange}
         >
-          <option value="html">Selecione</option>
+          <option value="selecione">Selecione</option>
           <option value="html">HTML</option>
           <option value="css">CSS</option>
           <option value="javascript">JavaScript</option>
           <option value="react">React</option>
         </select>
-        <p>{error}</p>
+        <span>{error}</span>
       </label>
       </fieldset>
     )
