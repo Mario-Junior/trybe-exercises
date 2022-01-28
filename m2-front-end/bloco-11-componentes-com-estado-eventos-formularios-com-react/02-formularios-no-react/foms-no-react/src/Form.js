@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
+import AprendizadoFavorito from './AprendizadoFavorito';
 
 class Form extends Component {
   constructor() {
@@ -33,22 +34,7 @@ class Form extends Component {
       <main>
         <h1>Estudando Formulários em React - Exercício de aprendizado</h1>
         <form className="form">
-          <fieldset>
-          <legend>Selecione aqui</legend>
-          <label>
-            Escolha seu aprendizado favorito até aqui: 
-            <select
-              name="aprendizadoFavorito"
-              value={aprendizadoFavorito}
-              onChange={handleChange}
-            >
-              <option value="html">HTML</option>
-              <option value="css">CSS</option>
-              <option value="javascript">JavaScript</option>
-              <option value="react">React</option>
-            </select>
-          </label>
-          </fieldset>
+          <AprendizadoFavorito value={this.state.aprendizadoFavorito} handleChange={this.handleChange} />
           <fieldset>
           <legend>Insira os dados solicitados</legend>
           <label>
