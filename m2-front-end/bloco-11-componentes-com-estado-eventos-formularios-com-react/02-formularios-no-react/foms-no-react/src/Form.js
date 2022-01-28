@@ -16,7 +16,27 @@ class Form extends Component {
       aprendizados: '',
       queroMais: false,
       enviaFoto: '',
+      formularioComErros: true,
     };
+  }
+
+  handleErro() {
+    const { aprendizadoFavorito, aprendizados, email, enviaFoto, nome, queroMais } = this.state;
+
+    const errorCases = [
+      aprendizadoFavorito === '',
+      !nome.length,
+      !email.match(/^\S+@\S+$/i),
+      !aprendizados.length,
+      queroMais === false,
+      enviaFoto === '',
+    ];
+
+    const formularioPreenchido = errorCases.every((error) => error !== true);
+
+    this.setState({
+      formularioComErros: !formularioPreenchido,
+    });
   }
 
   handleChange({ target }) {
@@ -25,7 +45,7 @@ class Form extends Component {
 
     this.setState({
       [name]: value,
-    });
+    }, () => { this.handleErro(); });
   }
 
   render () {
@@ -67,7 +87,7 @@ class Form extends Component {
           </fieldset>
           <Checkbox value={this.state.queroMais} handleChange={this.handleChange} />
           <label id="ult">
-            Mande uma foto sua que represente você com a TRYBE: 
+            Mande uma foto que represente você com a TRYBE: 
             <input
               type="file"
               name="enviaFoto"

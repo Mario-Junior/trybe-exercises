@@ -1,10 +1,13 @@
 main {
-  width: 94vw;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   border: 2px solid green;
   border-radius: 2vw;
-  margin: 3vw auto;
+  margin-bottom: 1vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-top: 2vw;
   padding: 1vw;
   text-align: center;
 }
@@ -20,10 +23,9 @@ fieldset {
 }
 
 label {
-  width: 80vw;
+  width: 82vw;
   display: flex;
   flex-direction: column;
-  /* border: 2px solid green; */
   margin: 1vw auto;
   padding: 1vw;
 }
