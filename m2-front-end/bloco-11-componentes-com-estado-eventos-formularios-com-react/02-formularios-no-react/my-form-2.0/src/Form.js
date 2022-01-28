@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 
 class Form extends Component {
   render() {
-    return 'Eu sou um formulário';
+    return (
+      <form>
+        Eu acho sou um Formulário
+      </form>
+    )
   }
 }
 
