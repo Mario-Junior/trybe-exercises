@@ -12,6 +12,8 @@ class Form extends Component {
       nome: '',
       email: '',
       aprendizados: '',
+      queroMais: false,
+      enviaFoto: '',
     };
   }
 
@@ -25,14 +27,16 @@ class Form extends Component {
   }
 
   render () {
-    const { aprendizadoFavorito, nome, email, aprendizados } = this.state;
+    const { aprendizadoFavorito, nome, email, aprendizados, queroMais, enviaFoto } = this.state;
     const { handleChange } = this;
     return (
-      <>
+      <main>
         <h1>Estudando Formulários em React - Exercício de aprendizado</h1>
         <form className="form">
+          <fieldset>
+          <legend>Selecione aqui</legend>
           <label>
-            Escolha seu aprendizado favorito até aqui:
+            Escolha seu aprendizado favorito até aqui: 
             <select
               name="aprendizadoFavorito"
               value={aprendizadoFavorito}
@@ -44,8 +48,11 @@ class Form extends Component {
               <option value="react">React</option>
             </select>
           </label>
+          </fieldset>
+          <fieldset>
+          <legend>Insira os dados solicitados</legend>
           <label>
-            Seu nome aqui:
+            Seu nome aqui: 
             <input
               type="name"
               name="nome"
@@ -54,7 +61,7 @@ class Form extends Component {
             />
           </label>
           <label>
-            Seu e-mail aqui:
+            Seu e-mail aqui: 
             <input
               type="email"
               name="email"
@@ -63,15 +70,37 @@ class Form extends Component {
             />
           </label>
           <label>
-            Diga mais sobre seus aprendizados até aqui!
+            Diga mais sobre seus aprendizados até aqui: 
             <textarea
               name="aprendizados"
               value={aprendizados}
               onChange={handleChange}
             />
           </label>
+          </fieldset>
+          <fieldset>
+          <legend>Complete o formulário</legend>
+          <label>
+            Você quer aprender mais com a TRYBE? 
+            <input
+              type="checkbox"
+              name="queroMais"
+              value={queroMais}
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Mande uma foto sua que represente você com a TRYBE: 
+            <input
+              type="file"
+              name="enviaFoto"
+              value={enviaFoto}
+              onChange={handleChange}
+            />
+          </label>
+          </fieldset>
         </form>
-      </>
+      </main>
     )
   }
 }
