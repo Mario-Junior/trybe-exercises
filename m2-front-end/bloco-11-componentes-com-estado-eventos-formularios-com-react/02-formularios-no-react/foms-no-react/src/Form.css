@@ -1,0 +1,40 @@
+main {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  border-radius: 2vw;
+  margin-bottom: 1vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-top: 2vw;
+  padding: 1vw;
+  text-align: center;
+}
+
+fieldset {
+  width: 86vw;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid green;
+  margin: 1vw auto;
+  padding: 1vw;
+  text-align: justify;
+}
+
+label {
+  width: 82vw;
+  display: flex;
+  flex-direction: column;
+  margin: 1vw auto;
+  padding: 1vw;
+}
+
+#ult {
+  width: 86vw;
+  text-align: justify;
+}
+
+span {
+  color: red
+}
