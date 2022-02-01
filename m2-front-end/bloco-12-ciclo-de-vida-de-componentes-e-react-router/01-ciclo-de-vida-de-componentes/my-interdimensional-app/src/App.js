@@ -9,13 +9,27 @@ class App extends Component {
     };
   }
 
-  fetchCharacters = () => {
-    fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(data => {
-      this.setState({characters: data.results})
-    })
-  }
+// Primeira maneira:
+// fetchCharacters() {
+//   fetch('https://rickandmortyapi.com/api/character')
+//   .then(response => response.json())
+//   .then(data => {
+//     this.setState({characters: data.results})
+//   })
+// }
+
+// componentDidMount() {
+//   this.fetchCharacters();
+// }
+
+// Segunda maneira:
+componentDidMount() {
+  fetch('https://rickandmortyapi.com/api/character')
+  .then(response => response.json())
+  .then(data => {
+    this.setState({characters: data.results})
+  })
+}
 
   render() {
     const { characters } = this.state;
