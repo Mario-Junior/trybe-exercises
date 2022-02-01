@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Counter from './Counter';
 
 class DadJoke extends Component {
   constructor() {
@@ -55,7 +56,7 @@ class DadJoke extends Component {
         </span>
 
       <span>RENDERIZAÇÃO CONDICIONAL</span>
-
+      
       </div>
     );
   }
