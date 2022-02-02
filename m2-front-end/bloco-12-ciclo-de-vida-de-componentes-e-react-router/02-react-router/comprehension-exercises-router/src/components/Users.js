@@ -10,7 +10,9 @@ class Users extends Component {
     return (
       <div>
         <h2>Users</h2>
-        <p> { id }, { greetingsMessage }, My awesome Users component </p>
+        <p> 
+          { greetingsMessage }, { id }, this is our awesome Users component
+        </p>
       </div>
     );
   }
