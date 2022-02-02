@@ -20,11 +20,22 @@ class Connections extends React.Component {
   }
 
   shouldComponentUpdate(_nextProps, { list }) {
+    const maxContactsNumber = 3;
 
+    return list.length <= maxContactsNumber;
+    // A quantidade de contatos não pode ser maior que 3, portanto se a lista é maior que 3, ele deverá retornar false e impedir a atualização.
   }
 
   componentDidUpdate(_prevProps, prevState) {
+    const { list } = this.state;
 
+    if (prevState.list.length < list.length) {
+      this.changeToBlue();
+    // Ao adicionar um contato, a div ficará azul.
+    } else if (prevState.list.length > list.length) {
+      this.changeToCoral();
+    // Ao deletar um contato, a div ficará coral.
+    }
   }
 
   handleChange({ target: { value } }) {

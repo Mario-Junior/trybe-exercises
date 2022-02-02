@@ -8,7 +8,6 @@
   max-width: 250px;
 }
 
-
 .c-button {
   margin-top: 10px;
 }
@@ -33,7 +32,6 @@
 .connections-coral {
   background-color: lightcoral;
 }
-
 
 .counter {
   margin: 15px 0;
@@ -70,7 +68,7 @@
 .myPicture {
   border: 4px solid white;
   border-radius: 100%;
-  width: 200px;
+  width: 150px;
 }
 
 img {
