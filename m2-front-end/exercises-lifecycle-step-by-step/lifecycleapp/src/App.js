@@ -6,6 +6,13 @@ import Connections from './components/Connections';
 
 class App extends React.Component {
   constructor() {
+    super();
+
+    this.state = {
+  showProfile: true,
+  };
+
+  this.changeProfile = this.changeProfile.bind(this);
 
   }
 
