@@ -9,15 +9,17 @@ class App extends Component {
     return (
       <BrowserRouter>
         <h1>Meu App React - Treinando React Router Dom</h1>
-        <ul>
+        <nav>
           <li><Link to="/" > Home </Link></li>
           <li><Link to="/about" > About </Link></li>
           <li><Link to="/users" > Users </Link></li>
-        </ul>
+        </nav>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/about" component={About}/>
-          <Route path="/users" render={() => <Users greetingsMessage="Good Morning"/>}/>
+          <Route path="/users/:id" render={(props) =>
+            <Users {...props} greetingsMessage="Good Morning"/>}
+          />
         </Switch>
       </BrowserRouter>
     );
