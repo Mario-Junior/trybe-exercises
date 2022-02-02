@@ -27,16 +27,20 @@ class App extends Component {
   }
 
   shouldComponentUpdate(_nextProps, nextState) {
-    const breed = 'terrier';
+    const noBreed = 'terrier';
 
-    if (nextState.dog.message.includes(breed)) {
+    if (nextState.dog.message.includes(noBreed)) {
       return false;
     }
     return true;
   }
 
   componentDidUpdate() {
-    
+    const { dog } = this.state;
+    const breed = dog.message.split('/')[4];
+
+    localStorage.setItem("dogUrl", dog.message);
+    alert(breed);
   }
 
   refreshPage = () => window.location.reload();
