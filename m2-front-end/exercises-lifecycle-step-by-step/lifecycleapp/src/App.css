@@ -1,0 +1,93 @@
+.card {
+  background-color: aliceblue;
+  border-radius: 25px !important;
+  max-height: 200px;
+  padding: 10px;
+  text-align: center;
+  width: 30vw;
+  max-width: 250px;
+}
+
+
+.c-button {
+  margin-top: 10px;
+}
+
+.c-img {
+  max-width: 100px;
+}
+
+.card-list {
+  margin-top: 20px;
+  width: 100vw;
+}
+
+.central {
+  height: 10vh;
+}
+
+.connections-blue {
+  background-color: lightblue;
+}
+
+.connections-coral {
+  background-color: lightcoral;
+}
+
+
+.counter {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.git {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  height: 40vh;
+  margin: 10px;
+}
+
+.git-connections {
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  justify-content: start;
+  width: 100vw;
+}
+
+.gitNetwork {
+  background-color: lavender;
+  height: 100vh;
+  width: 100vw;
+}
+
+.form {
+  text-align: center;
+  width: 90%;
+}
+
+.myPicture {
+  border: 4px solid white;
+  border-radius: 100%;
+  width: 200px;
+}
+
+img {
+  border-radius: 25px !important;
+}
+
+input {
+  min-width: 150px !important;
+  max-width: 250px;
+}
+
+p {
+  text-align: center;
+}
+
+span {
+  color: #710ece;
+  font-size: x-large;
+  font-weight: 600;
+}
