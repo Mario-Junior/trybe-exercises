@@ -45,15 +45,21 @@ class App extends Component {
 
   refreshPage = () => window.location.reload();
 
+  saveDog = () => {};
+
   render() {
     const { dog, loading } = this.state;
     const loadingElement = <p><span role="img" aria-label="dog">🐶 Loading...</span></p>
-    const dogImg = <div><img src={dog.message} alt="doguinho"></img></div>
+    const dogImg = <div className='dog-img'><img src={dog.message} alt="doguinho"></img></div>
     return(
-      <div>
-        <button type="button" onClick={this.refreshPage}>Novo Doguinho</button>
+      <section>
+        <div className="controller">
+          <button type="button" onClick={this.refreshPage}>Novo Doguinho</button>
+          <input type="text" name="dog-name" placeholder="Dê nome ao Doguinho" />
+          <button type="button" onClick={this.saveDog}>Salvar Doguinho</button>
+        </div>
         { loading ? loadingElement : dogImg }
-      </div>
+      </section>
     )
   }
 }
