@@ -78,7 +78,7 @@ class App extends Component {
   };
 
   render() {
-    const { dog } = this.state;
+    const { dog, dogName } = this.state;
     const loadingElement = <p><span role="img" aria-label="dog">🐶 Loading...</span></p>
     const dogImg = <div className='dog-img'><img src={dog.message} alt='doguinho'></img></div>
 
@@ -98,7 +98,7 @@ class App extends Component {
           <button type="button" onClick={this.saveDog}>Salvar Doguinho</button>
         </div>
         { dogImg }
-        <span>{ this.state.savedName }</span>
+        <span>{ !dogName ? this.state.savedName : dogName }</span>
       </section>
     )
   }
