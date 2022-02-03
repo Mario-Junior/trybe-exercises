@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       dog: {},
+      dogName: '',
+      array: [],
       loading: true,
     }
   }
@@ -16,7 +18,6 @@ class App extends Component {
       const require = await fetch('https://dog.ceo/api/breeds/image/random');
       const data = await require.json();
 
-      console.log(data.message.split('/'));
       this.setState({ 
         dog: data,
         loading: false,
@@ -26,7 +27,7 @@ class App extends Component {
     }
   }
 
-  shouldComponentUpdate(_nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     const noBreed = 'terrier';
 
     if (nextState.dog.message.includes(noBreed)) {
@@ -35,17 +36,39 @@ class App extends Component {
     return true;
   }
 
-  componentDidUpdate() {
-    const { dog } = this.state;
-    const breed = dog.message.split('/')[4];
+  componentDidUpdate(prevProps, prevState) {
+      const { dog } = this.state;
+      const breed = dog.message.split('/')[4];
+    console.log(prevState.dog, this.state.dog);
+    if (prevState.dog !== this.state.dog) {
+      alert(breed);
+    }
+  }
 
-    localStorage.setItem("dogUrl", dog.message);
-    alert(breed);
+  handleInputChange = ({ target }) => {
+    const { name, value, checked, type } = target;
+    console.log(name, value);
+    this.setState({
+      [name]: type === 'checkbox' ? checked : value,
+    }, () => this.enableSaveButton());
   }
 
   refreshPage = () => window.location.reload();
 
-  saveDog = () => {};
+  saveDog = () => {
+    const {
+      dog: { message },
+      dogName,
+      array
+    } = this.state;
+    const dogData = { message, dogName };
+    const newArray = [...array, dogData];
+    this.setState({ array: newArray });
+    this.setState({ dogName: '' });
+    localStorage.setItem('namedDogUrl', JSON.stringify(newArray));
+  };
+
+  enableSaveButton = () => {};
 
   render() {
     const { dog, loading } = this.state;
@@ -55,7 +78,7 @@ class App extends Component {
       <section>
         <div className="controller">
           <button type="button" onClick={this.refreshPage}>Novo Doguinho</button>
-          <input type="text" name="dog-name" placeholder="Dê nome ao Doguinho" />
+          <input type="text" name="dogName" placeholder="Dê nome ao Doguinho" onChange={this.handleInputChange} />
           <button type="button" onClick={this.saveDog}>Salvar Doguinho</button>
         </div>
         { loading ? loadingElement : dogImg }

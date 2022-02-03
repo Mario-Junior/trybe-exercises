@@ -49,6 +49,10 @@ section {
   width: 50vw;
 }
 
+input {
+  text-align: center;
+}
+
 .dog-img {
   display: flex;
   flex-direction: column;
