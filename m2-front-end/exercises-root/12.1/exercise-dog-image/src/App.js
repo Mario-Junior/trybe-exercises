@@ -6,28 +6,43 @@ class App extends Component {
     super(props)
 
     this.state = {
-      dog: {},
+      dog: '',
       dogName: '',
       array: [],
-      loading: true,
+      savedName: ''
     }
   }
 
-  async componentDidMount() {
+  fetchDog = async () => {
     try {
       const require = await fetch('https://dog.ceo/api/breeds/image/random');
       const data = await require.json();
 
       this.setState({ 
         dog: data,
-        loading: false,
       });
     } catch (error) {
       console.log(error);
     }
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  componentDidMount() {
+    if (localStorage.namedDogUrl) {
+      const parseStorage = JSON.parse(localStorage.namedDogUrl);
+      const lastDog = parseStorage[parseStorage.length - 1].message;
+      const name = parseStorage[parseStorage.length - 1].dogName;
+
+      this.setState({
+        array: parseStorage,
+        dog: { message: lastDog },
+        savedName: name,
+      });
+    } else {
+      this.fetchDog();
+    }
+  }
+
+  shouldComponentUpdate(_nextProps, nextState) {
     const noBreed = 'terrier';
 
     if (nextState.dog.message.includes(noBreed)) {
@@ -36,16 +51,13 @@ class App extends Component {
     return true;
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_prevProps, prevState) {
       const { dog } = this.state;
       const breed = dog.message.split('/')[4];
-    console.log(prevState.dog, this.state.dog);
     if (prevState.dog !== this.state.dog) {
       alert(breed);
     }
   }
-
-  refreshPage = () => window.location.reload();
 
   saveDog = () => {
     const {
@@ -55,19 +67,27 @@ class App extends Component {
     } = this.state;
     const dogData = { message, dogName };
     const newArray = [...array, dogData];
-    this.setState({ array: newArray });
-    this.setState({ dogName: '' });
-    localStorage.setItem('namedDogUrl', JSON.stringify(newArray));
+
+    if (!dogName) {
+      alert('Dê um nome ao Doguinho!');
+    } else {
+      this.setState({ array: newArray });
+      this.setState({ dogName: '' });
+      localStorage.setItem('namedDogUrl', JSON.stringify(newArray));
+    }
   };
 
   render() {
-    const { dog, loading } = this.state;
+    const { dog } = this.state;
     const loadingElement = <p><span role="img" aria-label="dog">🐶 Loading...</span></p>
-    const dogImg = <div className='dog-img'><img src={dog.message} alt="doguinho"></img></div>
+    const dogImg = <div className='dog-img'><img src={dog.message} alt='doguinho'></img></div>
+
+    if (dog === '') return loadingElement;
+
     return(
       <section>
         <div className="controller">
-          <button type="button" onClick={this.refreshPage}>Novo Doguinho</button>
+          <button type="button" onClick={this.fetchDog}>Novo Doguinho</button>
           <input
             type="text"
             name="dogName"
@@ -77,7 +97,8 @@ class App extends Component {
           />
           <button type="button" onClick={this.saveDog}>Salvar Doguinho</button>
         </div>
-        { loading ? loadingElement : dogImg }
+        { dogImg }
+        <span>{ this.state.savedName }</span>
       </section>
     )
   }
