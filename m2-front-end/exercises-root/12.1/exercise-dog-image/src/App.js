@@ -45,14 +45,6 @@ class App extends Component {
     }
   }
 
-  handleInputChange = ({ target }) => {
-    const { name, value, checked, type } = target;
-    console.log(name, value);
-    this.setState({
-      [name]: type === 'checkbox' ? checked : value,
-    }, () => this.enableSaveButton());
-  }
-
   refreshPage = () => window.location.reload();
 
   saveDog = () => {
@@ -68,8 +60,6 @@ class App extends Component {
     localStorage.setItem('namedDogUrl', JSON.stringify(newArray));
   };
 
-  enableSaveButton = () => {};
-
   render() {
     const { dog, loading } = this.state;
     const loadingElement = <p><span role="img" aria-label="dog">🐶 Loading...</span></p>
@@ -78,7 +68,13 @@ class App extends Component {
       <section>
         <div className="controller">
           <button type="button" onClick={this.refreshPage}>Novo Doguinho</button>
-          <input type="text" name="dogName" placeholder="Dê nome ao Doguinho" onChange={this.handleInputChange} />
+          <input
+            type="text"
+            name="dogName"
+            value={ this.state.dogName }
+            placeholder="Dê nome ao Doguinho"
+            onChange={ event => this.setState({ dogName: event.target.value })}
+          />
           <button type="button" onClick={this.saveDog}>Salvar Doguinho</button>
         </div>
         { loading ? loadingElement : dogImg }
