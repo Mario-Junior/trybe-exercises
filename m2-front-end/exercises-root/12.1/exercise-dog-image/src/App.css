@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.controller {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+input {
+  text-align: center;
+}
+
+.dog-img {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+img {
+  margin: 0 auto;
+  width: 100%;
+}
