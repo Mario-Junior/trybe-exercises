@@ -15,3 +15,12 @@ test('Testando um componente, caso o email seja inválido.', () => {
   const isValid = screen.getByText('Email Inválido');
   expect(isValid).toBeInTheDocument();
 });
+
+// Note que utilizamos o 'queryBy' ao invés do 'getBy', pois o getBy retorna um erro
+// caso o elemento não seja encontrado, encerrando o teste, já o queryBy retorna null,
+// sendo útil para verificar a não existência de algum elemento na página.
+test('Testando se o componente não aparece caso o campo email esteja vazio.', () => {
+  render(<ValidEmail email="" />)
+  const isValidText = screen.queryByTestId('id-is-email-valid');
+  expect(isValidText).not.toBeInTheDocument();
+});
