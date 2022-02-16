@@ -6,7 +6,7 @@ import App from './App';
 
 test('alterando o valor dos campos e testando o valor guardado', () => {
   render(<App />);
-  const inputNome = screen.getByRole('text', { name: /nome/i });
+  const inputNome = screen.getByRole('textbox', { name: /nome/i });
   expect(inputNome).toBeInTheDocument();
   expect(inputNome).toHaveValue('');
   userEvent.type(inputNome, 'Estudante da Trybe');
