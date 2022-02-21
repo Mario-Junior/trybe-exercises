@@ -82,35 +82,35 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ## Desenvolvimento Front-end :computer:
 
-##### Bloco 10: Introdução - React :hourglass_flowing_sand:
+##### Bloco 10: Introdução - React
 
 - [X] 10-1: _'Hello, world!' no React!_
-- [ ] 10-2: _Componentes React_
-- [ ] 10-3: _[Projeto - Sistema Solar]()_
+- [X] 10-2: _Componentes React_
+- [X] 10-3: _[Projeto - Sistema Solar](https://github.com/tryber/sd-018-b-project-solar-system/tree/mario-junior-solar-system)_
 
-##### Bloco 11: Componentes com Estado, Eventos e Formulários com React :hourglass_flowing_sand:
+##### Bloco 11: Componentes com Estado, Eventos e Formulários com React
 
-- [ ] 11-1: _Componentes com estado e eventos_
-- [ ] 11-2: _Formulários no React_
-- [ ] 11-3: _[Projeto - Tryunfo]()_
+- [X] 11-1: _Componentes com estado e eventos_
+- [X] 11-2: _Formulários no React_
+- [X] 11-3: _[Projeto - Tryunfo](https://github.com/tryber/sd-018-b-project-tryunfo/tree/mario-junior-tryunfo)_
 
-##### Bloco 12: Ciclo de Vida de Componentes e React Router :hourglass_flowing_sand:
+##### Bloco 12: Ciclo de Vida de Componentes e React Router
 
-- [ ] 12-1: _Ciclo de vida de componentes_
-- [ ] 12-2: _React Router_
-- [ ] 12-3: _[Projeto - TrybeTunes]()_
+- [X] 12-1: _Ciclo de vida de componentes_
+- [X] 12-2: _React Router_
+- [X] 12-3: _[Projeto - TrybeTunes](https://github.com/tryber/sd-018-b-project-trybetunes/tree/mario-junior-trybetunes)_
 
-##### Bloco 13: Metodologias Ágeis :hourglass_flowing_sand:
+##### Bloco 13: Metodologias Ágeis
 
-- [ ] 13-1: _Metodologias Ágeis_
-- [ ] 13-2: _[Projeto - Frontend Online Store]()_
+- [X] 13-1: _Metodologias Ágeis_
+- [X] 13-2: _[Projeto - Frontend Online Store](https://github.com/tryber/sd-018-b-project-frontend-online-store/tree/main-group-5)_
 
-##### Bloco 14: Testes automatizados com React Testing Library :hourglass_flowing_sand:
+##### Bloco 14: Testes automatizados com React Testing Library
 
-- [ ] 14-1: _RTL - Primeiros passos_
-- [ ] 14-2: _RTL - Mocks e Inputs_
-- [ ] 14-3: _RTL - Testando React Router_
-- [ ] 14-4: _[Projeto - Testes em React]()_
+- [X] 14-1: _RTL - Primeiros passos_
+- [X] 14-2: _RTL - Mocks e Inputs_
+- [X] 14-3: _RTL - Testando React Router_
+- [X] 14-4: _[Projeto - React Testing Library](https://github.com/tryber/sd-018-b-project-react-testing-library/tree/mario-junior-react-testing-library)_
 
 ##### Bloco 15: Gerenciamento de estado com Redux :hourglass_flowing_sand:
 
