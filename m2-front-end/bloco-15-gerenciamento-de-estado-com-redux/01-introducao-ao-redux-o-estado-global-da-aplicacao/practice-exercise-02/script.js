@@ -12,16 +12,20 @@ const ESTADO_INICIAL_2 = {
   cidade: 'São Paulo',
 };
 
-const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
+const firstReducer = (state = ESTADO_INICIAL_1, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
+const secondReducer = (state = ESTADO_INICIAL_2, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
+
+const centralReducer = Redux.combineReducers({ firstReducer, secondReducer });
+
+const store = Redux.createStore(centralReducer);
