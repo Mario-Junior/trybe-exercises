@@ -57,5 +57,4 @@ store.subscribe(() => {
   const { colors, index } = store.getState();
   document.getElementById('value').innerHTML = colors[index];
   document.getElementById('container').style.backgroundColor = colors[index];
-  console.log(colors);
 });
