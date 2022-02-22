@@ -41,3 +41,27 @@ switch (action.type) {
 const mainReducer = Redux.combineReducers({ primeiroReducer, segundoReducer });
 
 const store = Redux.createStore(mainReducer);
+
+window.onload = () => {
+  setInterval(() => {
+    store.dispatch({
+      type: 'ALTERAR_PRIMEIRO_NOME_E_SOBRENOME',
+      nome: 'Bruna',
+      sobrenome: 'Santana Oliveira',
+    });
+    store.dispatch({
+      type: 'ALTERAR_SEGUNDO_NOME_E_SOBRENOME',
+      nome: 'Rodrigo',
+      sobrenome: 'Santos da Silva',
+    });
+  }, 2000);
+};
+
+store.subscribe(() => {
+  const { primeiroReducer, segundoReducer } = store.getState();
+  document.getElementById('nome-1').innerHTML = primeiroReducer.nome;
+  document.getElementById('sobrenome-1').innerHTML = primeiroReducer.sobrenome;
+
+  document.getElementById('nome-2').innerHTML = segundoReducer.nome;
+  document.getElementById('sobrenome-2').innerHTML = segundoReducer.sobrenome;
+});
