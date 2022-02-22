@@ -12,20 +12,32 @@ const ESTADO_INICIAL_2 = {
   cidade: 'São Paulo',
 };
 
-const firstReducer = (state = ESTADO_INICIAL_1, action) => {
+const primeiroReducer = (state = ESTADO_INICIAL_1, action) => {
   switch (action.type) {
+    case 'ALTERAR_PRIMEIRO_NOME_E_SOBRENOME':
+      return {
+        ...state,
+        nome: action.nome,
+        sobrenome: action.sobrenome,
+      };
     default:
       return state;
   }
 };
 
-const secondReducer = (state = ESTADO_INICIAL_2, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
+const segundoReducer = (state = ESTADO_INICIAL_2, action) => {
+switch (action.type) {
+  case 'ALTERAR_SEGUNDO_NOME_E_SOBRENOME':
+    return {
+      ...state,
+      nome: action.nome,
+      sobrenome: action.sobrenome,
+    };
+  default:
+    return state;
+}
 };
 
-const centralReducer = Redux.combineReducers({ firstReducer, secondReducer });
+const mainReducer = Redux.combineReducers({ primeiroReducer, segundoReducer });
 
-const store = Redux.createStore(centralReducer);
+const store = Redux.createStore(mainReducer);
