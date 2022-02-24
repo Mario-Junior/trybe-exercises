@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Select from '../components/Select';
+import addInfos from '../redux/actions/actions';
 
 class PersonalForm extends Component {
   constructor() {
@@ -23,6 +25,14 @@ class PersonalForm extends Component {
   handleChange({ target }) {
     const { name, value } = target;
     this.setState({ [name]: value });
+  }
+
+  onClickHandlePersonalInfo = () => {
+    const { personalDispatch, history } = this.props;
+    const personalInfo = this.state;
+
+    personalDispatch(personalInfo);
+    history.push('/professionalform');
   }
 
   render() {
@@ -84,11 +94,20 @@ class PersonalForm extends Component {
         <Button
           type="button"
           label="Enviar"
-          onClick={ () => console.log('Ao clicar, envie a informação do formulário') }
+          onClick={ this.onClickHandlePersonalInfo }
         />
       </fieldset>
     );
   }
 }
 
-export default PersonalForm;
+PersonalForm.propTypes = {
+  personalDispatch: PropTypes.func.isRequired,
+  history: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  personalDispatch: (state) => dispatch(addInfos(state)),
+});
+
+export default connect(null, mapDispatchToProps)(PersonalForm);

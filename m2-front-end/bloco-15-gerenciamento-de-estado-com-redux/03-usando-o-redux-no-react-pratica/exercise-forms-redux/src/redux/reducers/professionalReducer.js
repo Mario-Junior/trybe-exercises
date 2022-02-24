@@ -8,9 +8,9 @@ const professionalReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case 'ADD_INFO':
     return { ...state,
-      curriculo: action.value,
-      cargo: action.value,
-      descricao: action.value,
+      curriculo: action.curriculo,
+      cargo: action.cargo,
+      descricao: action.descricao,
     };
   default:
     return state;
