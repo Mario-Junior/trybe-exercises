@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class FormDataDisplay extends Component {
   render() {
     // Recupere as informações do seu estado criado no Redux
+    const { userInfos } = this.props;
+    const { nome, email, cpf, endereco, cidade, estado,
+      curriculo, cargo, descricao } = userInfos;
     return (
       <div>
         <h2>Dados enviados</h2>
@@ -47,4 +52,12 @@ class FormDataDisplay extends Component {
   }
 }
 
-export default FormDataDisplay;
+const mapStateToProps = (state) => ({
+  userInfos: state.userReducer,
+});
+
+FormDataDisplay.propTypes = {
+  userInfos: PropTypes.shape.isRequired,
+};
+
+export default connect(mapStateToProps, null)(FormDataDisplay);
