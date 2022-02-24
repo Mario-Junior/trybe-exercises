@@ -1,9 +1,8 @@
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import personalReducer from '../reducers/personalReducer';
-import professionalReducer from '../reducers/professionalReducer';
+import userReducer from '../reducers/userReducer';
 
-const rootReducer = combineReducers({ personalReducer, professionalReducer });
+const rootReducer = combineReducers({ userReducer });
 
 const store = createStore(rootReducer, composeWithDevTools());
 

@@ -5,9 +5,12 @@ const INITIAL_STATE = {
   endereco: '',
   cidade: '',
   estado: '',
+  curriculo: '',
+  cargo: '',
+  descricao: '',
 };
 
-const personalReducer = (state = INITIAL_STATE, action) => {
+const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case 'ADD_INFO':
     return { ...state,
@@ -18,4 +21,4 @@ const personalReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default personalReducer;
+export default userReducer;
