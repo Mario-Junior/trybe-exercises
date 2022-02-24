@@ -10,8 +10,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={ PersonalForm } />
-          <Route path="/professionalform" component={ ProfessionalForm } />
-          <Route path="/formdisplay" component={ FormDataDisplay } />
+          <Route exact path="/professionalform" component={ ProfessionalForm } />
+          <Route exact path="/formdisplay" component={ FormDataDisplay } />
         </Switch>
       </BrowserRouter>
     );
