@@ -114,10 +114,10 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 15: Gerenciamento de estado com Redux :hourglass_flowing_sand:
 
-- [ ] 15-1: _Introdução ao Redux_
-- [ ] 15-2: _Usando o Redux no React_
-- [ ] 15-3: _Usando o Redux no React - Prática_
-- [ ] 15-4: _Usando o Redux no React - Actions Assíncronas_
+- [X] 15-1: _Introdução ao Redux_
+- [X] 15-2: _Usando o Redux no React_
+- [X] 15-3: _Usando o Redux no React - Prática_
+- [X] 15-4: _Usando o Redux no React - Actions Assíncronas_
 - [ ] 15-5: _Testes em React-Redux_
 - [ ] 15-6: _[Projeto - Trybe Wallet]()_
 
