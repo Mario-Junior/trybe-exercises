@@ -17,7 +17,7 @@ const renderWithRedux = (
 
 describe('testing clicks', () => {
   beforeEach(cleanup);
-  test('the page should has a button and a text 0', () => {
+  test('the page should have a button and a text 0', () => {
     const { queryByText } = renderWithRedux(<App />);
     const buttonAdicionar = queryByText('Clique aqui');
 
