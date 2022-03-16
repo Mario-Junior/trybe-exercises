@@ -112,14 +112,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 14-3: _RTL - Testando React Router_
 - [X] 14-4: _[Projeto - React Testing Library](https://github.com/tryber/sd-018-b-project-react-testing-library/tree/mario-junior-react-testing-library)_
 
-##### Bloco 15: Gerenciamento de estado com Redux :hourglass_flowing_sand:
+##### Bloco 15: Gerenciamento de estado com Redux
 
 - [X] 15-1: _Introdução ao Redux_
 - [X] 15-2: _Usando o Redux no React_
 - [X] 15-3: _Usando o Redux no React - Prática_
 - [X] 15-4: _Usando o Redux no React - Actions Assíncronas_
 - [X] 15-5: _Testes em React-Redux_
-- [X] 15-6: _[Projeto - Trybe Wallet]()_
+- [X] 15-6: _[Projeto - Trybe Wallet](https://github.com/tryber/sd-018-b-project-trybewallet/tree/mario-junior-trybewallet)_
 
 ##### Bloco 16: Projeto React :hourglass_flowing_sand:
 
