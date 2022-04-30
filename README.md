@@ -134,16 +134,16 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 18: Projeto Final de Front-end :hourglass_flowing_sand:
 
-- [ ] 18-1: _[Projeto - App de Receitas]()_
+- [X] 18-1: _[Projeto - App de Receitas]()_
 
 ## Desenvolvimento Back-end :hourglass_flowing_sand:
 
 ##### Bloco 19: Introdução à SQL :hourglass_flowing_sand:
 
-- [ ] 19-1: _Banco de dados SQL_
-- [ ] 19-2: _Encontrando dados em um banco de dados_
-- [ ] 19-3: _Filtrando dados de forma específica_
-- [ ] 19-4: _Manipulando tabelas_
+- [X] 19-1: _Banco de dados SQL_
+- [X] 19-2: _Encontrando dados em um banco de dados_
+- [X] 19-3: _Filtrando dados de forma específica_
+- [X] 19-4: _Manipulando tabelas_
 - [ ] 19-5: _[Projeto - All For One]()_
 
 ##### Bloco 20: Funções SQL, Joins e Subqueries :hourglass_flowing_sand:
