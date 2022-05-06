@@ -144,13 +144,13 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 19-2: _Encontrando dados em um banco de dados_
 - [X] 19-3: _Filtrando dados de forma específica_
 - [X] 19-4: _Manipulando tabelas_
-- [ ] 19-5: _[Projeto - All For One]()_
+- [X] 19-5: _[Projeto - All For One]()_
 
 ##### Bloco 20: Funções SQL, Joins e Subqueries :hourglass_flowing_sand:
 
-- [ ] 20-1: _Funções mais usadas no SQL_
-- [ ] 20-2: _Descomplicando JOINs, UNIONs e Subqueries_
-- [ ] 20-3: _Stored Routines & Stored Functions_
+- [X] 20-1: _Funções mais usadas no SQL_
+- [X] 20-2: _Descomplicando JOINs, UNIONs e Subqueries_
+- [X] 20-3: _Stored Routines & Stored Functions_
 - [ ] 20-4: _[Projeto - Vocabulary Booster]()_
 
 ##### Bloco 21: Normalização e Modelagem de Bancos de Dados :hourglass_flowing_sand:
