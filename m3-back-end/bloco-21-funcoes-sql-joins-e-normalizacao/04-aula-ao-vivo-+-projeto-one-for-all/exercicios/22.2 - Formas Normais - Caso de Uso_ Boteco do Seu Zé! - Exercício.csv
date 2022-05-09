@@ -1,0 +1,18 @@
+"O boteco do seu zé é um famoso boteco no centro de BH que recebe gente do Brasil inteiro atrás dos melhores lanches, seja coxinha, empada ou os tradicionais pão de queijo e doce de leite, patrimônio histórico de MG. 
+
+Porém o seu Zé anota todos os pedidos em uma caderneta no modo antigo, mas agora quer conhecer melhor o seu público e não sabe como fazer. 
+
+Ele contratou vocês para criar uma aplicação e quer começar organizando os registros dele em um banco de dados, com o conhecimento que ele tem sobre Excel, ele começou a preencher uma planilha para organizar os últimos pedidos que ele fez. 
+
+Agora vocês precisam normalizar essa planilha do seu Zé para seguir as boas práticas das 3 formas normais. Você pode normalizar uma forma normal por vez ou todas de uma vez só. Fique a vontade para criar quantas tabelas vocês acharem necessárias 
+e também para modificar os valores salvos para que atendam as condições de tipos específicos de coluna. Os nomes das colunas também podem ser alterados desde que preserve o sentido do seu propósito.
+
+O Seu Zé conta com vocês! Bom trabalho!",,,,,,,
+,,,,,,,
+,,,,,,,
+pedido_id,pedido_data,produtos,preco_total,forma_de_pagamento,num_cliente,cliente,endereco_cliente
+1,25/07/2021,"1 Coxinha (R$ 5,00), 1 Coca lata (R$ 5,00)","R$ 10,00",Débito,"""001""",Batman,"Av Paulista, Jardins, SP - SP"
+2,2021-07-27,"1 Empada (R$ 5,00), 1 Suco 300ml (R$ 3,00)","R$ 8,00",Crédito,"""002""",Superman,"AV Getúlio Vargas, Funcionários, BH - MG"
+3,28-07-2021,"3 x Coxinha (R$ 5,00), 1 Doce de leite (200g) (R$ 10,00)","R$ 25,00",Débito,3,Mulher-Maravilha,"Av Brasil numero 124, Bloco A, Centro, BH - MG"
+4,28/07/2021,"4 x Pão de Queijo (R$ 10,00), 2 Café (300ml) (R$ 14,00)","R$ 24,00",VR,"""002""",Superman,"AV Getúlio Vargas, 100, Apartamento 201, Funcionários, BH - MG"
+5,29-07-2021,"1 Coxinha (R$ 5,00), 1 Café (R$ 2,00)","R$ 7,00",Dinheiro,4,Flash,"Av Nossa Senhora de Fátima, Bairro de Fátima, THE - PI"
