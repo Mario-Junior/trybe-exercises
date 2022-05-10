@@ -1,0 +1,2 @@
+Node.js - Fluxo Assíncrono
+Lendo arquivos com métodos síncronos
