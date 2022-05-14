@@ -1,6 +1,7 @@
-/* index.js */
 const express = require('express');
 const app = express();
+
+app.use(express.json());
 
 const cors = require('cors');
 
@@ -16,10 +17,9 @@ app.get('/recipes', function (_req, res) {
   res.json(recipes.sort((a, b) => a.name.localeCompare(b.name)));
 });
 
-app.get('/recipes/search', function (req, res) {
+app.get('/recipes/search', (req, res) => {
   const { name, minPrice, maxPrice } = req.query;
-  const filteredRecipes = recipes
-    .filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase())
+  const filteredRecipes = recipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase())
   && recipe.price >= Number(minPrice)
   && recipe.price < parseInt(maxPrice));
   res.status(200).json(filteredRecipes);
@@ -33,6 +33,12 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
+app.post('/recipes', function (req, res) {
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime });
+  res.status(201).json({ message: 'Recipe created successfully!'});
+});
+
 const drinks = [
 	{ id: 1, name: 'Refrigerante Lata', price: 5.0 },
 	{ id: 2, name: 'Refrigerante 600ml', price: 8.0 },
@@ -41,6 +47,12 @@ const drinks = [
 	{ id: 5, name: 'Cerveja Lata', price: 4.5 },
 	{ id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
+
+app.post('/drinks', (req, res) => {
+  const { id, name, price } = req.body;
+  drinks.push({ id, name, price });
+  res.status(201).json({ message: 'Drink added successfully!'});
+});
 
 app.get('/drinks', function (_req, res) {
   res.json(drinks.sort((a, b) => a.name.localeCompare(b.name)));
@@ -60,6 +72,13 @@ app.get('/drinks/:id', function (req, res) {
 
   if(!drink) return res.status(404).json({message: 'No Orange Juice here!'});
   res.status(200).json(drink);
+});
+
+app.get('/validateToken', (req, res) => {
+  const token = req.headers.authorization;
+  if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
+
+  res.status(200).json({message: 'Valid Token!'});
 });
 
 app.listen(3001, () => {
