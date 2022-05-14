@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  api:
+    container_name: api
+    image: node:16
+    restart: always
+    ports:
+      - 3001:3001
+    environment:
+      - SERVER_PORT=3001
+    volumes:
+      - ./:/usr/app
+    working_dir: /usr/app
+    command: npm run debug
