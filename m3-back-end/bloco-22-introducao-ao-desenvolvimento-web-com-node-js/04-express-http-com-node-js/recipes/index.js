@@ -46,6 +46,14 @@ app.get('/drinks', function (_req, res) {
   res.json(drinks.sort((a, b) => a.name.localeCompare(b.name)));
 });
 
+app.get('/drinks/search', function (req, res) {
+  const { name } = req.query;
+  const filteredDrinks = drinks
+    .filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));
+  
+  res.status(200).json(filteredDrinks);
+});
+
 app.get('/drinks/:id', function (req, res) {
   const { id } = req.params;
   const drink = drinks.find((drink) => drink.id === Number(id));
