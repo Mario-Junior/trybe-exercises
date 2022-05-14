@@ -13,6 +13,12 @@ const recipes = [
   { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
 ];
 
+app.post('/recipes', function (req, res) {
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime });
+  res.status(201).json({ message: 'Recipe created successfully!'});
+});
+
 app.get('/recipes', function (_req, res) {
   res.json(recipes.sort((a, b) => a.name.localeCompare(b.name)));
 });
@@ -33,11 +39,28 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
-app.post('/recipes', function (req, res) {
-  const { id, name, price, waitTime } = req.body;
-  recipes.push({ id, name, price, waitTime });
-  res.status(201).json({ message: 'Recipe created successfully!'});
+app.put('/recipes/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const recipeIndex = recipes.findIndex((recipe) => recipe.id === +id);
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found! '});
+
+  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
+  
+  res.status(204).end();
 });
+
+app.delete('/recipes/:id', (req, res) => {
+  const { id } = req.params;
+  const recipeIndex = recipes.findIndex((recipe) => recipe.id === +id);
+
+  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found! '});
+
+  recipes.splice(recipeIndex, 1);
+  
+  res.status(204).end();
+})
 
 const drinks = [
 	{ id: 1, name: 'Refrigerante Lata', price: 5.0 },
