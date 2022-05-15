@@ -60,7 +60,7 @@ app.delete('/recipes/:id', (req, res) => {
   recipes.splice(recipeIndex, 1);
   
   res.status(204).end();
-})
+});
 
 const drinks = [
 	{ id: 1, name: 'Refrigerante Lata', price: 5.0 },
@@ -105,6 +105,17 @@ app.put('/drinks/:id', (req, res) => {
   if (drinkIndex === -1) return res.status(404).json({ message: 'Drink not found! '});
 
   drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+  
+  res.status(204).end();
+});
+
+app.delete('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const drinksIndex = drinks.findIndex((drinks) => drinks.id === +id);
+
+  if (drinksIndex === -1) return res.status(404).json({ message: 'Drink not found! '});
+
+  drinks.splice(drinksIndex, 1);
   
   res.status(204).end();
 });
