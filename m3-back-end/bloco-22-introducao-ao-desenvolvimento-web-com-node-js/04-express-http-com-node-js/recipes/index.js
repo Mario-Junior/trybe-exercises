@@ -97,6 +97,18 @@ app.get('/drinks/:id', function (req, res) {
   res.status(200).json(drink);
 });
 
+app.put('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const drinkIndex = drinks.findIndex((drink) => drink.id === +id);
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Drink not found! '});
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+  
+  res.status(204).end();
+});
+
 app.get('/validateToken', (req, res) => {
   const token = req.headers.authorization;
   if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
