@@ -1,6 +1,6 @@
 const validUser = {
   username: 'Masterchef',
-  password: 'SenhaSuperSeguraSQN'
+  password: 'abcde'
 };
 
 const authMiddleware = (req, res, next) => {
@@ -10,11 +10,11 @@ const authMiddleware = (req, res, next) => {
     return res.status(401).json({ message: `Username or password can't be blank!` });
   }
 
-  if (username !== validUser.username || !password !== validUser.password) {
+  if (username !== validUser.username || password !== validUser.password) {
     return res.status(401).json({ message: 'Você não é o Masterchef!' });
   }
 
-  next()
+  next();
 };
 
 module.exports = authMiddleware;
