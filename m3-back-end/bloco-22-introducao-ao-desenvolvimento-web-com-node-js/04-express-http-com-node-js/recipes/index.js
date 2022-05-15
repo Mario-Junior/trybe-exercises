@@ -37,7 +37,8 @@ const validatePrice = (req, res, next) => {
 
 app.post('/recipes', validateName, validatePrice, function (req, res) {
   const { id, name, price, waitTime } = req.body;
-  recipes.push({ id, name, price, waitTime });
+  const { username } = req.user; // Aqui acessamos o usuário encontrado no middleware de autenticação
+  recipes.push({ id, name, price, waitTime, chef: username }); // Aqui passo a informação para esse objeto da rota
   res.status(201).json({ message: 'Recipe created successfully!'});
 });
 
