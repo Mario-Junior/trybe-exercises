@@ -55,7 +55,7 @@ class App extends React.Component {
     document.location.reload(true);
   }
 
-  // Requisição do tipo DELETE
+  // Requisição DELETE (Delete) no front-end
   onClickDeleteItem = () => {
     fetch('http://localhost:3001/recipes/4', {
       method: 'DELETE',
