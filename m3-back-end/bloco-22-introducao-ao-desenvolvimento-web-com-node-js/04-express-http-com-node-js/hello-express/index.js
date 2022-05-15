@@ -13,5 +13,5 @@ app.listen(3001, () => {
 
 // 4. Trata a requisição com método GET no caminho /hello, envia o status HTTP 200 que significa OK e a mensagem 'Hello World!'
 function handleHelloWorldRequest(_req, res) {
-  res.status(200).send('Hello World run dev 2!');  
+  res.status(200).send('Hello World run dev!');  
 };
