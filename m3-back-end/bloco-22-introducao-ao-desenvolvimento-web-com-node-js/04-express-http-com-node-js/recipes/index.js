@@ -13,7 +13,13 @@ const recipes = [
   { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
 ];
 
-app.post('/recipes', function (req, res) {
+app.post('/recipes', function (req, res, next) {
+  const { name } = req.body;
+  if (!name || name === '') return res.status(400).json({ message: 'Invalid data!' });
+
+  next();
+},
+  (req, res) => {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime });
   res.status(201).json({ message: 'Recipe created successfully!'});
