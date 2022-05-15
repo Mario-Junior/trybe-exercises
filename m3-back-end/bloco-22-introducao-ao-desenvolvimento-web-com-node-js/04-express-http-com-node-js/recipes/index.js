@@ -1,4 +1,5 @@
 const express = require('express');
+const authMiddleware = require('./middlewares/auth-middleware');
 const app = express();
 
 app.use(express.json());
@@ -6,6 +7,12 @@ app.use(express.json());
 const cors = require('cors');
 
 app.use(cors());
+
+app.get('/open', (req, res) => {
+  res.send('open!');
+});
+
+app.use(authMiddleware);
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
@@ -20,7 +27,15 @@ const validateName = (req, res, next) => {
   next();
 };
 
-app.post('/recipes', validateName, function (req, res) {
+const validatePrice = (req, res, next) => {
+  const { price } = req.body;
+  if (!price || typeof(price) !== 'number' || price < 0)
+    return res.status(400).json({ message: 'Invalid data!' });
+
+  next();
+};
+
+app.post('/recipes', validateName, validatePrice, function (req, res) {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime });
   res.status(201).json({ message: 'Recipe created successfully!'});
@@ -46,7 +61,7 @@ app.get('/recipes/:id', function (req, res) {
   res.status(200).json(recipe);
 });
 
-app.put('/recipes/:id', validateName, (req, res) => {
+app.put('/recipes/:id', validateName, validatePrice, (req, res) => {
   const { id } = req.params;
   const { name, price } = req.body;
   const recipeIndex = recipes.findIndex((recipe) => recipe.id === +id);
@@ -141,3 +156,8 @@ app.all('*', (req, res) => {
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
 });
+
+// Exercícios 22.5 - Express - Middlewares
+// Middlewares
+// 1. No código apresentado acima, remova a função next() do middleware validateName. Faça uma requisição para a rota POST /recipes com um body válido (contendo id, name e price). A requisição irá retornar algo? Por quê?
+// R: A requisição não retorna nada, pois a operação fica presa no middleware sem a função next() para dar continuidade ao fluxo.
