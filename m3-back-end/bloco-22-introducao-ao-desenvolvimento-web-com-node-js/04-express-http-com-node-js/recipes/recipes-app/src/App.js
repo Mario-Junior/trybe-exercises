@@ -17,6 +17,8 @@ class App extends React.Component {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'username': 'MestreCuca',
+        'password': 'MinhaSenhaSuperSeguraSqn'
       },
       body: JSON.stringify({
         id: 4,
@@ -29,7 +31,13 @@ class App extends React.Component {
 
   componentDidMount() {
     // Requisição GET (Read) no front-end
-    fetch('http://localhost:3001/recipes')
+    fetch('http://localhost:3001/recipes', {
+      method: 'GET',
+      headers: {
+      'username': 'MestreCuca',
+      'password': 'MinhaSenhaSuperSeguraSqn'
+      }
+    })
       .then(response => response.json())
       .then((recipes) => this.setState(
         {
@@ -46,6 +54,8 @@ class App extends React.Component {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'username': 'MestreCuca',
+        'password': 'MinhaSenhaSuperSeguraSqn'
       },
       body: JSON.stringify({
         name: 'Macarrão ao alho e óleo',
@@ -62,6 +72,8 @@ class App extends React.Component {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'username': 'MestreCuca',
+        'password': 'MinhaSenhaSuperSeguraSqn'
       }
     });
     document.location.reload(true);

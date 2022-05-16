@@ -1,4 +1,5 @@
 const express = require('express');
+const authMiddleware = require('./middlewares/auth-middleware');
 const app = express();
 
 app.use(express.json());
@@ -7,60 +8,15 @@ const cors = require('cors');
 
 app.use(cors());
 
-const recipes = [
-  { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
-  { id: 2, name: 'Macarrão a Bolonhesa', price: 30.0, waitTime: 25 },
-  { id: 3, name: 'Macarrão com molho branco', price: 35.0, waitTime: 25 },
-];
-
-app.post('/recipes', function (req, res) {
-  const { id, name, price, waitTime } = req.body;
-  recipes.push({ id, name, price, waitTime });
-  res.status(201).json({ message: 'Recipe created successfully!'});
+app.get('/open', (req, res) => {
+  res.send('open!');
 });
 
-app.get('/recipes', function (_req, res) {
-  res.json(recipes.sort((a, b) => a.name.localeCompare(b.name)));
-});
+const recipesRouter = require('./recipesRouter');
 
-app.get('/recipes/search', (req, res) => {
-  const { name, minPrice, maxPrice } = req.query;
-  const filteredRecipes = recipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase())
-  && recipe.price >= Number(minPrice)
-  && recipe.price < parseInt(maxPrice));
-  res.status(200).json(filteredRecipes);
-});
+app.use(authMiddleware);
 
-app.get('/recipes/:id', function (req, res) {
-  const { id } = req.params;
-  const recipe = recipes.find((recipe) => recipe.id === parseInt(id));
-  if (!recipe) return res.status(404).json({ message: 'Recipe not found!'});
-  
-  res.status(200).json(recipe);
-});
-
-app.put('/recipes/:id', (req, res) => {
-  const { id } = req.params;
-  const { name, price } = req.body;
-  const recipeIndex = recipes.findIndex((recipe) => recipe.id === +id);
-
-  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found! '});
-
-  recipes[recipeIndex] = { ...recipes[recipeIndex], name, price };
-  
-  res.status(204).end();
-});
-
-app.delete('/recipes/:id', (req, res) => {
-  const { id } = req.params;
-  const recipeIndex = recipes.findIndex((recipe) => recipe.id === +id);
-
-  if (recipeIndex === -1) return res.status(404).json({ message: 'Recipe not found! '});
-
-  recipes.splice(recipeIndex, 1);
-  
-  res.status(204).end();
-})
+app.use('/recipes', recipesRouter);
 
 const drinks = [
 	{ id: 1, name: 'Refrigerante Lata', price: 5.0 },
@@ -97,6 +53,29 @@ app.get('/drinks/:id', function (req, res) {
   res.status(200).json(drink);
 });
 
+app.put('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, price } = req.body;
+  const drinkIndex = drinks.findIndex((drink) => drink.id === +id);
+
+  if (drinkIndex === -1) return res.status(404).json({ message: 'Drink not found! '});
+
+  drinks[drinkIndex] = { ...drinks[drinkIndex], name, price };
+  
+  res.status(204).end();
+});
+
+app.delete('/drinks/:id', (req, res) => {
+  const { id } = req.params;
+  const drinksIndex = drinks.findIndex((drinks) => drinks.id === +id);
+
+  if (drinksIndex === -1) return res.status(404).json({ message: 'Drink not found! '});
+
+  drinks.splice(drinksIndex, 1);
+  
+  res.status(204).end();
+});
+
 app.get('/validateToken', (req, res) => {
   const token = req.headers.authorization;
   if (token.length !== 16) return res.status(401).json({message: 'Invalid Token!'});
@@ -104,6 +83,15 @@ app.get('/validateToken', (req, res) => {
   res.status(200).json({message: 'Valid Token!'});
 });
 
+app.all('*', (req, res) => {
+  return res.status(404).json({ message: `Rota ${req.path} não existe!`});
+});
+
 app.listen(3001, () => {
   console.log('Aplicação ouvindo na porta 3001');
 });
+
+// Exercícios 22.5 - Express - Middlewares
+// Middlewares
+// 1. No código apresentado acima, remova a função next() do middleware validateName. Faça uma requisição para a rota POST /recipes com um body válido (contendo id, name e price). A requisição irá retornar algo? Por quê?
+// R: A requisição não retorna nada, pois a operação fica presa no middleware sem a função next() para dar continuidade ao fluxo.
