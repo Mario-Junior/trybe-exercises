@@ -11,6 +11,16 @@ app.get('/authors', async (_req, res) => {
   res.status(200).json(authors);
 });
 
+app.get('/authors/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const author = await Author.findById(id);
+
+  if (!author) return res.status(404).json({ message: 'Author Not found!'});
+
+  res.status(200).json(author);
+});
+
 app.get('/books/search', async (req, res) => {
   const { id } = req.query;
 
