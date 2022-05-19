@@ -4,7 +4,9 @@ const app = express();
 
 app.use(express.json());
 
+const charRouter = require('./routes/characters');
 
+app.use('/characters', charRouter);
 
 const PORT = process.env.PORT || 3006;
 
