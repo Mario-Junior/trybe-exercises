@@ -37,7 +37,7 @@ app.get('/authors/:id', async (req, res) => {
 app.post('/books', async (req, res) => {
   const { title, author_id } = req.body;
 
-  if (!Book.isValid(title, author_id)) {
+  if (!await Book.isValid(title, author_id)) {
     return res.status(400).json({ message: 'Invalid data!' });
   }
 
@@ -69,5 +69,5 @@ app.get('/books', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Aplicação ouvindo a porta ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });

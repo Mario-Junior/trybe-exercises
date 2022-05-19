@@ -1,4 +1,5 @@
 const connection = require('./connection');
+const Author = require('./Author');
 
 const getAll = async () => {
   const [books] = await connection.execute(
@@ -38,21 +39,20 @@ const findById = async (id) => {
 };
 
 const isValid = async (title, authorId) => {
-  const [ids] = await connection.execute(
-    'SELECT DISTINCT id FROM model_example.authors;');
-  const authorsIds = [...ids.map((author) => author.id)];
-  console.log(authorsIds.find((authorId) => authorId));
-
+  // const [ids] = await connection.execute(
+  //   'SELECT DISTINCT id FROM model_example.authors;');
+  // const authorsIds = [...ids.map((author) => author.id)];
+  // console.log(authorsIds.find((authorId) => authorId));
   if (!title || typeof title !== 'string' || title.length < 3) return false;
 
-  if (!authorId || !authorsIds.find((authorId) => authorId)) return false;
+  if (!authorId || typeof authorId !== 'number' || !(await Author.findById(authorId))) return false;
 
   return true;
 };
 isValid();
 
 const create = async (title, authorId) => connection.execute(
-  'INSERT INTO model_example.books (title, author_id) VALUES (?, ?)',
+  'INSERT INTO model_example.books (title, author_id) VALUES (?, ?);',
   [title, authorId],
 );
 
