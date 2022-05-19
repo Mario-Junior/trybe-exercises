@@ -14,9 +14,19 @@ const getByAuthorId = async (id) => {
     // ATENÇÃO!!! assim funciona, mas não é a melhor prática de passar o id!
   );
   return booksByAuthorId;
-}
+};
+
+const findById = async (id) => {
+  const query = 'SELECT title FROM model_example.books WHERE id = ?;';
+  const [bookTitle] = await connection.execute(query, [id]);
+
+  if (bookTitle.length === 0) return null;
+
+  return bookTitle;
+};
     
 module.exports = {
   getAll,
   getByAuthorId,
+  findById,
 };

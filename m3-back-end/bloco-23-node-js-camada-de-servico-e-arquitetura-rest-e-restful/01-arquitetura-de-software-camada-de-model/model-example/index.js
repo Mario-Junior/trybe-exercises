@@ -29,6 +29,16 @@ app.get('/books/search', async (req, res) => {
   res.status(200).json(books);
 });
 
+app.get('/books/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const book = await Book.findById(id);
+
+  if (!book) return res.status(404).json({ message: 'Book Not found!'});
+
+  res.status(200).json(book);
+});
+
 app.get('/books', async (_req, res) => {
   const books = await Book.getAll();
 
