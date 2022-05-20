@@ -15,7 +15,7 @@ const getAll = async () => await Author.getAll();
 const findById = async (id) => {
   const author = await Author.findById(id);
 
-  if (!author || author === null) {
+  if (!author) {
     return {
       error: {
         code: 'notFound',
@@ -29,7 +29,7 @@ const findById = async (id) => {
 const createAuthor = async (firstName, middleName, lastName) => {
   const validAuthor = isValid(firstName, middleName, lastName);
 
-  if (!validAuthor) return false;
+  if (!validAuthor) return { message: 'Invalid data!' };
 
   const existingAuthor = await Author.findByName(firstName, middleName, lastName);
 

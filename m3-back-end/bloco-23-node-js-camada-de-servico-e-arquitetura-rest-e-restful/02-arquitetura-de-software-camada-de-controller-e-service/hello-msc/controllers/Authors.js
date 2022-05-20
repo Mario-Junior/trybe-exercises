@@ -1,5 +1,7 @@
 // controllers/Authors.js
 
+const Joi = require('joi');
+
 const Author = require('../services/Authors');
 
 const getAll = async (_req, res) => {
@@ -12,21 +14,35 @@ const findById = async (req, res, next) => {
   const { id } = req.params;
 
   const author = await Author.findById(id);
-  console.log(author);
 
-  if (author.error) return next(author.error); // Entender como fazer pra aparecer o objeto de erro!!!
+  if (author.error) return next(Object.values(author.error)); // Entender como fazer pra aparecer o objeto de erro!!!
 
-  res.status(200).json(author);
+  return res.status(200).json(author);
 };
 
-const createAuthor = async (req, res) => {
-  const { first_name, middle_name, last_name } = req.body;
+const createAuthor = async (req, res, next) => {
+  const {
+    first_name: firstName,
+    middle_name: middleName,
+    last_name: lastName
+  } = req.body;
 
-  const author = await Author.createAuthor(first_name, middle_name, last_name);
+  // Utilizamos o Joi para descrever o objeto que esperamos receber na requisição. Para isso, chamamos Joi.object() passando um objeto com os campos da requisição e suas descrições
+  const { error } = Joi.object({
+    firstName: Joi.string().not().empty().required(),
+    lastName: Joi.string().not().empty().required(),
+  }).validate({ firstName, lastName }); // Por fim, pedimos que o Joi verifique se o corpo da requisição se adequa a essas regras
 
-  if (!author) return res.status(400).json({ message: 'Invalid data!' });
+  // Caso exista algum problema com a validação, iniciamos o fluxo de erro e interrompemos o middleware.
+  if (error) {
+    return next(error);
+  }
 
-  res.status(201).json(author);
+  const newAuthor = await Author.createAuthor(firstName, middleName, lastName);
+
+  if (newAuthor.error) return next(Object.values(newAuthor.error));
+
+  res.status(201).json(newAuthor);
 };
 
 module.exports = {
