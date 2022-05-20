@@ -62,8 +62,28 @@ const createAuthor = async (firstName, middleName, lastName) => {
   return [getNewAuthor({ id: author.insertId, firstName, middleName, lastName })];
 };
 
+const findByName = async (firstName, middleName, lastName) => {
+  let query = `
+    SELECT id, first_name, middle_name, last_name FROM model_example.authors`;
+
+    if (middleName) {
+      query += ' WHERE first_name = ? AND middle_name = ? AND last_name = ?;';
+    } else {
+      query += ' WHERE first_name = ? AND last_name = ?;';
+    }
+
+  const params = middleName ? [firstName, middleName, lastName] : [firstName, lastName];
+  
+  const [authorData] = await connection.execute(query, params);
+
+  if (authorData.length === 0) return null;
+
+  return serialize(authorData);
+};
+
 module.exports = {
   getAll,
   findById,
   createAuthor,
+  findByName,
 };

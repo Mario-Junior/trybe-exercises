@@ -8,12 +8,13 @@ const getAll = async (_req, res) => {
   res.status(200).json(authors);
 };
 
-const findById = async (req, res) => {
+const findById = async (req, res, next) => {
   const { id } = req.params;
 
   const author = await Author.findById(id);
+  console.log(author);
 
-  if (!author) return res.status(404).json({ message: 'Author not found' });
+  if (author.error) return next(author.error); // Entender como fazer pra aparecer o objeto de erro!!!
 
   res.status(200).json(author);
 };

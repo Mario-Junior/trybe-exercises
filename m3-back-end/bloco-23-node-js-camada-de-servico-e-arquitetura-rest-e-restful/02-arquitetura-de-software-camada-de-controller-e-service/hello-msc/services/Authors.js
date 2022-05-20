@@ -2,22 +2,6 @@
 
 const Author = require('../models/Author');
 
-const getNewAuthor = (authorData) => {
-  const { id, firstName, middleName, lastName } = authorData;
-
-  const fullName = [firstName, middleName, lastName]
-    .filter((name) => name)
-    .join(' ');
-
-  return {
-    id,
-    firstName,
-    middleName,
-    lastName,
-    name: fullName,
-  };
-};
-
 const isValid = (firstName, middleName, lastName) => {
   if (!firstName || typeof firstName !== 'string') return false;
   if (!lastName || typeof lastName !== 'string') return false;
@@ -26,18 +10,20 @@ const isValid = (firstName, middleName, lastName) => {
   return true;
 };
 
-const getAll = async () => {
-  const authors = await Author.getAll();
-
-  return authors.map(getNewAuthor);
-};
+const getAll = async () => await Author.getAll();
 
 const findById = async (id) => {
   const author = await Author.findById(id);
 
-  if (!author) return null;
-
-  return getNewAuthor(author);
+  if (!author || author === null) {
+    return {
+      error: {
+        code: 'notFound',
+        message: `Author not found by id ${id}`,
+      },
+    };
+  }
+  return author;
 };
 
 const createAuthor = async (firstName, middleName, lastName) => {
@@ -45,14 +31,17 @@ const createAuthor = async (firstName, middleName, lastName) => {
 
   if (!validAuthor) return false;
 
-  const [author] = await Author.createAuthor(firstName, middleName, lastName);
+  const existingAuthor = await Author.findByName(firstName, middleName, lastName);
 
-  return getNewAuthor({
-    id: author.id,
-    firstName,
-    middleName,
-    lastName,
-  });
+  if (existingAuthor) {
+    return {
+      error: {
+        code: 'alreadyExists',
+        message: 'Author with this fullname already exists',
+      },
+    };
+  }
+  return await Author.createAuthor(firstName, middleName, lastName);
 };
 
 module.exports = {
