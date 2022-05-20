@@ -18,7 +18,7 @@ const findById = async (id) => {
   if (!author) {
     return {
       error: {
-        code: 'notFound',
+        code: 404,
         message: `Author not found by id ${id}`,
       },
     };
@@ -29,14 +29,19 @@ const findById = async (id) => {
 const createAuthor = async (firstName, middleName, lastName) => {
   const validAuthor = isValid(firstName, middleName, lastName);
 
-  if (!validAuthor) return { message: 'Invalid data!' };
+  if (!validAuthor) return {
+    error: {
+      code: 400,
+      message: 'Invalid data!',
+    },
+  };
 
   const existingAuthor = await Author.findByName(firstName, middleName, lastName);
 
   if (existingAuthor) {
     return {
       error: {
-        code: 'alreadyExists',
+        code: 409,
         message: 'Author with this fullname already exists',
       },
     };

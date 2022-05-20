@@ -15,7 +15,7 @@ const findById = async (req, res, next) => {
 
   const author = await Author.findById(id);
 
-  if (author.error) return next(Object.values(author.error)); // Entender como fazer pra aparecer o objeto de erro!!!
+  if (author.error) return next(author.error); // Entender como fazer pra aparecer o objeto de erro!!!
 
   return res.status(200).json(author);
 };
@@ -40,7 +40,7 @@ const createAuthor = async (req, res, next) => {
 
   const newAuthor = await Author.createAuthor(firstName, middleName, lastName);
 
-  if (newAuthor.error) return next(Object.values(newAuthor.error));
+  if (newAuthor.error) return next(newAuthor.error);
 
   res.status(201).json(newAuthor);
 };
