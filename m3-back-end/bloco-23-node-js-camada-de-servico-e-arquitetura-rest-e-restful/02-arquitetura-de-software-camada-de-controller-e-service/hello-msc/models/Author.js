@@ -1,3 +1,5 @@
+// models/Author.js
+
 const connection = require('./connection');
 
 // Cria uma string com o nome completo da pessoa autora
