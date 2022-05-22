@@ -47,7 +47,7 @@ const createAuthor = async (req, res, next) => {
     firstName: Joi.string().not().empty().required(),
     lastName: Joi.string().not().empty().required(),
     contacts: Joi.array().items(Joi.string().length(15).required()).min(1).required(),
-  }).validate({ firstName, lastName }); // Por fim, pedimos que o Joi verifique se o corpo da requisição se adequa a essas regras
+  }).validate({ firstName, lastName, contacts }); // Por fim, pedimos que o Joi verifique se o corpo da requisição se adequa a essas regras
 
   // Caso exista algum problema com a validação, iniciamos o fluxo de erro e interrompemos o middleware.
   if (error) {
