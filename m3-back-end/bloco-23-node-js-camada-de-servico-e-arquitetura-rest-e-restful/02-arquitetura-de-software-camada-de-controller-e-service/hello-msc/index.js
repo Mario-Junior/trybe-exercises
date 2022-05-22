@@ -14,6 +14,8 @@ app.post('/authors', rescue(Author.createAuthor));
 
 app.get('/authors', rescue(Author.getAll));
 
+app.get('/authors', rescue(Author.findByName));
+
 app.get('/authors/:id', rescue(Author.findById));
 
 app.use(errorMiddleware);
