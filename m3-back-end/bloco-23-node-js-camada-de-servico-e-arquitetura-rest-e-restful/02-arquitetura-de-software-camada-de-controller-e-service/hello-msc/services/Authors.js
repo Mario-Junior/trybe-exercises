@@ -1,6 +1,7 @@
 // services/Authors.js
 
 const Author = require('../models/Author');
+const Contact = require('../models/Contact');
 
 const isValid = (firstName, middleName, lastName) => {
   if (!firstName || typeof firstName !== 'string') return false;
@@ -26,7 +27,21 @@ const findById = async (id) => {
   return author;
 };
 
-const createAuthor = async (firstName, middleName, lastName) => {
+const findByName = async (firstName, middleName, lastName) => {
+  const author = await Author.findByName(firstName, middleName, lastName);
+
+  if (!author) {
+    return {
+      error: {
+        code: 404,
+        message: `Author not found by this name ${firstName} ${middleName} ${lastName}`,
+      },
+    };
+  }
+  return author;
+};
+
+const createAuthor = async (firstName, middleName, lastName, contacts) => {
   const validAuthor = isValid(firstName, middleName, lastName);
 
   if (!validAuthor) return {
@@ -46,11 +61,16 @@ const createAuthor = async (firstName, middleName, lastName) => {
       },
     };
   }
-  return await Author.createAuthor(firstName, middleName, lastName);
+  const { id } = await Author.createAuthor(firstName, middleName, lastName);
+
+  await Promise.all(contacts.map((contact) => Contact.createContact(id, contact)));
+
+  return ({ id, firstName, middleName, lastName, contacts });
 };
 
 module.exports = {
   getAll,
   findById,
+  findByName,
   createAuthor,
 };
