@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS movies_db;
+
+CREATE DATABASE IF NOT EXISTS movies_db;
+
+USE movies_db;
+
+CREATE TABLE IF NOT EXISTS movies (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(100) NOT NULL,
+  directed_by VARCHAR(100) NOT NULL,
+  release_year INT NOT NULL
+);
+
+SELECT * FROM movies;
