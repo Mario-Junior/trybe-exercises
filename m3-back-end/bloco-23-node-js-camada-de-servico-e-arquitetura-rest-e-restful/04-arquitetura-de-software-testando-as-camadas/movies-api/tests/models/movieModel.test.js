@@ -48,27 +48,42 @@ describe('Insere um novo filme no BD', () => {
 describe('Consulta os detalhes de um filme no BD pelo "id"', () => {
 
   before(async () => {
-    const execute = { id: 1, ...payloadMovie }; // retorno esperado no teste
-    console.log(execute);
+    const execute = [[]];
 
     sinon.stub(connection, 'execute').resolves(execute);
   });
 
-  // Restauro a função 'execute' original após os testes
   after(async () => {
     connection.execute.restore();
   });
 
-  describe('Quando é encontrado com sucesso', () => {
+  describe('Quando não existe filme pelo "id" informado', () => {
+    it('retorna null', async () => {
+      const response = await MoviesModel.findById();
+      expect(response).to.be.equal(null);
+    });
+  });
+
+  describe('Quando um filme é encontrado com sucesso', () => {
+
+    before(async () => {
+      const movie = { id: 1, ...payloadMovie };
+  
+      sinon.stub(MoviesModel, 'findById').resolves(movie);
+    });
+  
+    after(async () => {
+      MoviesModel.findById.restore();
+    });
 
     it('retorna um objeto', async () => {
       const response = await MoviesModel.findById(1);
-      console.log(response);
 
       expect(response).to.be.a('object');
     });
 
-    it('tal objeto possui o "id" do filme consultado', async () => {
+    it('tal objeto possui as propriedades "id", "title", "releaseYear" e "directedBy"',
+      async () => {
       const response = await MoviesModel.findById(1);
 
       expect(response.id).to.be.equal(1);

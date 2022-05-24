@@ -13,7 +13,12 @@ const create = async ({ title, directedBy, releaseYear }) => {
 const findById = async (id) => {
   const [movie] = await connection.execute(
     'SELECT * FROM movies_db.movies WHERE id = ?;', [id]);
-  return movie;
+
+  if (movie.length === 0) return null;
+
+  const { title, directedBy, releaseYear } = movie[0];
+
+  return { id, title, directedBy, releaseYear };
 };
 
 module.exports = {
