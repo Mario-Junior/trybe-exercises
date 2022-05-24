@@ -7,15 +7,16 @@ const { expect } = require('chai');
 // };
 
 // Edito o teste para utilizar a minha implementação em models
-const MoviesModel = require('../../models/movieModel');
 const connection = require('../../models/connection');
+const MoviesModel = require('../../models/movieModel');
+
+const payloadMovie = {
+  title: 'Example Movie',
+  directedBy: 'Jane Dow',
+  releaseYear: 1999,
+};
 
 describe('Insere um novo filme no BD', () => {
-  const payloadMovie = {
-    title: 'Example Movie',
-    directedBy: 'Jane Dow',
-    releaseYear: 1999,
-  };
 
   before(async () => {
     const execute = [{ insertId: 1 }]; // retorno esperado no teste
@@ -40,6 +41,23 @@ describe('Insere um novo filme no BD', () => {
       const response = await MoviesModel.create(payloadMovie);
 
       expect(response).to.have.a.property('id');
+    });
+  });
+});
+
+describe('Consulta os detalhes de um filme no BD pelo "id"', () => {
+  describe('Quando é encontrado com sucesso', () => {
+
+    it('retorna um objeto', async () => {
+      const response = await MoviesModel.findById(id);
+
+      expect(response).to.be.a('object');
+    });
+
+    it('tal objeto possui o "id" do filme consultado', async () => {
+      const response = await MoviesModel.findById(id);
+
+      expect(response.id).to.be.equal(id);
     });
   });
 });
