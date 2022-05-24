@@ -46,18 +46,32 @@ describe('Insere um novo filme no BD', () => {
 });
 
 describe('Consulta os detalhes de um filme no BD pelo "id"', () => {
+
+  before(async () => {
+    const execute = { id: 1, ...payloadMovie }; // retorno esperado no teste
+    console.log(execute);
+
+    sinon.stub(connection, 'execute').resolves(execute);
+  });
+
+  // Restauro a função 'execute' original após os testes
+  after(async () => {
+    connection.execute.restore();
+  });
+
   describe('Quando é encontrado com sucesso', () => {
 
     it('retorna um objeto', async () => {
-      const response = await MoviesModel.findById(id);
+      const response = await MoviesModel.findById(1);
+      console.log(response);
 
       expect(response).to.be.a('object');
     });
 
     it('tal objeto possui o "id" do filme consultado', async () => {
-      const response = await MoviesModel.findById(id);
+      const response = await MoviesModel.findById(1);
 
-      expect(response.id).to.be.equal(id);
+      expect(response.id).to.be.equal(1);
     });
   });
 });
