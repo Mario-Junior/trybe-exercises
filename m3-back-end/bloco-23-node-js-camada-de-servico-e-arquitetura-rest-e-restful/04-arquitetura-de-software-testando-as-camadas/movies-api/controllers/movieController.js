@@ -8,7 +8,7 @@ const create = async (req, res) => {
   if (!movie) {
     return res.status(400).send('Dados inválidos');
   }
-  return res.status(201).send('Filme criado com sucesso!');
+  res.status(201).send('Filme criado com sucesso!');
 };
 
 /*
