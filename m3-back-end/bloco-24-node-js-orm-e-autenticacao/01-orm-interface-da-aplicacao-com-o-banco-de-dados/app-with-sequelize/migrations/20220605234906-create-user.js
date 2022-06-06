@@ -11,6 +11,10 @@ module.exports = {
       fullName: {
         type: Sequelize.STRING
       },
+      // adição de um novo campo 'email', conforme feito na model
+      email: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
