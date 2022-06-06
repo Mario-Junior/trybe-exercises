@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
 
 // endpoint usa o método findOne do Sequelize para buscar um usuário pelo id e pelo email (como URL query)
 // URL a ser utilizada para o exemplo http://localhost:3000/user/search/1?email=aqui-o-email
-router.get('/search//:id', async (req, res) => {
+router.get('/search/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { email } = req.query;
