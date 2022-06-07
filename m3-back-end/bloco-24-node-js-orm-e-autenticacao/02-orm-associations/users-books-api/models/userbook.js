@@ -2,7 +2,9 @@
 module.exports = (sequelize, _DataTypes) => {
   const UserBook = sequelize.define('UserBook',
     {},
-    { timestamps: false },
+    { timestamps: false,
+      tableName: 'UsersBooks',
+    },
   );
 
   UserBook.associate = (models) => {
