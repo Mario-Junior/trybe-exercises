@@ -1,36 +1,33 @@
-'use strict';
+// migration "books"
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Books', {
-      id: {
+      bookId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      bookId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        field: 'book_id',
       },
       name: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       releaseYear: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        field: 'release_year',
       },
       numberPages: {
-        type: Sequelize.INTEGER
-      },
-      createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER,
+        field: 'number_pages',
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
-  async down(queryInterface, Sequelize) {
+
+  down: async (queryInterface, _Sequelize) => {
     await queryInterface.dropTable('Books');
-  }
+  },
 };
