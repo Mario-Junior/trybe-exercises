@@ -29,7 +29,10 @@ const User = (sequelize, DataTypes) => {
     fullName: DataTypes.STRING,
     email: DataTypes.STRING,
     // aqui insiro o datatype da nova coluna criada no migration
-    phone_num: DataTypes.STRING,
+    phoneNum: DataTypes.STRING,
+  },{
+    underscored: true,
+    tableName: 'Users',
   });
 
   return User;
