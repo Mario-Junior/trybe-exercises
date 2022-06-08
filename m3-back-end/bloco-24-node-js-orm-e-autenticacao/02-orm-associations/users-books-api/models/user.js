@@ -1,4 +1,20 @@
-// Formato de Model em classe:
+// models/User.js
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    userId: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    age: DataTypes.INTEGER,
+  },
+  {
+    timestamps: false,
+    tableName: 'Users',
+    underscored: true,
+  });
+
+  return User;
+};
+
 // 'use strict';
 // const {
 //   Model
@@ -15,27 +31,13 @@
 //     }
 //   }
 //   User.init({
-//     fullName: DataTypes.STRING
+//     userId: DataTypes.INTEGER,
+//     firstName: DataTypes.STRING,
+//     lastName: DataTypes.STRING,
+//     age: DataTypes.INTEGER
 //   }, {
 //     sequelize,
 //     modelName: 'User',
 //   });
 //   return User;
 // };
-
-// formato de Model com função:
-const User = (sequelize, DataTypes) => {
-  const User = sequelize.define("User", {
-    fullName: DataTypes.STRING,
-    email: DataTypes.STRING,
-    // aqui insiro o datatype da nova coluna criada no migration
-    phoneNum: DataTypes.STRING,
-  },{
-    underscored: true,
-    tableName: 'Users',
-  });
-
-  return User;
-};
-
-module.exports = User;

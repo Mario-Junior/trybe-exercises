@@ -49,8 +49,8 @@ router.get('/search/:id', async (req, res) => {
 // endpoint usa o método create do Sequelize para salvar um usuário no banco
 router.post('/', async (req, res) => {
   try {
-    const { fullName, email, phone_num } = req.body;
-    const newUser = await User.create({ fullName, email, phone_num });
+    const { fullName, email, phoneNum } = req.body;
+    const newUser = await User.create({ fullName, email, phoneNum });
 
     return res.status(201).json(newUser);
   } catch (err) {
@@ -63,10 +63,10 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { fullName, email, phone_num } = req.body;
+    const { fullName, email, phoneNum } = req.body;
 
     const [updateUser] = await User.update(
-      { fullName, email, phone_num },
+      { fullName, email, phoneNum },
       { where: { id } },
     );
 
