@@ -2,10 +2,10 @@ const chai = require('chai');
 const sinon = require('sinon');
 const chaiHttp = require('chai-http');
 
-const server = require('../api/app');
+const server = require('../src/api/app');
 
 // Importação do modelo original, contido em `models`, a partir da raiz
-const { User } = require('../models');
+const { User } = require('../src/models');
 
 // Importação do mock utilizado nesse contexto
 const { User: userMock } = require('./mock/models');

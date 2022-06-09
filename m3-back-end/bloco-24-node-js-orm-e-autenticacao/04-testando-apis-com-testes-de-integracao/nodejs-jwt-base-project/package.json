@@ -5,9 +5,9 @@
   "scripts": {
     "debug": "nodemon ./api/server.js",
     "prestart": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
-    "start": "nodemon .",
-    "test": "mocha ./tests --recursive",
-    "test:coverage": "nyc npm test",
+    "start": "nodemon ./src/api/server.js",
+    "test": "mocha ./tests/**/*$NAME*.test.js --exit",
+    "test:coverage": "nyc --include='src/**/*.js' npm run test",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
