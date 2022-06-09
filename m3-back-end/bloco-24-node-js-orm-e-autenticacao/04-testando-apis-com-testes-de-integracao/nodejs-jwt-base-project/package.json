@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "./api/server.js",
   "scripts": {
+    "debug": "nodemon ./api/server.js",
     "prestart": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
     "start": "nodemon .",
     "test": "mocha ./tests/**/*$NAME*.test.js --exit",
@@ -24,7 +25,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
-    "chai-http": "4.3.0",
+    "chai-http": "^4.3.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-trybe-backend": "^1.0.4",
