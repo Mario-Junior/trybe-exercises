@@ -148,17 +148,17 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 20: Funções SQL, Joins e Subqueries :hourglass_flowing_sand:
 
-- [ ] 20-1: _Funções mais usadas no SQL_
-- [ ] 20-2: _Descomplicando JOINs, UNIONs e Subqueries_
-- [ ] 20-3: _Stored Routines & Stored Functions_
+- [X] 20-1: _Funções mais usadas no SQL_
+- [X] 20-2: _Descomplicando JOINs, UNIONs e Subqueries_
+- [X] 20-3: _Stored Routines & Stored Functions_
 - [ ] 20-4: _[Projeto - Vocabulary Booster]()_
 
 ##### Bloco 21: Normalização e Modelagem de Bancos de Dados :hourglass_flowing_sand:
 
-- [ ] 21-1: _Transformando ideias em um modelo de banco de dados - Parte 1_
-- [ ] 21-2: _Normalização, Formas Normais e Dumps_
-- [ ] 21-3: _Transformando ideias em um modelo de banco de dados - Parte 2_
-- [ ] 21-4: _[Projeto - One For All]()_
+- [X] 21-1: _Transformando ideias em um modelo de banco de dados - Parte 1_
+- [X] 21-2: _Normalização, Formas Normais e Dumps_
+- [X] 21-3: _Transformando ideias em um modelo de banco de dados - Parte 2_
+- [X] 21-4: _[Projeto - One For All]()_
 
 ##### Bloco 22: Introdução ao MongoDB :hourglass_flowing_sand:
 
