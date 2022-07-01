@@ -1,0 +1,3 @@
+[submodule "m3-back-end/bloco-25-deployment/m3-back-end/bloco-25-deployment/02-deploy-docker-heroku/herocker-exercise-backend"]
+	path = m3-back-end/bloco-25-deployment/m3-back-end/bloco-25-deployment/02-deploy-docker-heroku/herocker-exercise-backend
+	url = git@github.com:Mario-Junior/trybe-exercises.git
