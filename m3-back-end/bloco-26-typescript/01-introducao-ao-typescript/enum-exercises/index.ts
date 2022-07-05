@@ -1,4 +1,4 @@
-enum weekDays {
+enum WeekDays {
   Sunday = 1,
   Monday,
   Tuesday,
@@ -7,9 +7,9 @@ enum weekDays {
   Friday,
   Saturday,
 };
-console.log(weekDays);
+console.log(WeekDays);
 
-enum rainbowColors {
+enum RainbowColors {
   red = 'vermelha',
   orange = 'laranja',
   yellow = 'amarelo',
@@ -18,4 +18,21 @@ enum rainbowColors {
   indigo = 'anil',
   purple = 'roxo',
 };
-console.log(rainbowColors);
+console.log(RainbowColors);
+
+enum Actions {
+  save,
+  print,
+  open,
+  view,
+  close,
+};
+console.log(Actions);
+
+enum CardinalPoints {
+  North = 'N',
+  South = 'S',
+  East = 'E',
+  West = 'W',
+};
+console.log(CardinalPoints);
