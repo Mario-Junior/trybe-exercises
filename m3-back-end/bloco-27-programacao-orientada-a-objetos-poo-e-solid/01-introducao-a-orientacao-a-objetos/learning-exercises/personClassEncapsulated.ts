@@ -55,3 +55,18 @@ console.log(person1.height);
 // Observação da validação de dados no set age. É para este tipo de coisa que uso atributos privados: validar alterações nos dados. Ex:
 person2.age = 300;
 console.log(person2.age);
+
+
+// Exemplos de sintaxes inválidas neste contexto:
+// descomentar para ver que quebra e retorna mensagens de erros!!!
+
+// Acesso externo à classe a atributo privado
+// person1._weight;
+// person1._weight = 1;
+
+// Acesso a atributo inexistente
+// person1.weight;
+// person1.weight = 1;
+
+// Escrita em atributo readonly
+// person1.height = 1;
