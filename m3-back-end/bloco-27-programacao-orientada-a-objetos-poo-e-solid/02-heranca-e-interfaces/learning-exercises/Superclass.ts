@@ -12,8 +12,8 @@ class Superclass {
 
 class Subclass extends Superclass {}
 
-const myFunc = (instanceClass: Superclass) => {
-  instanceClass.sayHello();
+const myFunc = (object: Superclass) => {
+  object.sayHello();
 };
 
 const newSuper = new Superclass();

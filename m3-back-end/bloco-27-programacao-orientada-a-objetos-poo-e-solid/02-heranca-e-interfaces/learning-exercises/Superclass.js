@@ -30,8 +30,8 @@ var Subclass = /** @class */ (function (_super) {
     }
     return Subclass;
 }(Superclass));
-var myFunc = function (instanceClass) {
-    instanceClass.sayHello();
+var myFunc = function (object) {
+    object.sayHello();
 };
 var newSuper = new Superclass();
 var newSub = new Subclass();
