@@ -59,17 +59,25 @@ main(tiger);
 tiger.walk();
 
 // A função main, porém, só entende um objeto do tipo Animal. Por isso ela não consegue acessar nada restrito ao subtipo Mammal (também conhecida como classe filha ou subclasse)! Assim, obtenho um erro que diz "a propriedade 'walk' não existe no tipo Animal".
+/* Descomentar para ver o erro!
 const main2 = (animal: Animal) => {
   console.log(animal.age);
   animal.walk(); // error: Property 'walk' does not exist on type 'Animal'.
 }
 main2(tiger);
+*/
 
 // Nova classe filha de Animal, agora com outro método específico 'fly'
 class Bird extends Animal {
   fly() {
     console.log(`${this.name} está voando!`);
   }
+  /* Descomentar para ver o erro!
+  showBirthDate() {
+    // tenho, na classe Animal, um atributo privado birthDate (data de nascimento). Não posso acessar ou alterar este atributo fora da classe Animal, pois ele é privado.
+    console.log(this.birthDate); // ERRO! birthDate is private and only accessible within class 'Animal'.
+  }
+  */
 }
 
 const parrot = new Bird(
@@ -79,3 +87,13 @@ const parrot = new Bird(
 
 console.log(parrot.age);
 parrot.fly();
+
+class Car {
+  constructor(protected launchDate: Date) {}
+};
+// exemplo de acesso a atributo/método protegido (protected) fora da classe na subclasse
+class Beatle extends Car{
+  showLaunchDate() {
+    console.log(this.launchDate);
+  }
+};

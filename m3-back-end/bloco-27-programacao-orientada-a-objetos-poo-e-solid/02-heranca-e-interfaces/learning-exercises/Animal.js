@@ -77,11 +77,13 @@ var main = function (animal) {
 main(tiger);
 tiger.walk();
 // A função main, porém, só entende um objeto do tipo Animal. Por isso ela não consegue acessar nada restrito ao subtipo Mammal (também conhecida como classe filha ou subclasse)! Assim, obtenho um erro que diz "a propriedade 'walk' não existe no tipo Animal".
-var main2 = function (animal) {
-    console.log(animal.age);
-    animal.walk(); // error: Property 'walk' does not exist on type 'Animal'.
-};
+/* Descomentar para ver o erro!
+const main2 = (animal: Animal) => {
+  console.log(animal.age);
+  animal.walk(); // error: Property 'walk' does not exist on type 'Animal'.
+}
 main2(tiger);
+*/
 // Nova classe filha de Animal, agora com outro método específico 'fly'
 var Bird = /** @class */ (function (_super) {
     __extends(Bird, _super);
@@ -96,3 +98,22 @@ var Bird = /** @class */ (function (_super) {
 var parrot = new Bird('Papagaio', new Date(Date.parse('Jun 07, 2017')));
 console.log(parrot.age);
 parrot.fly();
+var Car = /** @class */ (function () {
+    function Car(launchDate) {
+        this.launchDate = launchDate;
+    }
+    return Car;
+}());
+;
+// exemplo de acesso a atributo/método protegido (protected) fora da classe na subclasse
+var Beatle = /** @class */ (function (_super) {
+    __extends(Beatle, _super);
+    function Beatle() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Beatle.prototype.showLaunchDate = function () {
+        console.log(this.launchDate);
+    };
+    return Beatle;
+}(Car));
+;
