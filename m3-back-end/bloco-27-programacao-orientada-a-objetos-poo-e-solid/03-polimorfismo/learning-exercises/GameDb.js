@@ -45,3 +45,46 @@ class LocalDBModel {
     }
 }
 ;
+class CharacterService {
+    constructor(model) {
+        this.model = model;
+    }
+    create(character) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const newCharacter = yield this.model.create(character);
+            return ({ status: 201, data: newCharacter });
+        });
+    }
+    ;
+    getAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const allCharacter = yield this.model.getAll();
+            return ({ status: 200, data: allCharacter });
+        });
+    }
+    ;
+    getById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const oneCharacter = yield this.model.getById(id);
+            return ({ status: 200, data: oneCharacter });
+        });
+    }
+    ;
+    update(id, character) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const updatedCharacter = yield this.model.update(id, character);
+            return ({ status: 204, data: updatedCharacter });
+        });
+    }
+    ;
+    delete(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const deletedCharacter = yield this.model.delete(id);
+            deletedCharacter
+                ? 'Character successfully deleted!'
+                : 'Character not found!';
+        });
+    }
+    ;
+}
+;
