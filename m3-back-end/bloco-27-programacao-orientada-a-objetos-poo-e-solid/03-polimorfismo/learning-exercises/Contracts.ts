@@ -54,3 +54,29 @@ const showIdentification = (person: Person) => {
 showIdentification(pp0);
 showIdentification(pp1);
 showIdentification(lp);
+
+// Garantia de tipo com generics
+/* Descomentar para ver o erro
+class Contract {
+  static _number = 0;
+  constructor(public broker: Person) {}
+  static get number() {return this._number; }
+};
+
+const c1 = new Contract(pp0);
+console.log(c1.broker.cpf); // Erro, pois não existe cpf em Person
+*/
+
+class Contract<T> { // 'T' de tipo, agora a classe recebe o genérico 'T'
+  static _number = 0;
+  constructor(public broker: T) {} // Tipo 'T' no lugar de Person
+  static get number() {return this._number; }
+};
+
+// Tipo inferido (não explícito)
+const c1 = new Contract(pp0);
+console.log(c1.broker.cpf);
+
+// Tipagem explícita
+const c2: Contract<LegalPerson> = new Contract(lp); // Deixo explícito que 'lp' é pessoa jurídica
+console.log(c2.broker.cnpj);
