@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 ;
 ;
 const db = [];
-class LocalDBModel {
+class LocalDbModel {
     constructor() {
         this.create = (character) => __awaiter(this, void 0, void 0, function* () {
             const lastId = db.length > 0 ? db[db.length - 1].id : 0;
@@ -80,11 +80,17 @@ class CharacterService {
     delete(id) {
         return __awaiter(this, void 0, void 0, function* () {
             const deletedCharacter = yield this.model.delete(id);
-            deletedCharacter
-                ? 'Character successfully deleted!'
-                : 'Character not found!';
+            return deletedCharacter;
         });
     }
     ;
 }
 ;
+const mario = new CharacterService(new LocalDbModel());
+mario.create({ name: 'Mario', specialMoveName: 'Fireball' }).then(console.log);
+const luigi = new CharacterService(new LocalDbModel());
+luigi.create({ name: 'Luigi', specialMoveName: 'SuperFlame' }).then(console.log);
+luigi.update(2, { name: 'Luigi', specialMoveName: 'FireFly' }).then(console.log);
+luigi.delete(4);
+const charsList = new CharacterService(new LocalDbModel());
+charsList.getAll().then(console.log);

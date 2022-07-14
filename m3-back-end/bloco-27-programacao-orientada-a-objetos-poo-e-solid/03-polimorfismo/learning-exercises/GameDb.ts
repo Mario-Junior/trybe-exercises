@@ -17,7 +17,7 @@ interface IModel {
 
 const db: IDbCharacter[] = [];
 
-class LocalDBModel implements IModel {
+class LocalDbModel implements IModel {
   create = async (character: ICharacter) => {
     const lastId = db.length > 0 ? db[db.length - 1].id : 0;
     const newCharacter = { id: lastId + 1, ...character };
@@ -53,7 +53,7 @@ class LocalDBModel implements IModel {
 };
 
 class CharacterService {
-  constructor(readonly model: LocalDBModel) {}
+  constructor(readonly model: LocalDbModel) {}
 
   async create(character: ICharacter) {
     const newCharacter = await this.model.create(character);
@@ -77,8 +77,15 @@ class CharacterService {
 
   async delete(id: number){
     const deletedCharacter = await this.model.delete(id);
-    deletedCharacter
-    ? 'Character successfully deleted!'
-    : 'Character not found!'
+    return deletedCharacter;
   };
 };
+
+const mario = new CharacterService(new LocalDbModel());
+mario.create({name: 'Mario', specialMoveName: 'Fireball'}).then(console.log);
+const luigi = new CharacterService(new LocalDbModel());
+luigi.create({name: 'Luigi', specialMoveName: 'SuperFlame'}).then(console.log);
+luigi.update(2, {name: 'Luigi', specialMoveName: 'FireFly'}).then(console.log);
+luigi.delete(4);
+const charsList = new CharacterService(new LocalDbModel());
+charsList.getAll().then(console.log);
