@@ -52,7 +52,7 @@ class CharacterService {
     create(character) {
         return __awaiter(this, void 0, void 0, function* () {
             const newCharacter = yield this.model.create(character);
-            return ({ status: 201, data: newCharacter });
+            return ({ message: 'Character created', status: 201, data: newCharacter });
         });
     }
     ;
@@ -73,7 +73,7 @@ class CharacterService {
     update(id, character) {
         return __awaiter(this, void 0, void 0, function* () {
             const updatedCharacter = yield this.model.update(id, character);
-            return ({ status: 204, data: updatedCharacter });
+            return ({ message: 'Character updated', status: 204, data: updatedCharacter });
         });
     }
     ;
@@ -94,3 +94,46 @@ luigi.update(2, { name: 'Luigi', specialMoveName: 'FireFly' }).then(console.log)
 luigi.delete(4);
 const charsList = new CharacterService(new LocalDbModel());
 charsList.getAll().then(console.log);
+class MockDbModel {
+    create(character) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('character created');
+            return { id: 1, name: 'Peach', specialMoveName: 'Toad' };
+        });
+    }
+    ;
+    update(id, character) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('character updated');
+            return { id: 1, name: 'Yoshi', specialMoveName: 'Egg Lay' };
+        });
+    }
+    ;
+    delete(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('character deleted');
+            return true;
+        });
+    }
+    ;
+    getAll() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return [
+                { id: 1, name: 'Samus', specialMoveName: 'Charge Shot' },
+                { id: 2, name: 'Kirby', specialMoveName: 'Inhale' },
+            ];
+        });
+    }
+    ;
+    getById(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return { id: 1, name: 'Mario', specialMoveName: 'Fireball' };
+        });
+    }
+    ;
+}
+;
+const A = new CharacterService(new LocalDbModel());
+A.getAll().then(console.log);
+const B = new CharacterService(new MockDbModel());
+B.getAll().then(console.log);

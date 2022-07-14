@@ -53,11 +53,11 @@ class LocalDbModel implements IModel {
 };
 
 class CharacterService {
-  constructor(readonly model: LocalDbModel) {}
+  constructor(readonly model: IModel) {}
 
   async create(character: ICharacter) {
     const newCharacter = await this.model.create(character);
-    return ({ status: 201, data: newCharacter });
+    return ({ message: 'Character created', status: 201, data: newCharacter });
   };
 
   async getAll() {
@@ -72,7 +72,7 @@ class CharacterService {
 
   async update(id: number, character: ICharacter) {
     const updatedCharacter = await this.model.update(id, character);
-    return ({ status: 204, data: updatedCharacter });
+    return ({ message: 'Character updated', status: 204, data: updatedCharacter });
   };
 
   async delete(id: number){
@@ -89,3 +89,37 @@ luigi.update(2, {name: 'Luigi', specialMoveName: 'FireFly'}).then(console.log);
 luigi.delete(4);
 const charsList = new CharacterService(new LocalDbModel());
 charsList.getAll().then(console.log);
+
+class MockDbModel implements IModel {
+  async create(character: ICharacter) {
+    console.log('character created');
+    return { id: 1, name: 'Peach', specialMoveName: 'Toad' };
+  };
+
+  async update(id: number, character: ICharacter) {
+    console.log('character updated');
+    return { id: 1, name: 'Yoshi', specialMoveName: 'Egg Lay' };
+  };
+
+  async delete(id: number) {
+    console.log('character deleted');
+    return true;
+  };
+
+  async getAll() {
+    return [
+      { id: 1, name: 'Samus', specialMoveName: 'Charge Shot' },
+      { id: 2, name: 'Kirby', specialMoveName: 'Inhale' },
+    ];
+  };
+
+  async getById(id: number) {
+    return { id: 1, name: 'Mario', specialMoveName: 'Fireball' };
+  };
+};
+
+const A = new CharacterService(new LocalDbModel());
+A.getAll().then(console.log);
+
+const B = new CharacterService(new MockDbModel());
+B.getAll().then(console.log);
