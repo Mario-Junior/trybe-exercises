@@ -1,22 +1,22 @@
-var Employee = /** @class */ (function () {
-    function Employee(name) {
+class Employee {
+    constructor(name) {
         this.name = name;
         Employee.addEmployee();
     }
     ;
-    Employee.addEmployee = function () {
+    static addEmployee() {
         this.employeeCount += 1;
-    };
+    }
     ;
-    Object.defineProperty(Employee, "employees", {
-        get: function () {
-            return this.employeeCount;
-        },
-        enumerable: false,
-        configurable: true
-    });
+    static get employees() {
+        return this.employeeCount;
+    }
     ;
-    Employee.employeeCount = 0;
-    return Employee;
-}());
+}
+Employee.employeeCount = 0;
 ;
+console.log(Employee.employees);
+const e1 = new Employee('Cíntia');
+console.log(Employee.employees);
+const e2 = new Employee('Ronaldo');
+console.log(Employee.employees);

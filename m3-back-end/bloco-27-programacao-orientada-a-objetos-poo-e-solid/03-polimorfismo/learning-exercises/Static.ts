@@ -13,3 +13,9 @@ class Employee {
     return this.employeeCount;
   };
 };
+
+console.log(Employee.employees);
+const e1 = new Employee('Cíntia');
+console.log(Employee.employees);
+const e2 = new Employee('Ronaldo');
+console.log(Employee.employees);
