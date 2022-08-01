@@ -181,40 +181,40 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 25: Introdução ao desenvovimento Web com NodeJS :hourglass_flowing_sand:
 
-- [ ] 25-1: _NodeJS - Introdução_
-- [ ] 25-2: _NodeJS - Fluxo Assíncrono_
-- [ ] 25-3: _Teste com NodeJS_
-- [ ] 25-4: _Express: HTTP com Node.js_
-- [ ] 25-5: _Express: Middlewares_
-- [ ] 25-6: _[Projeto - Talker Manager]()_
+- [X] 25-1: _NodeJS - Introdução_
+- [X] 25-2: _NodeJS - Fluxo Assíncrono_
+- [X] 25-3: _Teste com NodeJS_
+- [X] 25-4: _Express: HTTP com Node.js_
+- [X] 25-5: _Express: Middlewares_
+- [X] 25-6: _[Projeto - Talker Manager]()_
 
 ##### Bloco 26: NodeJS: Camada de Serviço e Arquitetura Rest e Restful :hourglass_flowing_sand:
 
-- [ ] 26-1: _Arquitetura de Software - Camada de Model_
-- [ ] 26-2: _Arquitetura de Software - Camada de Controller e Service_
-- [ ] 26-3: _Arquitetura Web - Rest e Restful_
-- [ ] 26-4: _Arquitetura de Software - Testando as Camadas_
-- [ ] 26-5: _[Projeto - Store Manager]()_
+- [X] 26-1: _Arquitetura de Software - Camada de Model_
+- [X] 26-2: _Arquitetura de Software - Camada de Controller e Service_
+- [X] 26-3: _Arquitetura Web - Rest e Restful_
+- [X] 26-4: _Arquitetura de Software - Testando as Camadas_
+- [X] 26-5: _[Projeto - Store Manager]()_
 
 ##### Bloco 27: Autenticação e Upload de Arquivos :hourglass_flowing_sand:
 
-- [ ] 27-1: _NodeJS - JWT - (JSON Web Token)_
-- [ ] 27-2: _NodeJS - Upload de arquivos com 'multer'_
-- [ ] 27-3: _NodeJS - Testando APIs com Teste de Integração_
-- [ ] 27-4: _[Projeto - CookMaster]()_
+- [X] 27-1: _NodeJS - JWT - (JSON Web Token)_
+- [X] 27-2: _NodeJS - Upload de arquivos com 'multer'_
+- [X] 27-3: _NodeJS - Testando APIs com Teste de Integração_
+- [X] 27-4: _[Projeto - CookMaster]()_
 
 ##### Bloco 28: Deployment :hourglass_flowing_sand:
 
-- [ ] 28-1: _Infraestrutura - Deploy com Heroku_
-- [ ] 28-2: _Deploy - Gerenciadores de Processos_
-- [ ] 28-3: _[Projeto - Stranger Things]()_
+- [X] 28-1: _Infraestrutura - Deploy com Heroku_
+- [X] 28-2: _Deploy - Gerenciadores de Processos_
+- [X] 28-3: _[Projeto - Stranger Things]()_
 
 ##### Bloco 29: Arquitetura: SOLID e ORM :hourglass_flowing_sand:
 
-- [ ] 29-1: _Arquitetura - Princípios SOLID_
-- [ ] 29-2: _ORM - Interface da aplicação com o banco de dados_
-- [ ] 29-3: _ORM - Associations_
-- [ ] 29-4: _[Projeto - API de Blogs]()_
+- [X] 29-1: _Arquitetura - Princípios SOLID_
+- [X] 29-2: _ORM - Interface da aplicação com o banco de dados_
+- [X] 29-3: _ORM - Associations_
+- [X] 29-4: _[Projeto - API de Blogs]()_
 
 ##### Bloco 30: Sockets :hourglass_flowing_sand:
 
