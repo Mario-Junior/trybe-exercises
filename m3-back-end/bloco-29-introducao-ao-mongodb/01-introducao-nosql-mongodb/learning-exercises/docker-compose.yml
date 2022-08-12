@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+
+  mongo:
+    image: mongo
+    container_name: mongodb
+    working_dir: /app-db
+    volumes:
+      - ./:/app-db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: senhaultrasecreta
+    restart: always
