@@ -36,7 +36,6 @@ describe('Frame Model', () => {
 				const test = await frameModel.readOne('123456ERRADO');
 			} catch (error:any) {
         console.log(error);
-        
 				expect(error.message).to.be.eq('InvalidMongoId');
 			}
 		});
@@ -48,7 +47,7 @@ describe('Frame Model', () => {
 describe('Searching a frame', () => {
   const frameModel = new FrameModel();
   before(async () => {
-    sinon.stub(Model, 'findOne').throwsException('InvalidMongoId');
+    sinon.stub(Model, 'findOne').resolves('InvalidMongoId');
   });
 
   after(async () => {
