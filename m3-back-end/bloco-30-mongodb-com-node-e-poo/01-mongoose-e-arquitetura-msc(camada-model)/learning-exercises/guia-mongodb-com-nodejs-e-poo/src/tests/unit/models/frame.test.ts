@@ -19,9 +19,27 @@ describe('Frame Model', () => {
   });
 
   describe('Creating a frame', () => {
-    it('successfully created', async () => {
-      const newFrame = await frameModel.create(frameMock);
-      expect(newFrame).to.be.deep.equal(frameMockWithId);
-    });
-  });
+		it('successfully created', async () => {
+			const newFrame = await frameModel.create(frameMock);
+			expect(newFrame).to.be.deep.equal(frameMockWithId);
+		});
+	});
+
+	describe('Searching a frame', () => {
+		it('successfully found', async () => {
+			const framesFound = await frameModel.readOne('62cf1fc6498565d94eba52cd');
+			expect(framesFound).to.be.deep.equal(frameMockWithId);
+		});
+
+		it('_id not found', async () => {
+			try {
+				const test = await frameModel.readOne('123456ERRADO');
+        console.log(test);
+        
+			} catch (error:any) {
+				expect(error.message).to.be.eq('InvalidMongoId');
+			}
+		});
+	});
 });
+// Porque não conseguimos cobrir a Branch do Erro!? //
