@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import FrameModel from '../../../models/Frame';
-import { Model } from 'mongoose';
+import { isValidObjectId, Model } from 'mongoose';
 import { frameMock, frameMockWithId } from '../../mocks/frameMock';
 
 describe('Frame Model', () => {
@@ -34,12 +34,30 @@ describe('Frame Model', () => {
 		it('_id not found', async () => {
 			try {
 				const test = await frameModel.readOne('123456ERRADO');
-        console.log(test);
-        
 			} catch (error:any) {
+        console.log(error);
+        
 				expect(error.message).to.be.eq('InvalidMongoId');
 			}
 		});
 	});
 });
+
 // Porque não conseguimos cobrir a Branch do Erro!? //
+
+describe('Searching a frame', () => {
+  const frameModel = new FrameModel();
+  before(async () => {
+    sinon.stub(Model, 'findOne').throwsException('InvalidMongoId');
+  });
+
+  after(async () => {
+    sinon.restore();
+  });
+  
+  it('_id not found', async () => {
+    const test = await frameModel.readOne('123456ERRADO');
+    console.log(test);
+    // expect(test).to.be.eq('Error: InvalidMongoId');
+  });
+});
