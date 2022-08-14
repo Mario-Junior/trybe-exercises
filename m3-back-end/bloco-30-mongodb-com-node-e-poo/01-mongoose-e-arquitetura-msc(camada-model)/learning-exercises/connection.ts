@@ -1,6 +1,6 @@
 import { connect } from 'mongoose';
 
-connect('mongodb://localhost:27017/mongodb');
+connect('mongodb://localhost:27017/learning_exercises');
 
 // DESCOMENTAR para entendimento!
 // Exemplo com URI:
