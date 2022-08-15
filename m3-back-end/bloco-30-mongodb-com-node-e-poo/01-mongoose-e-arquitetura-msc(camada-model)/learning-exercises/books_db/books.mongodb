@@ -1,0 +1,12 @@
+// naming de db
+use('learning_exercises');
+
+// Insert a few documents into a collection.
+db.books.insertMany([
+  { title: 'Design Patterns com Java', author: 'Eduardo Guerra' },
+  { title: 'Arquitetura limpa', author: 'Robert C. Martin' },
+  { title: 'Refatoração', author: 'Martin Fowler' }
+]);
+
+// Run a find command to view items.
+db.books.find();
