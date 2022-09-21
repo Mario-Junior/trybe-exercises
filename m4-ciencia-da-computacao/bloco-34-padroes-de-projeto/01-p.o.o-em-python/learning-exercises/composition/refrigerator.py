@@ -4,8 +4,8 @@ class Refrigerator:
         self.__color = color
         self.__capacity = capacity
         self.__voltage = voltage
-        self.__ligada = False
-        self.__temperatura = 0
+        self.__is_on = False
+        self.__temperature = 0
 
     # Getter
     @property
