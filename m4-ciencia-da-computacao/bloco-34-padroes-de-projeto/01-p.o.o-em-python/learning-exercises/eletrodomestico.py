@@ -30,3 +30,12 @@ class Eletrodomestico:
     @cor.setter
     def cor(self, nova_cor):
         self.__cor = nova_cor
+
+    def __str__(self):
+        return f"""
+Eletrodoméstico:
+- Cor: {self.cor}
+- Potência: {self.__potencia} watts
+- Voltagem: {self.__voltagem} volts
+- Preço: R${self.preco:,.2f}
+        """
