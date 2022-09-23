@@ -16,7 +16,7 @@ class Geladeira(Eletrodomestico):
     # @property
     # def cor(self):
     #     return self.__cor
-    
+
 
 #     def __str__(self):
 #         return f"""
@@ -25,7 +25,7 @@ class Geladeira(Eletrodomestico):
 # - Voltagem: {self.__voltagem} volts
 # - Preço: R${self.preco:,.2f}
 #         """
-    # até aqui !
+# até aqui !
 
 geladeira_branca = Geladeira("Branca", 250, 220, 1000)
 
