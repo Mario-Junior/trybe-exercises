@@ -13,7 +13,9 @@ while next_page_url:
     for product in selector.css(".product_pod"):
         # Busca e extrai o título e  o preço
         title = product.css("h3 a::attr(title)").get()
-        price = product.css(".price_color::text").get()
+        price = product.css(".product_price .price_color::text").re(
+            r"£\d+\.\d{2}"
+        )
         print(title, price)
 
         # Busca o detalhe de um produto
@@ -28,6 +30,9 @@ while next_page_url:
         description = detail_selector.css(
             "#product_description ~ p::text"
         ).get()
+        suffix = "...more"
+        if description.endswith(suffix):
+            description = description[: -len(suffix)]
         print(description)
 
     # Descobre qual é a próxima página
