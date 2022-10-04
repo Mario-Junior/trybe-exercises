@@ -6,4 +6,11 @@ from selenium import webdriver
 firefox = webdriver.Firefox()
 
 # requisições para essa instância criada utilizando o método `get`
-response = firefox.get("https://www.python.org/")
+response = firefox.get("https://www.google.com.br/")
+
+# pesquisa na instância aberta do navegador pela primeira ocorrência
+# da tag 'input'
+search_input = firefox.find_element_by_tag_name("input")
+
+# escreve dentro do campo de input
+search_input.send_keys("selenium")
