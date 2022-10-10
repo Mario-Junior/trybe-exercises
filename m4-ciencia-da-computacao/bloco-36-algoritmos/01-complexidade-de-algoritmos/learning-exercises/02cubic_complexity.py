@@ -8,10 +8,11 @@ def multiply_arrays(array1, array2, array3):
                 result.append(number1 * number2 * number3)
                 number_of_iterations += 1
 
-    print(f'{number_of_iterations} iterações!')
+    print(f"{number_of_iterations} iterações!")
     return result
 
 
 # Usar arrays de tamanho 1000 aqui pode ser muito lento!
 meu_array = list(range(1, 101))
 multiply_arrays(meu_array, meu_array, meu_array)
+# executar no terminal: time python3 02cubic_complexity.py
