@@ -1,3 +1,6 @@
+import time
+from timeit import timeit
+
 def multiply_arrays(array1, array2):
     result = []
     number_of_iterations = 0
@@ -13,6 +16,12 @@ def multiply_arrays(array1, array2):
     return result
 
 
-meu_array = [1, 2, 3, 4, 5]
+# meu_array = [1, 2, 3, 4, 5]
 
+n = 101 # onde n será o número total de elementos dentro do array
+meu_array = list(range(1, n))
+
+# start_at = time.time()
 multiply_arrays(meu_array, meu_array)
+# end_at = time.time()
+# print("Tempo de execução: ", end_at - start_at)
