@@ -19,6 +19,11 @@ def binary_search(numbers, target):
 
 numbers = [2, 3, 4, 10, 40]
 target = 40
+targets = [2, 10, 20]
 
 result = binary_search(numbers, target)
 print(f"Elemento encontrado na posição: {result}")
+
+for item in targets:
+    result = binary_search(numbers, item)
+    print(f"Elemento encontrado na posição: {result}")
