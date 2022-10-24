@@ -21,4 +21,4 @@ def solve_expression(expr):
     return stack.pop()
 
 
-print(solve_expression("5 10 + 3 *"))
+print(solve_expression("5 10 + 3 *"))  # saída: 45
