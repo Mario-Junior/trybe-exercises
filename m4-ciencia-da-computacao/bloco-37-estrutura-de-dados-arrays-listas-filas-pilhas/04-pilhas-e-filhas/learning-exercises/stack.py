@@ -20,3 +20,22 @@ class Stack:
         value = self._data[-1]
         del self._data[-1]
         return value
+
+    def peek(self):
+        if self.is_empty():
+            return None
+        value = self._data[-1]
+        return value
+
+    def clear(self):
+        self._data.clear()
+
+    def __str__(self):
+        str_items = ""
+        for i in range(self.size()):
+            value = self._data[i]
+            str_items += str(value)
+            if i + 1 < self.size():
+                str_items += ", "
+
+        return "Stack(" + str_items + ")"
