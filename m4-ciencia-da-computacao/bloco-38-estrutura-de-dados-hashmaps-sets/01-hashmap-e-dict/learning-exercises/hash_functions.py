@@ -5,5 +5,8 @@ class Employee:
 
 
 class HashMap:
+    def __init__(self):
+        self._buckets = [None for i in range(10)]
+
     def get_address(self, id_num):
         return id_num % 10
