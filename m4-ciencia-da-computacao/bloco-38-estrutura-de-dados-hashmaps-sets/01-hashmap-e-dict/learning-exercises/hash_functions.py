@@ -40,3 +40,11 @@ class HashMap:
     def get_value(self, id_num):
         address = self.get_address(id_num)
         return self._buckets[address].name
+
+    # has
+    # Para consultar se uma determinada chave existe dentro da hash map,
+    # basta calcular o address. Além disso,
+    # certifico que o conteúdo da lista buckets não é None.
+    def has(self, id_num):
+        address = self.get_address(id_num)
+        return self._buckets[address] is not None
