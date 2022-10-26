@@ -48,3 +48,13 @@ class HashMap:
     def has(self, id_num):
         address = self.get_address(id_num)
         return self._buckets[address] is not None
+
+
+employees = [(14, "name1"), (23, "name2"), (10, "name3"), (9, "name4")]
+employee_list = HashMap()
+
+for id_num, name in employees:
+    new_employee = Employee(id_num, name)
+    employee_list.insert(new_employee)
+
+print(employee_list.get_value(23))
