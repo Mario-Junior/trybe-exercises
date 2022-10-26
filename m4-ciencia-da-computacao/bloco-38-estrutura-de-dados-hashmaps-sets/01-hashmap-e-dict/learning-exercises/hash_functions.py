@@ -25,10 +25,18 @@ class HashMap:
     def get_address(self, id_num):
         return id_num % 10
 
+    # insert
+    # Para povoar a hash, recebo o objeto,
+    # computo o seu address a partir da chave numérica,
+    # armazeno no local adequado.
     def insert(self, employee):
         address = self.get_address(employee.id_num)
         self._buckets[address] = employee
 
+    # get_value
+    # Para acessar o dado de interesse, passo a chave.
+    # A classe identifica o índice, onde a referência ao objeto está armazenada
+    # e retorna o valor que estiver no campo name.
     def get_value(self, id_num):
         address = self.get_address(id_num)
         return self._buckets[address].name
