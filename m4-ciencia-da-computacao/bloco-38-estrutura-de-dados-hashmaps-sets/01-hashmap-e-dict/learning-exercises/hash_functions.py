@@ -49,8 +49,18 @@ class HashMap:
         address = self.get_address(id_num)
         return self._buckets[address] is not None
 
+    # Exercício 2:
+    def update_value(self, id_num, new_name):
+        address = self.get_address(id_num)
+        employee = self._buckets[address]
+        employee.name = new_name
 
+
+# Exercício 1: b) Use a entrada abaixo para criar objetos Employee:
 employees = [(14, "name1"), (23, "name2"), (10, "name3"), (9, "name4")]
+# Exercício 1: c) Instancie classe HashMap e use objetos Employee para povoá-la
+# Imprima na tela o nome da pessoa de id_num = 23,
+# acessando a informação a partir da HashMap.
 employee_list = HashMap()
 
 for id_num, name in employees:
@@ -58,3 +68,12 @@ for id_num, name in employees:
     employee_list.insert(new_employee)
 
 print(employee_list.get_value(23))
+
+# Exercício 2: A pessoa de id_num = 10 está com nome errado, deveria ser name30
+# Implemente método update, onde id_num é a chave para localizar o registro
+# e new_name é o nome a ser colocado.
+# Verifique se o seu código está realmente alterando o nome,
+# imprimindo o nome antes e depois da alteração:
+print(employee_list.get_value(10))
+employee_list.update_value(10, "name30")
+print(employee_list.get_value(10))
