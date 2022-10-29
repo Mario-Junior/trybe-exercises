@@ -21,6 +21,9 @@ class Conjunto:
         if item > self.last_element:
             self.last_element = item
 
+    def __contains__(self, item):
+        return self.set[item]
+
 
 if __name__ == "__main__":
     conj = Conjunto()
@@ -40,3 +43,10 @@ if __name__ == "__main__":
 
     conj4 = Conjunto()
     print(conj4)
+
+    conj5 = Conjunto()
+    for i in [1, 2, 3]:
+        conj5.add(i)
+    print(conj5)
+    print(1 in conj5)
+    print(0 in conj5)
