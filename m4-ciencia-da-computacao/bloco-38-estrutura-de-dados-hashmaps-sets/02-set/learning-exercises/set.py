@@ -33,6 +33,15 @@ class Conjunto:
 
         return new_conjunto
 
+    def intersection(self, conjuntoB):
+        new_conjunto = Conjunto()
+
+        for index in range(1001):
+            if self.set[index] and conjuntoB.set[index]:
+                new_conjunto.add(index)
+
+        return new_conjunto
+
 
 if __name__ == "__main__":
     # Inicialização e Adição
@@ -75,3 +84,17 @@ if __name__ == "__main__":
     print(f"Conjunto 1: {conj1}")
     print(f"Conjunto 2: {conj2}")
     print(f"1 U 2: {conj3}")
+
+    # Intersecção
+    conj1 = Conjunto()
+    for i in [1, 2, 3]:
+        conj1.add(i)
+
+    conj2 = Conjunto()
+    for i in [7, 2, 10]:
+        conj2.add(i)
+
+    conj3 = conj1.intersection(conj2)
+    print(f"Conjunto 1: {conj1}")
+    print(f"Conjunto 2: {conj2}")
+    print(f"1 (intersec) 2: {conj3}")
