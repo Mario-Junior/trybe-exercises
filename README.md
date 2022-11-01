@@ -162,16 +162,16 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 22: Introdução ao MongoDB :hourglass_flowing_sand:
 
-- [ ] 22-1: _Introdução - NoSQL e MongoDB_
-- [ ] 22-2: _Filter Operators_
+- [X] 22-1: _Introdução - NoSQL e MongoDB_
+- [X] 22-2: _Filter Operators_
 - [ ] 22-3: _[Projeto - Data Flights]()_
 
 ##### Bloco 23: MongoDB: Updates Simples e Complexos :hourglass_flowing_sand:
 
-- [ ] 23-1: _Updates Simples_
-- [ ] 23-2: _Updates Complexos - Arrays - Parte 1_
-- [ ] 23-3: _Updates Complexos - Arrays - Parte 2_
-- [ ] 23-4: _[Projeto - Commerce]()_
+- [X] 23-1: _Updates Simples_
+- [X] 23-2: _Updates Complexos - Arrays - Parte 1_
+- [X] 23-3: _Updates Complexos - Arrays - Parte 2_
+- [X] 23-4: _[Projeto - Commerce]()_
 
 ##### Bloco 24: Aggregation Framework :hourglass_flowing_sand:
 
@@ -181,12 +181,12 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 25: Introdução ao desenvovimento Web com NodeJS :hourglass_flowing_sand:
 
-- [ ] 25-1: _NodeJS - Introdução_
-- [ ] 25-2: _NodeJS - Fluxo Assíncrono_
-- [ ] 25-3: _Teste com NodeJS_
-- [ ] 25-4: _Express: HTTP com Node.js_
-- [ ] 25-5: _Express: Middlewares_
-- [ ] 25-6: _[Projeto - Talker Manager]()_
+- [X] 25-1: _NodeJS - Introdução_
+- [X] 25-2: _NodeJS - Fluxo Assíncrono_
+- [X] 25-3: _Teste com NodeJS_
+- [X] 25-4: _Express: HTTP com Node.js_
+- [X] 25-5: _Express: Middlewares_
+- [X] 25-6: _[Projeto - Talker Manager]()_
 
 ##### Bloco 26: NodeJS: Camada de Serviço e Arquitetura Rest e Restful :hourglass_flowing_sand:
 
