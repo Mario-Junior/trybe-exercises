@@ -190,24 +190,24 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 26: NodeJS: Camada de Serviço e Arquitetura Rest e Restful :hourglass_flowing_sand:
 
-- [ ] 26-1: _Arquitetura de Software - Camada de Model_
-- [ ] 26-2: _Arquitetura de Software - Camada de Controller e Service_
-- [ ] 26-3: _Arquitetura Web - Rest e Restful_
-- [ ] 26-4: _Arquitetura de Software - Testando as Camadas_
-- [ ] 26-5: _[Projeto - Store Manager]()_
+- [X] 26-1: _Arquitetura de Software - Camada de Model_
+- [X] 26-2: _Arquitetura de Software - Camada de Controller e Service_
+- [X] 26-3: _Arquitetura Web - Rest e Restful_
+- [X] 26-4: _Arquitetura de Software - Testando as Camadas_
+- [X] 26-5: _[Projeto - Store Manager]()_
 
 ##### Bloco 27: Autenticação e Upload de Arquivos :hourglass_flowing_sand:
 
-- [ ] 27-1: _NodeJS - JWT - (JSON Web Token)_
-- [ ] 27-2: _NodeJS - Upload de arquivos com 'multer'_
-- [ ] 27-3: _NodeJS - Testando APIs com Teste de Integração_
+- [X] 27-1: _NodeJS - JWT - (JSON Web Token)_
+- [X] 27-2: _NodeJS - Upload de arquivos com 'multer'_
+- [X] 27-3: _NodeJS - Testando APIs com Teste de Integração_
 - [ ] 27-4: _[Projeto - CookMaster]()_
 
 ##### Bloco 28: Deployment :hourglass_flowing_sand:
 
-- [ ] 28-1: _Infraestrutura - Deploy com Heroku_
-- [ ] 28-2: _Deploy - Gerenciadores de Processos_
-- [ ] 28-3: _[Projeto - Stranger Things]()_
+- [X] 28-1: _Infraestrutura - Deploy com Heroku_
+- [X] 28-2: _Deploy - Gerenciadores de Processos_
+- [X] 28-3: _[Projeto - Stranger Things]()_
 
 ##### Bloco 29: Arquitetura: SOLID e ORM :hourglass_flowing_sand:
 
