@@ -226,16 +226,16 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 31: Projeto :hourglass_flowing_sand:
 
-- [ ] 31-1: _[Projeto - App de Delivery]()_
+- [X] 31-1: _[Projeto - App de Delivery]()_
 
 ## Ciência da Computação :hourglass_flowing_sand:
 
 ##### Bloco 32: Introdução à Python :hourglass_flowing_sand:
 
-- [ ] 32-1: _Aprendendo Python_
-- [ ] 32-2: _Entrada e Saída de Dados_
-- [ ] 32-3: _Testes_
-- [ ] 32-4: _[Projeto - Job Insights]()_
+- [X] 32-1: _Aprendendo Python_
+- [X] 32-2: _Entrada e Saída de Dados_
+- [X] 32-3: _Testes_
+- [X] 32-4: _[Projeto - Job Insights]()_
 
 ##### Bloco 33: Programação Orientada a Objetos e Padrões de Projeto :hourglass_flowing_sand:
 
