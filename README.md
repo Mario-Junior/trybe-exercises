@@ -253,10 +253,10 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 35: Algoritmos :hourglass_flowing_sand:
 
-- [ ] 35-1: _Complexidade de Algoritmos_
-- [ ] 35-2: _Recursividade e Estratégias para solução de problemas_
-- [ ] 35-3: _Algoritmos de ordenação e busca_
-- [ ] 35-4: _[Projeto - Algoritmos]()_
+- [X] 35-1: _Complexidade de Algoritmos_
+- [X] 35-2: _Recursividade e Estratégias para solução de problemas_
+- [X] 35-3: _Algoritmos de ordenação e busca_
+- [X] 35-4: _[Projeto - Algoritmos]()_
 
 ##### Bloco 36: Estrutura de Dados 1: Arrays, Hashmaps e Sets :hourglass_flowing_sand:
 
