@@ -260,11 +260,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 36: Estrutura de Dados 1: Arrays, Hashmaps e Sets :hourglass_flowing_sand:
 
-- [ ] 36-1: _Arquitetura de Computadores_
-- [ ] 36-2: _Arrays_
-- [ ] 36-3: _Hashmap e Dict_
-- [ ] 36-4: _Set_
-- [ ] 36-5: _[Projeto - Restaurant Orders]()_
+- [X] 36-1: _Arquitetura de Computadores_
+- [X] 36-2: _Arrays_
+- [X] 36-3: _Hashmap e Dict_
+- [X] 36-4: _Set_
+- [X] 36-5: _[Projeto - Restaurant Orders]()_
 
 ##### Bloco 37: Esrutura de Dados 2: Listas, Filas e Pilhas :hourglass_flowing_sand:
 
