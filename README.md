@@ -268,7 +268,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 37: Esrutura de Dados 2: Listas, Filas e Pilhas :hourglass_flowing_sand:
 
-- [ ] 37-1: _Nó e Listas Encadeadas_
-- [ ] 37-2: _Deque_
-- [ ] 37-3: _Pilhas_
-- [ ] 37-4: _[Projeto - TING - Trybe Is Not Google]()_
+- [X] 37-1: _Nó e Listas Encadeadas_
+- [X] 37-2: _Deque_
+- [X] 37-3: _Pilhas_
+- [X] 37-4: _[Projeto - TING - Trybe Is Not Google]()_
