@@ -22,7 +22,8 @@ jobs:
           gh pr create \
             --base main \
             --head dev-main \
-            --title "Daily update"
+            --title "Daily update" \
+            --fill
 
       - name: Approve Pull Request
         env:
