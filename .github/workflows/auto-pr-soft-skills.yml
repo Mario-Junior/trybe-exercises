@@ -14,18 +14,18 @@ jobs:
     env:
       BASE_BRANCH: main
       HEAD_BRANCH: dev-main
-      PR_TITLE: Daily update
+      PR_TITLE: Atualização automática - Diário de Autoconhecimento
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Ensure gh is authenticated
+      - name: Validate GitHub CLI authentication
         env:
           GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
         run: gh auth status
 
-      - name: Create PR if not exists
+      - name: Create PR if it does not exist
         env:
           GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
         run: |
@@ -37,7 +37,7 @@ jobs:
             --jq '.[0].number')
 
           if [ -z "$PR_NUMBER" ]; then
-            echo "No open PR found. Creating one..."
+            echo "No open PR found. Creating PR..."
             gh pr create \
               --base "$BASE_BRANCH" \
               --head "$HEAD_BRANCH" \
@@ -47,21 +47,31 @@ jobs:
             echo "PR already exists: #$PR_NUMBER"
           fi
 
+      - name: Get PR number
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          PR_NUMBER=$(gh pr list \
+            --base "$BASE_BRANCH" \
+            --head "$HEAD_BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number')
+
+          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+          echo "Using PR #$PR_NUMBER"
+
       - name: Approve PR (idempotent)
         env:
           GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
         run: |
-          gh pr review \
-            --base "$BASE_BRANCH" \
-            --head "$HEAD_BRANCH" \
-            --approve || true
+          gh pr review "$PR_NUMBER" --approve || true
 
-      - name: Merge PR (idempotent)
+      - name: Enable auto-merge and merge PR
         env:
           GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
         run: |
-          gh pr merge \
-            --base "$BASE_BRANCH" \
-            --head "$HEAD_BRANCH" \
+          gh pr merge "$PR_NUMBER" \
             --merge \
-            --delete-branch=false || true
+            --auto \
+            --delete-branch=false
