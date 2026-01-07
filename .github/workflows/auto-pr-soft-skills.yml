@@ -1,0 +1,67 @@
+name: Auto PR Soft Skills
+
+on:
+  push:
+    branches:
+      - dev-main
+    paths:
+      - "soft-skills/20211124 Esquenta - Inteligência Emocional - Autoconhecimento - Emoções - Diário de Autoconhecimento.ods"
+
+jobs:
+  auto-pr:
+    runs-on: ubuntu-latest
+
+    env:
+      BASE_BRANCH: main
+      HEAD_BRANCH: dev-main
+      PR_TITLE: Daily update
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure gh is authenticated
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: gh auth status
+
+      - name: Create PR if not exists
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          PR_NUMBER=$(gh pr list \
+            --base "$BASE_BRANCH" \
+            --head "$HEAD_BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number')
+
+          if [ -z "$PR_NUMBER" ]; then
+            echo "No open PR found. Creating one..."
+            gh pr create \
+              --base "$BASE_BRANCH" \
+              --head "$HEAD_BRANCH" \
+              --title "$PR_TITLE" \
+              --body ""
+          else
+            echo "PR already exists: #$PR_NUMBER"
+          fi
+
+      - name: Approve PR (idempotent)
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          gh pr review \
+            --base "$BASE_BRANCH" \
+            --head "$HEAD_BRANCH" \
+            --approve || true
+
+      - name: Merge PR (idempotent)
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          gh pr merge \
+            --base "$BASE_BRANCH" \
+            --head "$HEAD_BRANCH" \
+            --merge \
+            --delete-branch=false || true
