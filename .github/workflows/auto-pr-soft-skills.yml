@@ -1,0 +1,37 @@
+name: Auto PR - Soft Skills ODS
+
+on:
+  push:
+    branches:
+      - dev-main
+    paths:
+      - "soft-skills/20211124 Esquenta - Inteligência Emocional - Autoconhecimento - Emoções - Diário de Autoconhecimento.ods"
+
+jobs:
+  auto-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          gh pr create \
+            --base main \
+            --head dev-main \
+            --title "Daily update"
+
+      - name: Approve Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          gh pr review --approve
+
+      - name: Merge Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.PAT_GH_AUTOMERGE }}
+        run: |
+          gh pr merge --merge --delete-branch=false
